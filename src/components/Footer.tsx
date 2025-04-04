@@ -11,7 +11,7 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4 text-foreground">Academia HQ</h3>
             <p className="text-muted-foreground">
-              Transformando talento em arte sequencial desde 2012
+              Em conexão com mentores de forma consciente há mais de 15 anos.
             </p>
           </div>
           <div>
