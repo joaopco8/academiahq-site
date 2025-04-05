@@ -136,22 +136,26 @@ export default function Banner({ banners }: BannerProps) {
                   
                   {/* Conteúdo do banner */}
                   <div className="relative z-20 max-w-6xl mx-auto px-4 text-white">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-2 md:mb-4 text-shadow-lg">
-                      {banner.title}
-                    </h2>
-                    <p className="text-lg md:text-xl mb-4 md:mb-6 max-w-xl text-shadow">
-                      {banner.description}
-                    </p>
-                    {banner.buttonText && (
-                      <Button 
-                        asChild 
-                        className="bg-slate-900 hover:bg-slate-800 text-white px-6 md:px-8 py-4 md:py-6 text-sm md:text-base"
-                      >
-                        <a href={banner.buttonLink || '#'}>
-                          {banner.buttonText}
-                        </a>
-                      </Button>
-                    )}
+                    <div className="max-w-[280px] sm:max-w-[380px] md:max-w-xl mx-auto sm:mx-0">
+                      <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-1 sm:mb-2 md:mb-4 text-shadow-lg text-center sm:text-left">
+                        {banner.title}
+                      </h2>
+                      <p className="text-sm sm:text-lg md:text-xl mb-3 sm:mb-4 md:mb-6 text-shadow text-center sm:text-left">
+                        {banner.description}
+                      </p>
+                      {banner.buttonText && (
+                        <div className="flex justify-center sm:justify-start">
+                          <Button 
+                            asChild 
+                            className="bg-slate-900 hover:bg-slate-800 text-white px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 text-xs sm:text-sm md:text-base"
+                          >
+                            <a href={banner.buttonLink || '#'}>
+                              {banner.buttonText}
+                            </a>
+                          </Button>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
               </CarouselItem>
