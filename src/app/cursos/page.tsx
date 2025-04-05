@@ -71,9 +71,7 @@ export default function CursosPage() {
                 <h3 className="text-2xl font-bold mb-2 text-foreground">Curso de Apometria</h3>
                 <p className="text-primary mb-4">Duração: 2 dias | Curso Online Ao vivo</p>
                 <p className="text-muted-foreground mb-6">
-                  Desenvolva habilidades para contar histórias através da arte sequencial. Do roteiro ao 
-                  produto final, você aprenderá a criar personagens, desenvolver narrativas, 
-                  layoutar páginas, fazer arte-final e preparar seu material para publicação.
+                O Curso de Apometria Online ensina a aplicar essa técnica de forma consciente e estruturada, acelerando o despertar espiritual e potencializando atendimentos terapêuticos. Com ele, você acessa informações essenciais para ampliar seus resultados e garantir efeitos mais d
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
                   <span className="px-3 py-1 bg-slate-800 rounded-full text-sm text-muted-foreground">Atendimento</span>
@@ -87,6 +85,113 @@ export default function CursosPage() {
                 </Button>
               </div>
             </div>
+
+            
+          </AnimatedBorder>
+
+          <AnimatedBorder>
+            <div className="md:flex">
+              <div 
+                className="md:w-1/3 h-64 md:h-auto"
+                style={{
+                  backgroundImage: "url('/images/nivel2.jpg?v=1')",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center"
+                }}
+              >
+              </div>
+              <div className="md:w-2/3 p-8">
+                <h3 className="text-2xl font-bold mb-2 text-foreground">Curso Nível 1</h3>
+                <p className="text-primary mb-4">Duração: 1 dia | Curso Online Ao vivo</p>
+                <p className="text-muted-foreground mb-6">
+                Este curso tem por objetivo atender aos alunos que estão iniciando sua jornada no despertar consciencial. Sua estrutura é extremamente didática, facilitando o aprendizado e a absorção do conteúdo proposto.
+Ministrado por Sergio Oliveira, tem a duração aproximada de 06h, podendo se estender de acordo com o desenvolvimento do grupo.
+Os participantes deste módulo participam no encerramento deste módulo de uma sintonização individual, onde é feita a sua iniciação junto à sua família cósmica e estruturas do trabalho de Harmonização Quântica.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <span className="px-3 py-1 bg-slate-800 rounded-full text-sm text-muted-foreground">Atendimento</span>
+                  <span className="px-3 py-1 bg-slate-800 rounded-full text-sm text-muted-foreground">Auto-atendimento</span>
+                  <span className="px-3 py-1 bg-slate-800 rounded-full text-sm text-muted-foreground">Interação energética</span>
+                </div>
+                <Button asChild>
+                  <Link href="/cursos/nivel1">
+                    Mais informações
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            
+          </AnimatedBorder>
+
+          <AnimatedBorder>
+            <div className="md:flex">
+              <div 
+                className="md:w-1/3 h-64 md:h-auto"
+                style={{
+                  backgroundImage: "url('/images/nivel2-1.jpg?v=1')",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center"
+                }}
+              >
+              </div>
+              <div className="md:w-2/3 p-8">
+                <h3 className="text-2xl font-bold mb-2 text-foreground">Curso Nível 2</h3>
+                <p className="text-primary mb-4">Duração: 1 dia | Curso Online Ao vivo</p>
+                <p className="text-muted-foreground mb-6">
+                O Nível II da Academia HQ é o próximo passo para quem deseja ampliar sua conexão com esferas superiores. Atualizado para 2024, o curso oferece uma compreensão profunda da estrutura universal e eleva o gradiente energético do aluno. Esse avanço se refletirá em sua vida pessoal e, para terapeutas, aumentará a eficácia dos atendimentos. Com uma egrégora fortalecida, o curso promove um despertar consciencial e mediúnico, proporcionando resultados mais rápidos e duradouros na transmigração consciencial.
+
+​
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <span className="px-3 py-1 bg-slate-800 rounded-full text-sm text-muted-foreground">Atendimento</span>
+                  <span className="px-3 py-1 bg-slate-800 rounded-full text-sm text-muted-foreground">Auto-atendimento</span>
+                  <span className="px-3 py-1 bg-slate-800 rounded-full text-sm text-muted-foreground">Interação energética</span>
+                </div>
+                <Button asChild>
+                  <Link href="/cursos/nivel2">
+                    Mais informações
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            
+          </AnimatedBorder>
+
+          <AnimatedBorder>
+            <div className="md:flex">
+              <div 
+                className="md:w-1/3 h-64 md:h-auto"
+                style={{
+                  backgroundImage: "url('/images/mediunidade.jpg?v=1')",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center"
+                }}
+              >
+              </div>
+              <div className="md:w-2/3 p-8">
+                <h3 className="text-2xl font-bold mb-2 text-foreground">Curso de Mediunidade</h3>
+                <p className="text-primary mb-4">Duração: Indefinida | Curso Online e Presencial em Vila Velha-ES</p>
+                <p className="text-muted-foreground mb-6">
+                Nesse trabalho que estamos desenvolvendo, você terá a oportunidade de descobrir quais são as suas equipes, quais são as entidades que te acompanham, quais são as estruturas e tipos de mediunidade que existem, quem são os orixás e como eles atuam e ainda, como você pode alinhar a sua estrutura de trabalho junto às suas equipes.
+Essa proposta de aulas é uma formação contínua para aqueles que tem  interesse em desenvolver a sua mediunidade e ou até mesmo aprender a incorporar (se suas entidades e Orixás permitirem).
+​
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <span className="px-3 py-1 bg-slate-800 rounded-full text-sm text-muted-foreground">Atendimento</span>
+                  <span className="px-3 py-1 bg-slate-800 rounded-full text-sm text-muted-foreground">Auto-atendimento</span>
+                  <span className="px-3 py-1 bg-slate-800 rounded-full text-sm text-muted-foreground">Interação energética</span>
+                </div>
+                <Button asChild>
+                  <Link href="/cursos/mediunidade">
+                    Mais informações
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            
           </AnimatedBorder>
 
         </div>
@@ -121,14 +226,11 @@ export default function CursosPage() {
           ].map((testimonial, index) => (
             <AnimatedBorder key={index} containerClassName="h-full">
               <div className="p-6 h-full">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-slate-800 rounded-full mr-4"></div>
-                  <div>
-                    <h3 className="font-bold text-foreground">{testimonial.name}</h3>
-                    <p className="text-primary text-sm">{testimonial.course}</p>
-                  </div>
+                <div className="mb-3">
+                  <h3 className="font-bold text-foreground text-lg">{testimonial.name}</h3>
+                  <p className="text-primary text-sm mb-3">{testimonial.course}</p>
                 </div>
-                <p className="text-muted-foreground italic">&quot;{testimonial.testimonial}&quot;</p>
+                <p className="text-muted-foreground">{testimonial.testimonial}</p>
               </div>
             </AnimatedBorder>
           ))}

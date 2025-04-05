@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 import Autoplay from "embla-carousel-autoplay";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 interface BannerProps {
   banners: {
@@ -27,13 +27,84 @@ export default function Banner({ banners }: BannerProps) {
   const plugin = useRef(
     Autoplay({ delay: 5000, stopOnInteraction: true })
   );
+  const [isMobile, setIsMobile] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(0);
+  const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({});
 
-  console.log("Banners recebidos:", banners); // Depuração para verificar os dados recebidos
+  // Detectar se o dispositivo é móvel
+  useEffect(() => {
+    const checkIsMobile = () => {
+      const width = window.innerWidth;
+      setWindowWidth(width);
+      setIsMobile(width < 768);
+      console.log(`Largura da janela: ${width}px, Modo móvel: ${width < 768 ? 'SIM' : 'NÃO'}`);
+    };
+
+    // Verificar inicialmente
+    checkIsMobile();
+
+    // Adicionar listener para redimensionamento
+    window.addEventListener('resize', checkIsMobile);
+
+    // Cleanup
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
+
+  // Verificar se a imagem existe
+  useEffect(() => {
+    banners.forEach((banner) => {
+      if (banner.imageUrl) {
+        const mobileUrl = `${banner.imageUrl}-mobile.jpg`;
+        const desktopUrl = `${banner.imageUrl}-desktop.jpg`;
+        
+        // Verificar imagem mobile
+        const imgMobile = new Image();
+        imgMobile.onload = () => console.log(`✅ Imagem mobile carregada com sucesso: ${mobileUrl}`);
+        imgMobile.onerror = () => {
+          console.error(`❌ Erro ao carregar imagem mobile: ${mobileUrl}`);
+          setImageErrors(prev => ({ ...prev, [mobileUrl]: true }));
+        };
+        imgMobile.src = mobileUrl;
+        
+        // Verificar imagem desktop
+        const imgDesktop = new Image();
+        imgDesktop.onload = () => console.log(`✅ Imagem desktop carregada com sucesso: ${desktopUrl}`);
+        imgDesktop.onerror = () => {
+          console.error(`❌ Erro ao carregar imagem desktop: ${desktopUrl}`);
+          setImageErrors(prev => ({ ...prev, [desktopUrl]: true }));
+        };
+        imgDesktop.src = desktopUrl;
+      }
+    });
+  }, [banners]);
+
+  // Função para obter a URL da imagem correta (desktop ou mobile)
+  const getImageUrl = (baseUrl?: string) => {
+    if (!baseUrl) return '';
+    
+    // Construir e retornar a URL completa
+    const suffix = isMobile ? '-mobile' : '-desktop';
+    const fullUrl = `${baseUrl}${suffix}.jpg`;
+    console.log(`Gerando URL para banner (${isMobile ? 'Mobile' : 'Desktop'}): ${fullUrl}`);
+    
+    // Verificar se tivemos erro com esta imagem
+    if (imageErrors[fullUrl]) {
+      // Tentar a outra versão como fallback
+      const fallbackSuffix = isMobile ? '-desktop' : '-mobile';
+      const fallbackUrl = `${baseUrl}${fallbackSuffix}.jpg`;
+      console.log(`⚠️ Usando fallback para imagem: ${fallbackUrl}`);
+      return fallbackUrl;
+    }
+    
+    return fullUrl;
+  };
+
+  console.log("Banners recebidos:", banners, "Modo móvel:", isMobile, "Largura:", windowWidth);
 
   return (
     <div className="w-full">
       <Carousel 
-        className="w-full h-[500px]"
+        className="w-full h-[300px] sm:h-[400px] md:h-[500px]"
         plugins={[plugin.current]}
         opts={{
           align: "start",
@@ -42,16 +113,19 @@ export default function Banner({ banners }: BannerProps) {
       >
         <CarouselContent>
           {banners.map((banner) => {
-            console.log("Processando banner:", banner.id, "URL:", banner.imageUrl); // Depuração
+            const finalImageUrl = getImageUrl(banner.imageUrl);
+            console.log(`Banner ${banner.id}: ${banner.title}`);
+            console.log(`- URL base: ${banner.imageUrl}`);
+            console.log(`- URL final: ${finalImageUrl}`);
             
             // Definir background (imagem ou cor) - aplicando diretamente para evitar problemas
-            const backgroundImage = banner.imageUrl ? `url(${banner.imageUrl})` : '';
+            const backgroundImage = banner.imageUrl ? `url(${finalImageUrl})` : '';
             const backgroundColor = !banner.imageUrl ? (banner.bgColor || 'hsl(var(--secondary))') : 'transparent';
               
             return (
               <CarouselItem key={banner.id}>
                 <div
-                  className="relative h-[500px] w-full flex items-center bg-cover bg-center"
+                  className="relative h-[300px] sm:h-[400px] md:h-[500px] w-full flex items-center bg-cover bg-center"
                   style={{
                     backgroundImage: backgroundImage,
                     backgroundColor: backgroundColor
@@ -62,16 +136,16 @@ export default function Banner({ banners }: BannerProps) {
                   
                   {/* Conteúdo do banner */}
                   <div className="relative z-20 max-w-6xl mx-auto px-4 text-white">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4 text-shadow-lg">
+                    <h2 className="text-3xl md:text-5xl font-bold mb-2 md:mb-4 text-shadow-lg">
                       {banner.title}
                     </h2>
-                    <p className="text-xl mb-6 max-w-xl text-shadow">
+                    <p className="text-lg md:text-xl mb-4 md:mb-6 max-w-xl text-shadow">
                       {banner.description}
                     </p>
                     {banner.buttonText && (
                       <Button 
                         asChild 
-                        className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-6 text-base"
+                        className="bg-slate-900 hover:bg-slate-800 text-white px-6 md:px-8 py-4 md:py-6 text-sm md:text-base"
                       >
                         <a href={banner.buttonLink || '#'}>
                           {banner.buttonText}

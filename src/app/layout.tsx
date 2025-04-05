@@ -3,7 +3,6 @@ import { GeistSans, GeistMono } from "geist/font";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { CosmicBackground } from "@/components/cosmic-background";
 
 const geistSans = GeistSans;
 const geistMono = GeistMono;
@@ -28,9 +27,6 @@ export default function RootLayout({
             background: "radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 70%), radial-gradient(circle at 80% 60%, rgba(29, 78, 216, 0.1) 0%, transparent 60%), radial-gradient(circle at 50% 80%, rgba(37, 99, 235, 0.12) 0%, transparent 50%)",
           }}
         ></div>
-        
-        {/* Animação cósmica */}
-        <CosmicBackground />
         
         <div className="flex flex-col min-h-screen relative z-10">
           <Navbar />

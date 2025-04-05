@@ -9,18 +9,27 @@ export const metadata: Metadata = {
 
 export default function AtendimentosPage() {
   return (
-    <div className="min-h-screen">
+    <main className="flex flex-col items-center">
+      {/* Hero Section */}
+      <section className="w-full bg-slate-950 border-b border-slate-800 py-16 px-4">
+        <div className="max-w-6xl mx-auto text-center">
+          <h1 className="text-4xl font-bold mb-4 text-foreground">Atendimentos</h1>
+          <p className="text-xl max-w-3xl mx-auto text-muted-foreground">
+            Agende seu atendimento personalizado com Sergio Oliveira
+          </p>
+        </div>
+      </section>
+      
       <div className="container mx-auto py-12">
-        <h1 className="text-4xl font-bold mb-8 text-center">Atendimentos</h1>
-        
-        <div className="max-w-3xl mx-auto mt-12">
+        <div className="max-w-3xl mx-auto">
           <AnimatedBorder>
             <div>
-              <div className="h-64 overflow-hidden">
+              <div className="h-64 overflow-hidden relative">
                 <img 
-                  src="/images/atendimento-banner.jpg" 
+                  src="/images/atendimento-desktop.jpg" 
                   alt="Consulta Individual" 
-                  className="w-full h-full object-cover"
+                  className="w-full absolute top-0 left-0 max-h-none"
+                  style={{ objectFit: 'cover', objectPosition: 'center top' }}
                 />
               </div>
               <div className="p-8">
@@ -53,7 +62,7 @@ export default function AtendimentosPage() {
                 </div>
                 <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
                   <span className="font-bold text-2xl text-foreground order-2 sm:order-1">
-                    R$ 350,00
+                    R$ 400,00
                   </span>
                   <Button 
                     size="lg" 
@@ -84,6 +93,6 @@ export default function AtendimentosPage() {
           </AnimatedBorder>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

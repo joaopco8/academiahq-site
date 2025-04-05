@@ -47,7 +47,7 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4 text-foreground">Contato</h4>
             <address className="not-italic text-muted-foreground">
-              <p>WhatsApp: +55(14) 998525760</p>
+              <p>WhatsApp: +55 (14) 99852-5760</p>
             </address>
           </div>
           <div>

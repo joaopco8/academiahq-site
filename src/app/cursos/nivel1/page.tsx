@@ -1,14 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
-export default function ApometriaPage() {
+export default function Nivel1Page() {
   return (
     <main className="flex flex-col items-center">
       {/* Hero Section */}
       <section 
         className="w-full bg-slate-950 border-b border-slate-800 py-16 px-4 relative"
         style={{
-          backgroundImage: "url('/images/apometria2025.jpg?v=1')",
+          backgroundImage: "url('/images/nivel1.jpg?v=1')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed"
@@ -16,9 +16,9 @@ export default function ApometriaPage() {
       >
         <div className="absolute inset-0 bg-slate-950 bg-opacity-75"></div>
         <div className="max-w-6xl mx-auto text-center relative z-10">
-          <h1 className="text-4xl font-bold mb-4 text-white">Curso de Apometria</h1>
+          <h1 className="text-4xl font-bold mb-4 text-white">Curso Nível 1</h1>
           <p className="text-xl max-w-3xl mx-auto text-gray-300">
-            17 e 18 de Maio de 2025 • Online
+            Fundamentos para Despertar Consciencial • Online
           </p>
         </div>
       </section>
@@ -29,11 +29,11 @@ export default function ApometriaPage() {
         
         <div className="prose prose-invert max-w-none">
           <p className="text-muted-foreground text-lg mb-6">
-          A apometria é uma técnica fundamental utilizada dentro dos processos de atendimento da Harmonização Quântica e também em nossos cursos. Muitos de vocês utilizam esta técnica porém ainda não tem as informações de forma sistematizada para poder acessar de forma consciente. Com este curso isso será possível. O processo de despertar consciencial/mediúnico será acelerado de forma significativa. Os atendimentos terapêuticos serão potencializados de forma que os clientes avancem mais rapidamente e mantenham os resultados obtidos durante os trabalho por mais tempo.
+            O Curso Nível 1 da Academia HQ tem como objetivo atender aos alunos que estão iniciando sua jornada no despertar consciencial. Sua estrutura é extremamente didática, facilitando o aprendizado e a absorção do conteúdo proposto para quem está dando os primeiros passos na expansão da consciência e desenvolvimento espiritual.
           </p>
           
           <p className="text-muted-foreground text-lg mb-6">
-          O curso acontecerá nos dias 17 e 18 de maio de 2025, das 09:00 até as 18:00 em ambos os dias. ​ Haverá um bônus para os participantes: um sorteio de uma canalização do seu mentor pessoal, incluindo imagem e descrição desta frequência.
+            Ministrado por Sergio Oliveira, fundador da Academia HQ, o curso tem a duração aproximada de 6 horas, podendo se estender de acordo com o desenvolvimento do grupo. Os participantes deste módulo participam no encerramento de uma sintonização individual, onde é feita a sua iniciação junto à sua família cósmica e estruturas do trabalho de Harmonização Quântica.
           </p>
 
           <div className="bg-slate-900 p-6 rounded-lg border border-slate-800 mb-8">
@@ -41,24 +41,23 @@ export default function ApometriaPage() {
             <ul className="space-y-2 text-gray-300">
               <li className="flex items-start">
                 <span className="text-primary mr-2">•</span>
-                <span><strong>Data:</strong> 17 e 18 de Maio de 2025</span>
+                <span><strong>Duração:</strong> 1 dia (aproximadamente 6 horas)</span>
               </li>
               <li className="flex items-start">
                 <span className="text-primary mr-2">•</span>
-                <span><strong>Horário:</strong> 09:00 às 18:00 (com intervalos)</span>
+                <span><strong>Formato:</strong> Online ao vivo via Zoom</span>
               </li>
               <li className="flex items-start">
                 <span className="text-primary mr-2">•</span>
-                <span><strong>Formato:</strong> Online via Zoom</span>
+                <span><strong>Pré-requisitos:</strong> Não há pré-requisitos, ideal para iniciantes</span>
               </li>
-              
               <li className="flex items-start">
                 <span className="text-primary mr-2">•</span>
                 <span><strong>Certificado:</strong> Sim, após conclusão</span>
               </li>
               <li className="flex items-start">
                 <span className="text-primary mr-2">•</span>
-                <span><strong>Investimento:</strong> R$ 1.500,00 (parcelamento disponível). </span>
+                <span><strong>Investimento:</strong> R$ 550,00 (parcelamento disponível)</span>
               </li>
             </ul>
           </div>
@@ -73,42 +72,27 @@ export default function ApometriaPage() {
           <div className="space-y-8">
             <Card className="bg-card border-border">
               <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-4 text-foreground">Conteúdo completo</h3>
+                <h3 className="text-xl font-bold mb-4 text-foreground">O que você vai aprender</h3>
                 <div className="space-y-4">
                   <div>
                     <ul className="list-disc pl-6 mt-2 text-muted-foreground">
-                    <li>Apometria - definições</li>
-                      <li>Desenvolvimento Cognitivo - corpo físico e astral - (abordagens de reprogramação neurolinguística - PNL)</li>
-                      <li>Desdobramentos multidimensionais</li>
-                      <li>Os corpos sutis</li>
-                      <li>Eteriatria</li>
-                      <li>Chakras</li>
-                      <li>Obsessão</li>
-                      <li>Umbral e suas infra dimensões</li>
-                      <li>Encaminhamento de entidades obsessoras</li>
-                      <li>Merkabas da Harmonização Quântica</li>
-                      <li>Atendimento e/ou auto atendimento passo a passo </li>
-                      <li>Contratos</li>
-                      <li>Ressonância</li>
-                      <li>Associação e Dissociação</li>
-                      <li>Mediunidade</li>
-                      <li>Os elementais</li>
-                      <li>Cromoterapia - Luz Líquida</li>
-                      <li>Os pulso magnéticos</li>
-                      <li>Despolarização e Polarização</li>
-                      <li>Cirurgias espirituais</li>
-                      <li>Equipes médicas espirituais</li>
-                      <li>Centros de conexão e rastreamento cósmico</li>
-                      <li>Barreira de frequência planetária</li>
-                      <li>Mundos intraterrenos</li>
+                      <li>Introdução aos conceitos fundamentais de espiritualidade</li>
+                      <li>O campo áurico e suas camadas</li>
+                      <li>Os corpos sutis e como percebê-los</li>
+                      <li>Chakras: centros energéticos e suas funções</li>
+                      <li>Técnicas básicas de proteção energética</li>
+                      <li>Primeiros passos na percepção extrassensorial</li>
+                      <li>Meditação guiada para expansão da consciência</li>
+                      <li>Como identificar e limpar bloqueios energéticos</li>
+                      <li>A lei da ressonância e como ela afeta seu campo energético</li>
+                      <li>Introdução ao Método TEAC (Tecnologia Espiritual Ascensional Canopeana)</li>
+                      <li>Conexão com guias e mentores: primeiros contatos</li>
+                      <li>Sintonização com sua família cósmica</li>
                     </ul>
                   </div>
-                  
-                 
                 </div>
               </CardContent>
             </Card>
-            
           </div>
         </div>
       </section>
@@ -120,26 +104,29 @@ export default function ApometriaPage() {
         <div className="grid md:grid-cols-2 gap-6">
           {[
             {
-              title: "Autonomia Energética",
-              description: "Aprenda a realizar atendimentos e auto-atendimentos eficazes sem depender de terceiros."
+              title: "Base Sólida de Conhecimento",
+              description: "Aprenda os fundamentos essenciais para iniciar sua jornada espiritual de forma segura e eficaz."
             },
             {
-              title: "Proteção Apométrica",
-              description: "Domine técnicas avançadas de proteção para você e seus pacientes, caso atenda."
+              title: "Sintonização Individual",
+              description: "Receba uma sintonização personalizada para conectar-se com sua família cósmica."
+            },
+            {
+              title: "Material de Apoio",
+              description: "Acesso a apostilas e materiais complementares para estudo contínuo."
+            },
+            {
+              title: "Técnicas Práticas",
+              description: "Aprenda técnicas que podem ser aplicadas imediatamente no seu dia a dia."
             },
             {
               title: "Certificado de Conclusão",
-              description: "Receba um certificado de conclusão do curso."
+              description: "Receba um certificado oficial da Academia HQ, reconhecido para cursos subsequentes."
             },
             {
-              title: "Apostila PDF",
-              description: "Receba a apostila em formato PDF para consulta e estudo."
+              title: "Suporte Pós-Curso",
+              description: "Acesso a canal de dúvidas e suporte para auxiliar em sua prática após o curso."
             },
-            {
-              title: "Iniciação Coletiva",
-              description: "Receba a iniciação coletiva para você acessar, oficialmente, novos níveis de conexão com as estruturas da Academia HQ de Apometria."
-            },
-            
           ].map((item, index) => (
             <Card key={index} className="bg-card border-border p-6">
               <h3 className="text-xl font-bold mb-2 text-foreground">{item.title}</h3>
@@ -149,16 +136,16 @@ export default function ApometriaPage() {
         </div>
       </section>
 
-      {/* Inscrição */}
-      <section className="py-16 px-4 bg-slate-900 w-full border-y border-slate-800">
+      {/* Inscrição
+       <section className="py-16 px-4 bg-slate-900 w-full border-y border-slate-800">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6 text-white">Pronto para Transformar sua Conexão Espiritual?</h2>
+          <h2 className="text-3xl font-bold mb-6 text-white">Dê o Primeiro Passo na Sua Evolução Espiritual</h2>
           <p className="text-lg mb-8 text-gray-300">
             Reserve seu lugar agora!
           </p>
           <Button size="lg" className="font-bold bg-green-600 hover:bg-green-700 text-white" asChild>
             <a 
-              href="https://wa.me/5514998525760?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20Curso%20de%20Apometria" 
+              href="https://wa.me/5514998525760?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20Curso%20N%C3%ADvel%201" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-2"
@@ -177,6 +164,7 @@ export default function ApometriaPage() {
           </Button>
         </div>
       </section>
+      */} 
     </main>
   );
 } 

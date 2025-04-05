@@ -52,8 +52,7 @@ export default function AgendaPage() {
                   <span>Online Via Zoom</span>
                 </div>
                 <p className="text-muted-foreground mb-6">
-                  Editores e profissionais do mercado discutem as tendências, desafios e 
-                  oportunidades para quadrinistas no Brasil. Networking e coquetel após o evento.
+                O Curso de Apometria Online ensina a aplicar essa técnica de forma consciente e estruturada, acelerando o despertar espiritual e potencializando atendimentos terapêuticos. Com ele, você acessa informações essenciais para ampliar seus resultados e garantir efeitos mais duradouros.
                 </p>
                 <div className="flex justify-between items-center">
                   <Button asChild>

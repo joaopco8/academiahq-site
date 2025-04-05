@@ -2,6 +2,7 @@ import Banner from '@/components/Banner';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { AnimatedBorder } from '@/components/animated-border';
+import Link from 'next/link';
 
 export default function Home() {
   // Dados dos banners
@@ -12,7 +13,7 @@ export default function Home() {
       description: "Conheça o método único que combina tecnologia espiritual e conexão astral para transformar sua jornada de despertar",
       buttonText: "Conheça o método",
       buttonLink: "/cursos",
-      imageUrl: "/images/teac-banner.jpg",
+      imageUrl: "/images/teac",
     },
     {
       id: 2,
@@ -20,7 +21,7 @@ export default function Home() {
       description: "Aprenda técnicas avançadas para realizar atendimentos e auto-atendimentos com segurança e precisão nos dias 17 e 18 de maio.",
       buttonText: "Inscreva-se",
       buttonLink: "/agenda",
-      imageUrl: "/images/apometria-banner.jpg",
+      imageUrl: "/images/cursoapo",
     },
     {
       id: 3,
@@ -28,7 +29,7 @@ export default function Home() {
       description: "Agende seu atendimento online com Sergio Oliveira, fundador da Academia HQ",
       buttonText: "Agende agora",
       buttonLink: "/atendimentos",
-      imageUrl: "/images/atendimento-banner.jpg",
+      imageUrl: "/images/atendimento",
     },
   ];
 
@@ -48,7 +49,7 @@ export default function Home() {
               A Academia HQ é a ponte entre espiritualidade e tecnologia, trazendo um método inovador para acessar, interagir e transformar realidades no plano astral. Nossa abordagem combina conhecimento energético avançado com técnicas modernas de conexão e proteção, permitindo que você desenvolva autonomia e precisão na sua jornada espiritual.
             </p>
             <p className="text-muted-foreground">
-              Aqui, a Apometria vai além da teoria: utilizamos protocolos estruturados, inspirados em sistemas inteligentes, para otimizar a interação com dimensões sutis. O resultado? Uma conexão clara, segura e livre de interferências.
+              Aqui, a Academia HQ vai além da teoria: utilizamos protocolos estruturados, inspirados em sistemas inteligentes, para otimizar a interação com dimensões sutis. O resultado? Uma conexão clara, segura e livre de interferências.
             </p>
           </div>
           <AnimatedBorder>
@@ -87,7 +88,7 @@ export default function Home() {
                 title: "Curso de Apometria HQ",
                 description: "Participe do nosso curso especial nos dias 17 e 18 de maio. Vagas limitadas!",
                 image: "/images/apometria2025.jpg?v=1",
-                link: "#"
+                link: "/agenda"
               },
             ].map((course, index) => (
               <AnimatedBorder key={index}>
@@ -108,9 +109,15 @@ export default function Home() {
                   </div>
                   <div className="p-5">
                     <Button variant="link" className="p-0 h-auto text-primary hover:text-primary/80" asChild>
-                      <a href={course.link} target="_blank" rel="noopener noreferrer">
-                        Saiba mais →
-                      </a>
+                      {course.link.startsWith('/') ? (
+                        <Link href={course.link}>
+                          Saiba mais →
+                        </Link>
+                      ) : (
+                        <a href={course.link} target="_blank" rel="noopener noreferrer">
+                          Saiba mais →
+                        </a>
+                      )}
                     </Button>
                   </div>
                 </div>
@@ -121,7 +128,7 @@ export default function Home() {
       </section>
 
       {/* YouTube Section */}
-      <section className="py-16 px-4 w-full bg-slate-950 border-b border-slate-800">
+      <section className="py-16 px-4 w-full">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold mb-8 text-center text-foreground">Estude pelo YouTube</h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -172,7 +179,7 @@ export default function Home() {
 
       {/* Call to Action */}
       <section 
-        className="py-16 px-4 w-full border-b border-slate-800 bg-slate-950"
+        className="py-16 px-4 w-full border-y border-slate-800 bg-slate-950"
       >
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-6 text-foreground">Alguma dúvida?</h2>
@@ -181,7 +188,7 @@ export default function Home() {
           </p>
           <Button size="lg" className="font-bold bg-green-600 hover:bg-green-700 text-white" asChild>
             <a 
-              href="https://wa.me/5527997648551?text=Ol%C3%A1%2C%20gostaria%20de%20esclarecer%20uma%20d%C3%BAvida%20sobre%20a%20Academia%20HQ" 
+              href="https://wa.me/5514998525760?text=Ol%C3%A1%2C%20gostaria%20de%20esclarecer%20uma%20d%C3%BAvida%20sobre%20a%20Academia%20HQ" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-2"
