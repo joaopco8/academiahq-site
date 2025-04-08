@@ -24,7 +24,7 @@ export default function LojaPage() {
                 name: "Canalização do Seu Mentor Pessoal",
                 price: "R$ 800,00",
                 image: "/images/canalizacao.jpg",
-                description: "Receba duas imagens de seres que lhe acompanham. Uma frequência terrestre e outra estelar.",
+                description: "Receba uma imagem de uma consciência que lhe acompanha.",
                 link: "/loja/canalizacao"
               },
               {
