@@ -37,9 +37,9 @@ export default function CursosPage() {
                 <h3 className="text-2xl font-bold mb-2 text-foreground">Método TEAC</h3>
                 <p className="text-primary mb-4">Duração: 30 horas | Aulas gravadas e em constante atualização</p>
                 <p className="text-muted-foreground mb-6">
-                  Aprenda a criar ilustrações profissionais utilizando ferramentas digitais como Photoshop, 
-                  Procreate e Clip Studio Paint. Domine técnicas de desenho, pintura digital, composição, 
-                  iluminação e desenvolvimento de projetos completos.
+                  O Método TEAC (Tecnologia Espiritual e Acesso à Consciência) é uma abordagem inovadora que combina 
+                  tecnologia espiritual e conexão astral para transformar sua jornada de despertar. Aprenda a acessar 
+                  e interagir com dimensões superiores de forma estruturada e segura.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
                   <span className="px-3 py-1 bg-slate-800 rounded-full text-sm text-muted-foreground">Espiritualidade Tecnológica</span>

@@ -36,25 +36,13 @@ export default function CanalizacaoPage() {
                   <svg className="w-5 h-5 mr-2 mt-1 text-primary" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
                   </svg>
-                  <span>Duas ilustrações canalizadas (digital)</span>
+                  <span>Uma ilustração canalizada (digital)</span>
                 </li>
                 <li className="flex items-start">
                   <svg className="w-5 h-5 mr-2 mt-1 text-primary" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
                   </svg>
-                  <span>Uma representação de frequência terrestre</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="w-5 h-5 mr-2 mt-1 text-primary" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-                  </svg>
-                  <span>Uma representação de frequência estelar</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="w-5 h-5 mr-2 mt-1 text-primary" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-                  </svg>
-                  <span>Descrição e interpretação das imagens</span>
+                  <span>Descrição e interpretação da imagem</span>
                 </li>
                 <li className="flex items-start">
                   <svg className="w-5 h-5 mr-2 mt-1 text-primary" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -96,17 +84,17 @@ export default function CanalizacaoPage() {
           <div>
             <h2 className="text-2xl font-bold mb-6 text-foreground">O que é a Canalização do Mentor Pessoal?</h2>
             <p className="text-muted-foreground mb-6">
-              A Canalização do Mentor Pessoal é um serviço exclusivo da Academia HQ onde, através de técnicas avançadas de conexão, Sergio Oliveira acessa o campo de frequências que o envolve e canaliza, artisticamente, representações visuais dos seus mentores espirituais.
+              A Canalização do Mentor Pessoal é um serviço exclusivo da Academia HQ onde, através de técnicas avançadas de conexão, Sergio Oliveira acessa o campo de frequências que o envolve e canaliza, artisticamente, representações visuais dos seus mentore espiritual.
             </p>
             
             <h3 className="text-xl font-bold mb-4 text-foreground">Como funciona?</h3>
             <p className="text-muted-foreground mb-6">
-              Através de uma conexão estabelecida com seu campo energético (apenas com seu nome e data de nascimento), Sergio realiza um trabalho de sintonia e canalização para captar e traduzir visualmente os seres que o acompanham e guiam em sua jornada espiritual.
+              Através de uma conexão estabelecida com seu campo energético (apenas com seu nome, local e data de nascimento), Sergio realiza um trabalho de sintonia e canalização para captar e traduzir visualmente os seres que o acompanham e guiam em sua jornada espiritual.
             </p>
             
             <h3 className="text-xl font-bold mb-4 text-foreground">O que você recebe?</h3>
             <p className="text-muted-foreground mb-6">
-              Você receberá duas ilustrações digitais: uma representando um ser de frequência terrestre e outra de frequência estelar que estão conectados à sua jornada. Além das imagens, você receberá uma descrição e interpretação de cada ser canalizado, com informações sobre suas características, propósitos e como se relacionam com você.
+              Você receberá uma ilustração digital: uma representação de uma consciência conectada à sua jornada. Além da imagem, você receberá uma descrição e interpretação da imagem, com informações sobre sua características, propósitos e como se relacionam com você.
             </p>
             
             <h3 className="text-xl font-bold mb-4 text-foreground">Benefícios</h3>

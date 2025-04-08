@@ -9,7 +9,7 @@ const geistMono = GeistMono;
 
 export const metadata: Metadata = {
   title: "Academia HQ",
-  description: "Academia de Quadrinhos e Ilustração",
+  description: "Academia de Harmonização Quântica - Tecnologia Espiritual e Conexão Astral",
 };
 
 export default function RootLayout({

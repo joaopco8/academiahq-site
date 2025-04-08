@@ -15,6 +15,7 @@ const navLinks = [
   { href: '/', label: 'Início' },
   { href: '/sobre', label: 'Sobre' },
   { href: '/cursos', label: 'Cursos' },
+  { href: '/ativacoes', label: 'Ativações' },
   { href: '/atendimentos', label: 'Atendimentos' },
   { href: '/loja', label: 'Loja' },
   { href: '/agenda', label: 'Agenda' },
