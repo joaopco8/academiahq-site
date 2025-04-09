@@ -80,10 +80,7 @@ export default function AtivacoesPage() {
                 <h3 className="text-2xl font-bold mb-2 text-foreground">Ativação Haseya</h3>
                 <p className="text-primary mb-4">Ativação Gravada</p>
                 <p className="text-muted-foreground mb-6">
-                  A Ativação Haseya é uma poderosa técnica de harmonização energética que visa reconectar você com sua 
-                  essência ancestral e sabedoria interior. Inspirada em tradições xamânicas, esta ativação trabalha com 
-                  a cura de padrões transgeracionais, liberação de memórias celulares limitantes e fortalecimento da sua 
-                  conexão com a Mãe Terra e os elementos da natureza.
+                A "Ativação Haseya" é canalizado para elevar sua conexão com seus mentores espirituais e proporcionar experiências espirituais inéditas. Esta ativação utiliza um conjunto exclusivo de ativações e técnicas conhecidas como Haseya, desenvolvidas especificamente para facilitar uma conexão espiritual autônoma e independente.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
                   <span className="px-3 py-1 bg-slate-800 rounded-full text-sm text-muted-foreground">Ativação Tecnológica</span>
@@ -115,10 +112,7 @@ export default function AtivacoesPage() {
                 <h3 className="text-2xl font-bold mb-2 text-foreground">Ativação Prosperidade e Propósito</h3>
                 <p className="text-primary mb-4">Ativação Gravada</p>
                 <p className="text-muted-foreground mb-6">
-                  Esta ativação realinha suas energias com o fluxo natural da abundância e clarifica seu propósito de vida. 
-                  Através de técnicas avançadas de reprogramação de crenças limitantes e alinhamento frequencial, você 
-                  será conectado ao seu verdadeiro potencial de manifestação e realização. O processo inclui a remoção de 
-                  bloqueios energéticos relacionados a prosperidade e a ativação do seu DNA de abundância.
+                A ativação Prosperidade e Propósito foi criada para alinhar sua energia com o fluxo natural da abundância e clareza do seu propósito, enquanto encarnado. Utilizando técnicas avançadas de reprogramação energética, removemos bloqueios que impedem sua realização e ativamos frequências que impulsionam sua prosperidade e alinhamento com sua jornada. Abra-se para um novo nível de manifestação e propósito!
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
                   <span className="px-3 py-1 bg-slate-800 rounded-full text-sm text-muted-foreground">Abundância</span>
@@ -150,11 +144,7 @@ export default function AtivacoesPage() {
                 <h3 className="text-2xl font-bold mb-2 text-foreground">Ativação: Sexo - Conexão Consciente</h3>
                 <p className="text-primary mb-4">Ativação Gravada</p>
                 <p className="text-muted-foreground mb-6">
-                  Esta ativação trabalha com a energia sexual sagrada como uma força criativa e transformadora. Através de técnicas 
-                  de ativação do chakra sacral e alinhamento dos canais de energia, você aprenderá a direcionar e elevar 
-                  sua energia sexual para potencializar sua criatividade, vitalidade e conexão espiritual. O processo 
-                  inclui a limpeza de traumas e crenças limitantes relacionados à sexualidade e a reconexão com o 
-                  aspecto divino desta força vital.
+                Sexo - Conexão Consciente é uma ativação transformadorora que propõe um novo olhar sobre a sexualidade, ajudando as pessoas a ressignificarem suas experiências e a desbloquearem traumas que podem estar impactando sua vida íntima e emocional. Com conteúdos que exploram temas como relações afetivas, abusos, tabus e o uso consciente da energia sexual, este trabalho visa libertar e empoderar indivíduos para que possam viver sua sexualidade de forma plena e saudável.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
                   <span className="px-3 py-1 bg-slate-800 rounded-full text-sm text-muted-foreground">Energia Sexual</span>
