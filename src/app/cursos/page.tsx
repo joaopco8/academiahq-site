@@ -172,7 +172,7 @@ Os participantes deste módulo participam no encerramento deste módulo de uma s
               </div>
               <div className="md:w-2/3 p-8">
                 <h3 className="text-2xl font-bold mb-2 text-foreground">Curso de Mediunidade</h3>
-                <p className="text-primary mb-4">Duração: Indefinida | Curso Online e Presencial em Vila Velha-ES</p>
+                <p className="text-primary mb-4">Duração: Indefinida | Curso Online e Presencial em Vitória-ES</p>
                 <p className="text-muted-foreground mb-6">
                 Nesse trabalho que estamos desenvolvendo, você terá a oportunidade de descobrir quais são as suas equipes, quais são as entidades que te acompanham, quais são as estruturas e tipos de mediunidade que existem, quem são os orixás e como eles atuam e ainda, como você pode alinhar a sua estrutura de trabalho junto às suas equipes.
 Essa proposta de aulas é uma formação contínua para aqueles que tem  interesse em desenvolver a sua mediunidade e ou até mesmo aprender a incorporar (se suas entidades e Orixás permitirem).
