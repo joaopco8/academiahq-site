@@ -17,11 +17,11 @@ export default function Home() {
     },
     {
       id: 2,
-      title: "Curso de Apometria Online",
-      description: "Aprenda técnicas avançadas para realizar atendimentos e auto-atendimentos com segurança e precisão nos dias 17 e 18 de maio.",
+      title: "Curso Nível 1",
+      description: "Fundamentos para Despertar Consciencial. Próxima turma em 17 de agosto de 2025.",
       buttonText: "Inscreva-se",
-      buttonLink: "/agenda",
-      imageUrl: "/images/cursoapo",
+      buttonLink: "/cursos/nivel1",
+      imageUrl: "/images/galaxy",
     },
     {
       id: 3,
@@ -73,10 +73,10 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "21 Dias de Prosperidade",
-                description: "Transforme sua vida com nosso programa exclusivo de prosperidade e abundância.",
-                image: "https://img.youtube.com/vi/O0rB357GylU/maxresdefault.jpg",
-                link: "https://www.youtube.com/watch?v=O0rB357GylU&list=PLX7WSGdI0C0UmFXeO6sD53lEH-uN37iMq"
+                title: "Curso Nível 1",
+                description: "Fundamentos para Despertar Consciencial. Próxima turma em 17 de agosto de 2025.",
+                image: "/images/nivel2.jpg?v=1",
+                link: "/cursos/nivel1"
               },
               {
                 title: "Método TEAC",
@@ -85,10 +85,10 @@ export default function Home() {
                 link: "https://teachq.com.br"
               },
               {
-                title: "Curso de Apometria HQ",
-                description: "Participe do nosso curso especial nos dias 17 e 18 de maio. Vagas limitadas!",
-                image: "/images/apometria2025.jpg?v=1",
-                link: "/agenda"
+                title: "21 Dias de Prosperidade",
+                description: "Transforme sua vida com nosso programa exclusivo de prosperidade e abundância.",
+                image: "https://img.youtube.com/vi/O0rB357GylU/maxresdefault.jpg",
+                link: "https://www.youtube.com/watch?v=O0rB357GylU&list=PLX7WSGdI0C0UmFXeO6sD53lEH-uN37iMq"
               },
             ].map((course, index) => (
               <AnimatedBorder key={index}>

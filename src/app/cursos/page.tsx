@@ -56,38 +56,7 @@ export default function CursosPage() {
           </AnimatedBorder>
 
           {/* Curso 2 */}
-          <AnimatedBorder>
-            <div className="md:flex">
-              <div 
-                className="md:w-1/3 h-64 md:h-auto"
-                style={{
-                  backgroundImage: "url('/images/apometria2025.jpg?v=1')",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center"
-                }}
-              >
-              </div>
-              <div className="md:w-2/3 p-8">
-                <h3 className="text-2xl font-bold mb-2 text-foreground">Curso de Apometria</h3>
-                <p className="text-primary mb-4">Duração: 2 dias | Curso Online Ao vivo</p>
-                <p className="text-muted-foreground mb-6">
-                O Curso de Apometria Online ensina a aplicar essa técnica de forma consciente e estruturada, acelerando o despertar espiritual e potencializando atendimentos terapêuticos. Com ele, você acessa informações essenciais para ampliar seus resultados e garantir efeitos mais d
-                </p>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  <span className="px-3 py-1 bg-slate-800 rounded-full text-sm text-muted-foreground">Atendimento</span>
-                  <span className="px-3 py-1 bg-slate-800 rounded-full text-sm text-muted-foreground">Auto-atendimento</span>
-                  <span className="px-3 py-1 bg-slate-800 rounded-full text-sm text-muted-foreground">Interação energética</span>
-                </div>
-                <Button asChild>
-                  <Link href="/cursos/apometria">
-                    Mais informações
-                  </Link>
-                </Button>
-              </div>
-            </div>
-
-            
-          </AnimatedBorder>
+         
 
           <AnimatedBorder>
             <div className="md:flex">
@@ -115,6 +84,39 @@ Os participantes deste módulo participam no encerramento deste módulo de uma s
                 </div>
                 <Button asChild>
                   <Link href="/cursos/nivel1">
+                    Mais informações
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            
+          </AnimatedBorder>
+
+          <AnimatedBorder>
+            <div className="md:flex">
+              <div 
+                className="md:w-1/3 h-64 md:h-auto"
+                style={{
+                  backgroundImage: "url('/images/apometria2025.jpg?v=1')",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center"
+                }}
+              >
+              </div>
+              <div className="md:w-2/3 p-8">
+                <h3 className="text-2xl font-bold mb-2 text-foreground">Curso de Apometria</h3>
+                <p className="text-primary mb-4">Duração: 2 dias | Curso Online Ao vivo</p>
+                <p className="text-muted-foreground mb-6">
+                O Curso de Apometria Online ensina a aplicar essa técnica de forma consciente e estruturada, acelerando o despertar espiritual e potencializando atendimentos terapêuticos. Com ele, você acessa informações essenciais para ampliar seus resultados e garantir efeitos mais d
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <span className="px-3 py-1 bg-slate-800 rounded-full text-sm text-muted-foreground">Atendimento</span>
+                  <span className="px-3 py-1 bg-slate-800 rounded-full text-sm text-muted-foreground">Auto-atendimento</span>
+                  <span className="px-3 py-1 bg-slate-800 rounded-full text-sm text-muted-foreground">Interação energética</span>
+                </div>
+                <Button asChild>
+                  <Link href="/cursos/apometria">
                     Mais informações
                   </Link>
                 </Button>

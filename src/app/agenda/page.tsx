@@ -27,7 +27,7 @@ export default function AgendaPage() {
               <div 
                 className="md:w-2/5 h-64 md:h-auto"
                 style={{
-                  backgroundImage: "url('/images/apometria2025.jpg?v=1')",
+                  backgroundImage: "url('/images/nivel2.jpg?v=1')",
                   backgroundSize: "cover",
                   backgroundPosition: "center"
                 }}
@@ -37,12 +37,12 @@ export default function AgendaPage() {
                 <div className="bg-green-950 text-green-200 px-3 py-1 rounded-full text-sm inline-block mb-3">
                   Curso Online
                 </div>
-                <h3 className="text-2xl font-bold mb-2 text-foreground">Curso de Apometria</h3>
+                <h3 className="text-2xl font-bold mb-2 text-foreground">Curso Nível 1</h3>
                 <div className="flex items-center text-muted-foreground mb-4">
                   <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
-                  <span>17 e 18 de Maio de 2025 • 09:00 - 18:00</span>
+                  <span>17 de agosto de 2025 • 08:00 - 17:00</span>
                 </div>
                 <div className="flex items-center text-muted-foreground mb-4">
                   <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -52,11 +52,11 @@ export default function AgendaPage() {
                   <span>Online Via Zoom</span>
                 </div>
                 <p className="text-muted-foreground mb-6">
-                O Curso de Apometria Online ensina a aplicar essa técnica de forma consciente e estruturada, acelerando o despertar espiritual e potencializando atendimentos terapêuticos. Com ele, você acessa informações essenciais para ampliar seus resultados e garantir efeitos mais duradouros.
+                O Curso Nível 1 da Academia HQ tem como objetivo atender aos alunos que estão iniciando sua jornada no despertar consciencial. Sua estrutura é extremamente didática, facilitando o aprendizado e a absorção do conteúdo proposto para quem está dando os primeiros passos na expansão da consciência e desenvolvimento espiritual.
                 </p>
                 <div className="flex justify-between items-center">
                   <Button asChild>
-                    <Link href="/cursos/apometria">
+                    <Link href="/cursos/nivel1">
                       Conhecer Conteúdo do Curso
                     </Link>
                   </Button>

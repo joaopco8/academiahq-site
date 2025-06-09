@@ -57,7 +57,7 @@ export default function Nivel2Page() {
               </li>
               <li className="flex items-start">
                 <span className="text-primary mr-2">•</span>
-                <span><strong>Investimento:</strong> R$ 780,00 (parcelamento disponível)</span>
+                <span><strong>Investimento:</strong> R$ 1.000,00 (parcelamento disponível). Alunos TEAC possuem desconto especial. Para reciclagem do curso, entre em contato.</span>
               </li>
             </ul>
           </div>
@@ -76,19 +76,21 @@ export default function Nivel2Page() {
                 <div className="space-y-4">
                   <div>
                     <ul className="list-disc pl-6 mt-2 text-muted-foreground">
-                      <li>Estrutura Universal avançada e níveis dimensionais</li>
-                      <li>Técnicas avançadas de proteção energética e selamentos</li>
-                      <li>Conexão consciente com hierarquias superiores</li>
-                      <li>Apometria Quântica: princípios e aplicações práticas</li>
-                      <li>Desenvolvimento da visão remota e clarividência</li>
-                      <li>Acionamento e interação com portais dimensionais</li>
-                      <li>Calibração e equilíbrio dos corpos sutis</li>
-                      <li>Trabalho com frequências estelares específicas</li>
-                      <li>Tratamento de implantes energéticos e interferências</li>
-                      <li>Mergulho na estrutura do DNA espiritual</li>
-                      <li>Ativação de códigos superiores de consciência</li>
-                      <li>Técnicas avançadas de transmigração consciencial</li>
-                      <li>Sincronização com as estruturas da Academia HQ de nível superior</li>
+                    <li>Níveis Neurológicos</li>
+<li>Linguagem Ericksoniana</li>
+<li>Transe</li>
+<li>Modelo Milton de Investigação</li>
+<li>Apresentação dos 32 corpos</li>
+<li>Mantras para alinhamento</li>
+<li>Os 12 Raios</li>
+<li>Lúcifer</li>
+<li>Hierarquias</li>
+<li>Supraconfederação</li>
+<li>A experiência Criacional</li>
+<li>Formas de ascensão planetária</li>
+<li>Comandos e Comandantes (equipes "espirituais")</li>
+<li>Sintonização / Iniciação coletiva</li>
+
                     </ul>
                   </div>
                 </div>
