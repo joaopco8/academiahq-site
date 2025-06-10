@@ -65,7 +65,7 @@ export default function MerkabaPage() {
               </ul>
 
               <div className="mt-6">
-                <p className="text-2xl font-bold text-foreground mb-4">R$ 350,00</p>
+                <p className="text-2xl font-bold text-foreground mb-4">R$ 500,00</p>
                 <Button 
                   size="lg" 
                   className="w-full bg-green-600 hover:bg-green-700 text-white" 
