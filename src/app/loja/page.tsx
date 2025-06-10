@@ -29,7 +29,7 @@ export default function LojaPage() {
               },
               {
                 name: "Merkaba Frequêncial Personalizado",
-                price: "R$ 350,00",
+                price: "R$ 500,00",
                 image: "/images/merkaba.jpg",
                 description: "Receba seu próprio Merkaba Frequêncial, criado exclusivamente para você e suas necessidades específicas.",
                 link: "/loja/merkaba"
