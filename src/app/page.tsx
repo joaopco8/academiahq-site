@@ -8,20 +8,20 @@ export default function Home() {
   // Dados dos banners
   const banners = [
     {
-      id: 1,
-      title: "Método TEAC",
-      description: "Conheça o método único que combina tecnologia espiritual e conexão astral para transformar sua jornada de despertar",
-      buttonText: "Conheça o método",
-      buttonLink: "/cursos",
-      imageUrl: "/images/teac",
-    },
-    {
       id: 2,
       title: "Curso Nível 1",
       description: "Fundamentos para Despertar Consciencial. Próxima turma em 17 de agosto de 2025.",
       buttonText: "Inscreva-se",
       buttonLink: "/cursos/nivel1",
       imageUrl: "/images/galaxy",
+    },
+    {
+      id: 1,
+      title: "Método TEAC",
+      description: "Conheça o método único que combina tecnologia espiritual e conexão astral para transformar sua jornada de despertar",
+      buttonText: "Conheça o método",
+      buttonLink: "/cursos",
+      imageUrl: "/images/teac",
     },
     {
       id: 3,
