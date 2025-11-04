@@ -16,35 +16,77 @@ export default function SobrePage() {
 
       {/* Sobre Nós */}
       <section className="py-16 px-4 max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-12 items-start">
           <AnimatedBorder>
-            <div 
-              className="h-80 overflow-hidden"
-              style={{
-                backgroundImage: "url('/images/sobresergio.jpg?v=1')",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
+            <div className="overflow-hidden rounded-lg">
+              <img 
+                src="/images/foto-sergio-v2.png"
+                alt="Sergio Oliveira"
+                className="w-full h-auto object-cover"
+              />
             </div>
           </AnimatedBorder>
           <div>
             <h2 className="text-3xl font-bold mb-6 text-foreground">Minha História</h2>
-            <p className="text-muted-foreground mb-4">
-            Há mais de 20 anos venho buscando e desenvolvendo possibilidades para um autoconhecimento eficaz. Ao longo desta jornada conheci várias ferramentas para auxilar neste processo infinito. Destaco entre elas, algumas que me trouxeram até aqui: PNL - Programação Neurolínguistica, CNV - Comunicação Não Violenta, Inteligência Emocional, Constelação Sistêmica, Coaching Sistêmico; Apometria Quântica, Cura Quântica Estelar, Orixá Reiki, Método Ascencional Melquizedeck e Voronandeck, Up Grade Cura Quântica Estelar (ROMETRIA). Se você está aqui, é por que talvez você faça parte desta &quot;família cósmica&quot; que está se unindo para retornar para casa.
-            </p>
-            <p className="text-muted-foreground mb-4">
-            Este trabalho tem por objetivo fazer uma conexão com nossas equipes &quot;espirituais&quot; e, na medida do possível, através do despertar da consciência, promover a cura de nosso corpo físico, favorecer o alinhamento com nossos corpos sutis, e, sempre que possível ampliar a visão sobre o Universo.
-
-Sou o canalizador do MÉTODO TEAC - Tecnologia Espiritual Ascensional Canopeana - onde tenho a honra de ofertar para você o que de maior pode haver na nobreza do despertar: SUA AUTONOMIA NA VERTICALIZAÇÃO.
-            </p>
-            <p className="text-muted-foreground">
-            Conheça os cursos que ofereço e acredite, assim como muitos, você é capaz de fazer TUDO SOZINHO, você ainda não foi conectado com as informações e estruturas corretas.
-
-Não há nada de espiritual, apenas tecnologia...
-
-Seja bem-vindo (a) a mais uma etapa no seu processo de despertar.
-            </p>
+            <div className="space-y-4 text-muted-foreground">
+              <p>
+                Durante boa parte da minha vida, eu procurei respostas, sobre quem eu era, de onde vinha e o que realmente estávamos fazendo aqui.
+              </p>
+              <p>
+                Por muito tempo, me disseram que despertar era seguir mestres, dogmas, ordens espirituais…
+              </p>
+              <p>
+                Mas quanto mais eu estudava, mais percebia que havia algo errado: o sistema que prometia libertação era o mesmo que nos mantinha presos.
+              </p>
+              <p>
+                Foi só quando comecei a entender a estrutura do simulador, essa arquitetura que manipula nossas percepções, emoções e crenças, que tudo começou a fazer sentido.
+              </p>
+              <p>
+                Eu compreendi que não estamos apenas &quot;vivendo experiências espirituais&quot;, mas participando de uma programação cuidadosamente desenhada para limitar a consciência.
+              </p>
+              <p>
+                Meu trabalho aqui não é por acaso.
+              </p>
+              <p>
+                Sou um entrante, parte de um projeto maior de reconexão e desprogramação das consciências.
+              </p>
+              <p>
+                Meu propósito é claro: mostrar caminhos de extração, para que cada pessoa possa se desligar das camadas que a mantêm dentro do simulador, e reconectar-se com a sua origem soberana.
+              </p>
+              <p>
+                Desse propósito nasceu o Método TEAC - TECNOLOGIA EXTRAÇÃO ATIVAÇÃO CRIPTOGRAFADA.
+              </p>
+              <p>
+                Um sistema que une técnica, ciência e espiritualidade sob um novo paradigma: o da autonomia.
+              </p>
+              <p>
+                Não é sobre acreditar, é sobre compreender.
+              </p>
+              <p>
+                Não é sobre pedir ajuda, é sobre lembrar como operar sua própria tecnologia interna.
+              </p>
+              <p>
+                Com o tempo, esse trabalho se expandiu, e o que começou como uma ativação se transformou em uma das chaves mais potentes desse processo: o Haseya.
+              </p>
+              <p>
+                Agora com uma nova estrutura vibracional, sustentada por frequências japonesas, o Haseya atua como um ponto de extração e realinhamento, permitindo que você se reconecte de forma segura, lúcida e livre.
+              </p>
+              <p>
+                Hoje, a minha entrega é essa:
+              </p>
+              <p>
+                Ensinar você a operar sua própria consciência, sem intermediários, sem hierarquias e sem dependências.
+              </p>
+              <p>
+                Porque a verdadeira ascensão não é sobre sair da Terra, é sobre sair da simulação.
+              </p>
+              <p>
+                Se você chegou até aqui, não é por acaso.
+              </p>
+              <p>
+                Talvez seja o momento de lembrar quem você é, e o que veio fazer aqui.
+              </p>
+            </div>
           </div>
         </div>
       </section>

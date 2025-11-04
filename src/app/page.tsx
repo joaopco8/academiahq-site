@@ -10,15 +10,15 @@ export default function Home() {
     {
       id: 2,
       title: "Curso Nível 1",
-      description: "Fundamentos para Despertar Consciencial. Próxima turma em 17 de agosto de 2025.",
+      description: "Fundamentos para Despertar Consciencial. Próxima turma em 18 de janeiro de 2026.",
       buttonText: "Inscreva-se",
       buttonLink: "/cursos/nivel1",
       imageUrl: "/images/galaxy",
     },
     {
       id: 1,
-      title: "Método TEAC",
-      description: "Conheça o método único que combina tecnologia espiritual e conexão astral para transformar sua jornada de despertar",
+      title: "Método TEAC - TECNOLOGIA EXTRAÇÃO ATIVAÇÃO CRIPTOGRAFADA",
+            description: "Conheça o método único TEAC - TECNOLOGIA EXTRAÇÃO ATIVAÇÃO CRIPTOGRAFADA que combina tecnologia espiritual e conexão astral para transformar sua jornada de despertar",
       buttonText: "Conheça o método",
       buttonLink: "/cursos",
       imageUrl: "/images/teac",
@@ -40,46 +40,55 @@ export default function Home() {
       {/* Banner principal com carrossel */}
       <Banner banners={banners} />
 
-      {/* About Section */}
-      <section className="py-16 px-4 max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-3xl font-bold mb-4 text-foreground">Sobre a Academia HQ</h2>
-            <p className="text-muted-foreground mb-6">
-              A Academia HQ é a ponte entre espiritualidade e tecnologia, trazendo um método inovador para acessar, interagir e transformar realidades no plano astral. Nossa abordagem combina conhecimento energético avançado com técnicas modernas de conexão e proteção, permitindo que você desenvolva autonomia e precisão na sua jornada espiritual.
-            </p>
-            <p className="text-muted-foreground">
-              Aqui, a Academia HQ vai além da teoria: utilizamos protocolos estruturados, inspirados em sistemas inteligentes, para otimizar a interação com dimensões sutis. O resultado? Uma conexão clara, segura e livre de interferências.
-            </p>
-          </div>
-          <AnimatedBorder>
-            <div 
-              className="h-80 overflow-hidden"
-              style={{
-                backgroundImage: "url('/images/sobre-academia.jpg?v=1')",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-            </div>
-          </AnimatedBorder>
-        </div>
-      </section>
-
       {/* Courses Section */}
       <section className="py-16 px-4 bg-slate-950 w-full border-y border-slate-800">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center text-foreground">Em Destaque</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          
+          {/* Curso Nível 1 - Em Destaque */}
+          <div className="mb-12 relative">
+            <div className="absolute -inset-1 bg-gradient-to-r from-primary via-green-500 to-primary rounded-2xl blur-lg opacity-50"></div>
+            <AnimatedBorder>
+              <div className="relative bg-slate-900 rounded-xl overflow-hidden">
+                <div className="md:flex">
+                  <div className="md:w-2/5 h-64 md:h-auto min-h-[300px] flex-shrink-0">
+                    <img 
+                      src="/images/SITE-NIVEL1.jpg"
+                      alt="Curso Nível 1 - O Poder do Conhecimento"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="md:w-3/5 p-6 md:p-8 relative">
+                    <div className="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-xs font-bold animate-pulse">
+                      EM DESTAQUE
+                    </div>
+                    <h3 className="text-2xl md:text-3xl font-bold mb-3 text-foreground mt-2">Curso Nível 1</h3>
+                    <p className="text-primary mb-2 font-semibold">18 de janeiro de 2026 • 08:00 - 17:00</p>
+                    <p className="text-primary mb-4 text-sm">Duração: 1 dia | Curso Online Ao vivo</p>
+                    <p className="text-muted-foreground mb-4">
+                      Este curso tem por objetivo atender aos alunos que estão iniciando sua jornada no despertar consciencial. Sua estrutura é extremamente didática, facilitando o aprendizado e a absorção do conteúdo proposto para quem está dando os primeiros passos na expansão da consciência e desenvolvimento espiritual.
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-medium border border-primary/30">Atendimento</span>
+                      <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-medium border border-primary/30">Auto-atendimento</span>
+                      <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-medium border border-primary/30">Interação energética</span>
+                    </div>
+                    <Button size="lg" className="font-bold bg-green-600 hover:bg-green-700 text-white" asChild>
+                      <Link href="/cursos/nivel1">
+                        Inscreva-se Agora
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </AnimatedBorder>
+          </div>
+
+          {/* Outros cursos */}
+          <div className="grid md:grid-cols-2 gap-8">
             {[
               {
-                title: "Curso Nível 1",
-                description: "Fundamentos para Despertar Consciencial. Próxima turma em 17 de agosto de 2025.",
-                image: "/images/nivel2.jpg?v=1",
-                link: "/cursos/nivel1"
-              },
-              {
-                title: "Método TEAC",
+                title: "Método TEAC - TECNOLOGIA EXTRAÇÃO ATIVAÇÃO CRIPTOGRAFADA",
                 description: "Descubra o revolucionário método que está transformando a forma de aprender e ensinar.",
                 image: "/images/teac.jpg?v=1",
                 link: "https://teachq.com.br"
@@ -124,6 +133,32 @@ export default function Home() {
               </AnimatedBorder>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-16 px-4 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-3xl font-bold mb-4 text-foreground">Sobre a Academia HQ</h2>
+            <p className="text-muted-foreground mb-6">
+              A Academia HQ é a ponte entre espiritualidade e tecnologia, trazendo um método inovador para acessar, interagir e transformar realidades no plano astral. Nossa abordagem combina conhecimento energético avançado com técnicas modernas de conexão e proteção, permitindo que você desenvolva autonomia e precisão na sua jornada espiritual.
+            </p>
+            <p className="text-muted-foreground">
+              Aqui, a Academia HQ vai além da teoria: utilizamos protocolos estruturados, inspirados em sistemas inteligentes, para otimizar a interação com dimensões sutis. O resultado? Uma conexão clara, segura e livre de interferências.
+            </p>
+          </div>
+          <AnimatedBorder>
+            <div 
+              className="h-80 overflow-hidden"
+              style={{
+                backgroundImage: "url('/images/sobre-academia.jpg?v=1')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+            </div>
+          </AnimatedBorder>
         </div>
       </section>
 

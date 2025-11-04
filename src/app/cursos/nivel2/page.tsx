@@ -57,7 +57,7 @@ export default function Nivel2Page() {
               </li>
               <li className="flex items-start">
                 <span className="text-primary mr-2">•</span>
-                <span><strong>Investimento:</strong> R$ 1.000,00 (parcelamento disponível). Alunos TEAC possuem desconto especial. Para reciclagem do curso, entre em contato.</span>
+                <span><strong>Investimento:</strong> R$ 1.000,00 (parcelamento disponível). Alunos do TEAC - TECNOLOGIA EXTRAÇÃO ATIVAÇÃO CRIPTOGRAFADA possuem desconto especial. Para reciclagem do curso, entre em contato.</span>
               </li>
             </ul>
           </div>

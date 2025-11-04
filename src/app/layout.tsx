@@ -35,17 +35,17 @@ export default function RootLayout({
           fbq('track', 'PageView');
         `}
       </Script>
-      <noscript>
-        <img 
-          height="1" 
-          width="1" 
-          style={{ display: 'none' }}
-          src="https://www.facebook.com/tr?id=1227385201728303&ev=PageView&noscript=1"
-          alt=""
-        />
-      </noscript>
       {/* End Meta Pixel Code */}
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground relative`}>
+        <noscript>
+          <img 
+            height="1" 
+            width="1" 
+            style={{ display: 'none' }}
+            src="https://www.facebook.com/tr?id=1227385201728303&ev=PageView&noscript=1"
+            alt=""
+          />
+        </noscript>
         {/* Background com tons azuis */}
         <div 
           className="fixed inset-0 pointer-events-none opacity-70 z-0"
