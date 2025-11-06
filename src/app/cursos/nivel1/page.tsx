@@ -142,32 +142,59 @@ export default function Nivel1Page() {
             <Card className="bg-card border-border">
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold mb-4 text-foreground">O que você vai aprender</h3>
-                <div className="space-y-4">
+                <div className="space-y-6">
+                  {/* PNL */}
                   <div>
-                    <ul className="list-disc pl-6 mt-2 text-muted-foreground">
-                    <li>Mapas e Paradigmas</li>
-<li>Filtros</li>
-<li>Critérios</li>
-<li>Crenças</li>
-<li>Comunicação</li>
-<li>Ressignificação</li>
-<li>Elementais</li>
-<li>Pensamento</li>
-<li>Chakras</li>
-<li>Corpos sutis</li>
-<li>Verticalização</li>
-<li>Coluna Búdica</li>
-<li>Havona e Shantar</li>
-<li>Geometria Sagrada</li>
-<li>Apometria</li>
-<li>Merkabas</li>
-<li>Símbolos</li>
-<li>Ancoramento</li>
-<li>Conexões</li>
-<li>Prática de meditação</li>
-<li>Preparando o ambiente</li>
-<li>Sintonização / Iniciação coletiva</li>
+                    <h4 className="text-lg font-semibold mb-3 text-foreground">Programação Neurolinguística – PNL</h4>
+                    <ul className="list-disc pl-6 space-y-1 text-muted-foreground">
+                      <li>Mapas e Paradigmas</li>
+                      <li>Filtros</li>
+                      <li>Valores</li>
+                      <li>Critérios</li>
+                      <li>Crenças</li>
+                      <li>Comunicação</li>
+                      <li>Ressignificação</li>
+                      <li>DQI</li>
+                    </ul>
+                  </div>
 
+                  {/* Simulação */}
+                  <div>
+                    <h4 className="text-lg font-semibold mb-3 text-foreground">Simulação e seus operadores</h4>
+                    <ul className="list-disc pl-6 space-y-1 text-muted-foreground">
+                      <li>Extração</li>
+                      <li>Plano Astral</li>
+                      <li>Raças e Projetos</li>
+                      <li>Templos Etéricos e Raios</li>
+                      <li>Federação e Aliança – Galáctica e Planetária</li>
+                      <li>Geometria Sagrada</li>
+                      <li>Apometria</li>
+                      <li>Merkabas</li>
+                      <li>Merkaba para utilização inicial</li>
+                      <li>Ativações</li>
+                      <li>Merkabas de Luz da Harmonização Quântica</li>
+                      <li>Conexões</li>
+                    </ul>
+                  </div>
+
+                  {/* Auto Atendimento */}
+                  <div>
+                    <h4 className="text-lg font-semibold mb-3 text-foreground">Auto – Atendimento</h4>
+                    <ul className="list-disc pl-6 space-y-1 text-muted-foreground">
+                      <li>Elementais (frequências)</li>
+                      <li>Pensamento</li>
+                      <li>Chakras</li>
+                      <li>Corpos sutis</li>
+                      <li>Verticalização</li>
+                    </ul>
+                  </div>
+
+                  {/* Meditação */}
+                  <div>
+                    <h4 className="text-lg font-semibold mb-3 text-foreground">Meditação / Ativação</h4>
+                    <ul className="list-disc pl-6 space-y-1 text-muted-foreground">
+                      <li>Conexão</li>
+                      <li>Sugestão para o início da prática de Meditação / Ativação</li>
                     </ul>
                   </div>
                 </div>
@@ -188,8 +215,8 @@ export default function Nivel1Page() {
               description: "Aprenda os fundamentos essenciais para iniciar sua jornada espiritual de forma segura e eficaz."
             },
             {
-              title: "Sintonização Coletiva",
-              description: "Receba uma sintonização coletiva para conectar-se com sua família cósmica."
+              title: "Iniciação Coletiva",
+              description: "Você participará da iniciação coletiva para conectar-se com sua família cósmica."
             },
             {
               title: "Material de Apoio",
