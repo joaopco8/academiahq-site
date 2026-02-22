@@ -62,7 +62,7 @@ export default function AtendimentosPage() {
                 </div>
                 <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
                   <span className="font-bold text-2xl text-foreground order-2 sm:order-1">
-                    R$ 400,00
+                    R$ 530,00
                   </span>
                   <Button 
                     size="lg" 
