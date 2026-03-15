@@ -9,10 +9,10 @@ export default function Home() {
   const banners = [
     {
       id: 2,
-      title: "Curso Nível 1",
-      description: "Fundamentos para Despertar Consciencial. Próxima turma em 18 de janeiro de 2026.",
+      title: "Curso Nível 2",
+      description: "Ampliando sua Conexão com Esferas Superiores. Próxima turma em 17 de maio de 2026.",
       buttonText: "Inscreva-se",
-      buttonLink: "/cursos/nivel1",
+      buttonLink: "/cursos/nivel2",
       imageUrl: "/images/galaxy",
     },
     {
@@ -45,7 +45,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center text-foreground">Em Destaque</h2>
           
-          {/* Curso Nível 1 - Em Destaque */}
+          {/* Curso Nível 2 - Em Destaque */}
           <div className="mb-12 relative">
             <div className="absolute -inset-1 bg-gradient-to-r from-primary via-green-500 to-primary rounded-2xl blur-lg opacity-50"></div>
             <AnimatedBorder>
@@ -53,8 +53,8 @@ export default function Home() {
                 <div className="md:flex">
                   <div className="md:w-2/5 h-64 md:h-auto min-h-[300px] flex-shrink-0">
                     <img 
-                      src="/images/SITE-NIVEL1.jpg"
-                      alt="Curso Nível 1 - O Poder do Conhecimento"
+                      src="/images/n2.jpg"
+                      alt="Curso Nível 2 - Ampliando sua Conexão com Esferas Superiores"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -62,19 +62,19 @@ export default function Home() {
                     <div className="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-xs font-bold animate-pulse">
                       EM DESTAQUE
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-bold mb-3 text-foreground mt-2">Curso Nível 1</h3>
-                    <p className="text-primary mb-2 font-semibold">18 de janeiro de 2026 • 08:00 - 17:00</p>
+                    <h3 className="text-2xl md:text-3xl font-bold mb-3 text-foreground mt-2">Curso Nível 2</h3>
+                    <p className="text-primary mb-2 font-semibold">17 de maio de 2026 • 08:00 - 17:00</p>
                     <p className="text-primary mb-4 text-sm">Duração: 1 dia | Curso Online Ao vivo</p>
                     <p className="text-muted-foreground mb-4">
-                      Este curso tem por objetivo atender aos alunos que estão iniciando sua jornada no despertar consciencial. Sua estrutura é extremamente didática, facilitando o aprendizado e a absorção do conteúdo proposto para quem está dando os primeiros passos na expansão da consciência e desenvolvimento espiritual.
+                      O Nível 2 da Academia HQ é o próximo passo para quem deseja ampliar sua conexão com esferas superiores. Com uma egrégora fortalecida, o curso promove um despertar consciencial e mediúnico, proporcionando resultados mais rápidos e duradouros na transmigração consciencial.
                     </p>
                     <div className="flex flex-wrap gap-2 mb-6">
-                      <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-medium border border-primary/30">Atendimento</span>
-                      <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-medium border border-primary/30">Auto-atendimento</span>
-                      <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-medium border border-primary/30">Interação energética</span>
+                      <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-medium border border-primary/30">Pré-requisito: Nível 1</span>
+                      <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-medium border border-primary/30">Elevação energética</span>
+                      <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-medium border border-primary/30">Conexão avançada</span>
                     </div>
                     <Button size="lg" className="font-bold bg-green-600 hover:bg-green-700 text-white" asChild>
-                      <Link href="/cursos/nivel1">
+                      <Link href="/cursos/nivel2">
                         Inscreva-se Agora
                       </Link>
                     </Button>
