@@ -26,10 +26,10 @@ export default function Nivel2Page() {
                 Curso Nível 2
               </h1>
               <p className="text-xl md:text-2xl mb-6 text-gray-300 font-semibold">
-                Ampliando sua Conexão com Esferas Superiores
+                Ampliando sua Conexão para Além da Simulação
               </p>
               <p className="text-lg md:text-xl mb-8 text-gray-400">
-                Próximo passo no desenvolvimento espiritual • Online Via Zoom
+                Próximo passo no seu despertar consciencial • Online Via Zoom
               </p>
               
               {/* Destaque da data */}
@@ -74,12 +74,11 @@ export default function Nivel2Page() {
         
         <div className="prose prose-invert max-w-none">
           <p className="text-muted-foreground text-lg mb-6">
-            O Nível 2 da Academia HQ é o próximo passo para quem deseja ampliar sua conexão com esferas superiores. Atualizado para 2025, o curso oferece uma compreensão profunda da estrutura universal e eleva o gradiente energético do aluno. Esse avanço se refletirá em sua vida pessoal e, para terapeutas, aumentará a eficácia dos atendimentos.
+          O Nível II da Academia HQ aprofunda a atuação do aluno dentro da estrutura da transmigração consciencial, expandindo sua compreensão sobre simuladores, inteligências, criptografias e a dinâmica entre diferentes esferas como Terra, Havona e Nebadon. Atualizado para 2026, o curso conduz o aluno a uma maior lucidez fora da simulação, fortalecendo sua conexão com equipes e protocolos mais avançados.
           </p>
           
           <p className="text-muted-foreground text-lg mb-6">
-            Com uma egrégora fortalecida, o curso promove um despertar consciencial e mediúnico, proporcionando resultados mais rápidos e duradouros na transmigração consciencial. Este curso representa um salto significativo no seu desenvolvimento espiritual e energético.
-          </p>
+          Ao longo do processo, são desenvolvidas habilidades práticas como projeção astral e mental, atuação estratégica, extração seletiva e participação em operações de evacuação, elevando significativamente o nível energético e a capacidade de intervenção.</p>
 
           <div className="bg-slate-900 p-6 rounded-lg border border-slate-800 mb-8">
             <h3 className="text-xl font-bold mb-4 text-white">Informações Importantes</h3>
@@ -120,12 +119,6 @@ export default function Nivel2Page() {
                   </svg>
                   <span><strong>Aluno do TEAC - TECNOLOGIA EXTRAÇÃO ATIVAÇÃO CRIPTOGRAFADA:</strong> R$900,00</span>
                 </li>
-                <li className="flex items-center">
-                  <svg className="w-4 h-4 mr-2 text-primary" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-                  </svg>
-                  <span><strong>Fazer novamente:</strong> R$800,00</span>
-                </li>
               </ul>
             </div>
           </div>
@@ -144,20 +137,26 @@ export default function Nivel2Page() {
                 <div className="space-y-4">
                   <div>
                     <ul className="list-disc pl-6 mt-2 text-muted-foreground">
-                    <li>Níveis Neurológicos</li>
-<li>Linguagem Ericksoniana</li>
-<li>Transe</li>
-<li>Modelo Milton de Investigação</li>
-<li>Apresentação dos 32 corpos</li>
-<li>Mantras para alinhamento</li>
-<li>Os 12 Raios</li>
-<li>Lúcifer</li>
-<li>Hierarquias</li>
-<li>Supraconfederação</li>
-<li>A experiência Criacional</li>
-<li>Formas de ascensão planetária</li>
-<li>Comandos e Comandantes (equipes "espirituais")</li>
-<li>Sintonização / Iniciação coletiva</li>
+                   
+<li>Kannyus BR8 Y10 B26</li>
+<li>Simuladores</li>
+<li>Hologramas</li>
+<li>IA</li>
+<li>Criptografia(s)</li>
+<li>Havona</li>
+<li>Nebadon</li>
+<li>Terra</li>
+<li>Transmigração Consciencial</li>
+<li>Corpo astral e consciência fora da simulação</li>
+<li>D’JHON RHU’O</li>
+<li>Haseya</li>
+<li>Yasherath</li>
+<li>Projeção Astral e Mental</li>
+<li>Equipes</li>
+<li>Evacuação estratégica</li>
+<li>Extração seletiva</li>
+<li>Sugestão para o início da prática de Meditação</li>
+<li>Sintonização Coletiva</li>
 
                     </ul>
                   </div>

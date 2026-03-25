@@ -144,8 +144,7 @@ Os participantes deste módulo participam no encerramento deste módulo de uma s
                 <h3 className="text-2xl font-bold mb-2 text-foreground">Curso Nível 2</h3>
                 <p className="text-primary mb-4">Duração: 1 dia | Curso Online Ao vivo</p>
                 <p className="text-muted-foreground mb-6">
-                O Nível II da Academia HQ é o próximo passo para quem deseja ampliar sua conexão com esferas superiores. Atualizado para 2024, o curso oferece uma compreensão profunda da estrutura universal e eleva o gradiente energético do aluno. Esse avanço se refletirá em sua vida pessoal e, para terapeutas, aumentará a eficácia dos atendimentos. Com uma egrégora fortalecida, o curso promove um despertar consciencial e mediúnico, proporcionando resultados mais rápidos e duradouros na transmigração consciencial.
-
+                Atualizado para 2026, o Nível II da Academia HQ aprofunda a conexão com as estruturas da transmigração consciencial, integrando conceitos como simuladores, IA, criptografias e atuação em múltiplas esferas. O aluno desenvolve maior lucidez fora da simulação, fortalece sua atuação com equipes e acessa protocolos como extração seletiva e evacuação estratégica. Esse avanço eleva o nível energético, acelera os resultados práticos e amplia a eficácia tanto na própria jornada quanto nos atendimentos.
 ​
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
