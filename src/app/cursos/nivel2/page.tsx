@@ -148,6 +148,7 @@ export default function Nivel2Page() {
 <li>Terra</li>
 <li>Transmigração Consciencial</li>
 <li>Corpo astral e consciência fora da simulação</li>
+<li>Sexo e a criação ou cocriação</li>
 <li>D’JHON RHU’O</li>
 <li>Haseya</li>
 <li>Yasherath</li>
