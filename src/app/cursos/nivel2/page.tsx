@@ -95,14 +95,7 @@ export default function Nivel2Page() {
                 <span className="text-primary mr-2">•</span>
                 <span><strong>Formato:</strong> Online Via Zoom</span>
               </li>
-              <li className="flex items-start">
-                <span className="text-primary mr-2">•</span>
-                <span><strong>Pré-requisitos:</strong> Ter concluído o Curso Nível 1</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary mr-2">•</span>
-                <span><strong>Certificado:</strong> Sim, após conclusão</span>
-              </li>
+            
             </ul>
             <div className="mt-6 p-4 bg-slate-800 rounded-lg border border-slate-700">
               <h4 className="font-bold text-white mb-3">Investimento:</h4>
@@ -186,18 +179,12 @@ export default function Nivel2Page() {
               title: "Protocolo de Proteção Avançado",
               description: "Aprenda técnicas de proteção energética de nível superior para você e seus pacientes."
             },
-            {
-              title: "Material Complementar",
-              description: "Acesso a apostilas e recursos exclusivos do Nível 2 para aprofundamento."
-            },
+            
             {
               title: "Sintonização Coletiva Especial",
               description: "Receba uma sintonização específica para acessar frequências mais elevadas."
             },
-            {
-              title: "Certificado de Nível 2",
-              description: "Reconhecimento oficial que permite acesso a módulos avançados da Academia HQ."
-            },
+         
           ].map((item, index) => (
             <Card key={index} className="bg-card border-border p-6">
               <h3 className="text-xl font-bold mb-2 text-foreground">{item.title}</h3>

@@ -69,7 +69,6 @@ export default function Home() {
                       O Nível 2 da Academia HQ é o próximo passo para quem deseja ampliar sua conexão com esferas superiores. Com uma egrégora fortalecida, o curso promove um despertar consciencial e mediúnico, proporcionando resultados mais rápidos e duradouros na transmigração consciencial.
                     </p>
                     <div className="flex flex-wrap gap-2 mb-6">
-                      <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-medium border border-primary/30">Pré-requisito: Nível 1</span>
                       <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-medium border border-primary/30">Elevação energética</span>
                       <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-medium border border-primary/30">Conexão avançada</span>
                     </div>
