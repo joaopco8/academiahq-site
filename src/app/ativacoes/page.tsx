@@ -64,6 +64,57 @@ export default function AtivacoesPage() {
             </div>
           </AnimatedBorder>
 
+          {/* D'JHON RHU'O */}
+          <AnimatedBorder>
+            <div className="md:flex">
+              <div
+                className="md:w-1/3 h-64 md:h-auto flex items-center justify-center relative overflow-hidden"
+                style={{ background: "linear-gradient(135deg, #030712 0%, #041a0f 100%)", minHeight: "240px" }}
+              >
+                <svg viewBox="0 0 200 200" fill="none" className="absolute inset-0 w-full h-full opacity-30 pointer-events-none">
+                  <circle cx="100" cy="100" r="90" stroke="#d4af37" strokeWidth="0.6" strokeDasharray="6 4" />
+                  <circle cx="100" cy="100" r="68" stroke="#10b981" strokeWidth="0.5" />
+                  <circle cx="100" cy="100" r="46" stroke="#d4af37" strokeWidth="0.6" strokeDasharray="3 5" />
+                  <polygon points="100,10 190,155 10,155" stroke="#10b981" strokeWidth="0.5" fill="none" />
+                  <polygon points="100,190 10,45 190,45" stroke="#d4af37" strokeWidth="0.4" fill="none" />
+                </svg>
+                <div className="relative z-10 text-center">
+                  <p className="text-4xl font-bold tracking-widest" style={{
+                    background: "linear-gradient(135deg, #d4af37, #f5e17a, #a07d1c)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                    letterSpacing: "0.15em",
+                  }}>
+                    D&apos;JHON<br />RHU&apos;O
+                  </p>
+                </div>
+              </div>
+              <div className="md:w-2/3 p-8">
+                <div className="flex items-center gap-2 mb-2">
+                  <h3 className="text-2xl font-bold text-foreground">D&apos;JHON RHU&apos;O</h3>
+                  <span className="text-xs font-bold py-1 px-2 rounded" style={{ background: "#d4af3720", color: "#d4af37", border: "1px solid #d4af3740" }}>ATIVAÇÃO</span>
+                </div>
+                <p className="text-primary mb-4">Ativação Consciencial</p>
+                <p className="text-muted-foreground mb-6">
+                  Uma ativação voltada para quebra de criptografias conscienciais, expansão de leitura da simulação
+                  e reorganização da percepção fora dos padrões de aprisionamento. Não se trata de crença —
+                  é um processo de percepção, alinhamento e reorganização interna.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <span className="px-3 py-1 bg-slate-800 rounded-full text-sm text-muted-foreground">Quebra de Criptografia</span>
+                  <span className="px-3 py-1 bg-slate-800 rounded-full text-sm text-muted-foreground">Expansão de Lucidez</span>
+                  <span className="px-3 py-1 bg-slate-800 rounded-full text-sm text-muted-foreground">Leitura da Simulação</span>
+                </div>
+                <Button asChild>
+                  <Link href="/ativacoes/djhon-rhuo">
+                    Mais informações
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </AnimatedBorder>
+
           {/* Ativação Haseya */}
           <AnimatedBorder>
             <div className="md:flex">
