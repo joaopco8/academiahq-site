@@ -58,7 +58,11 @@ export default function ApometriaPage() {
               </li>
               <li className="flex items-start">
                 <span className="text-primary mr-2">•</span>
-                <span><strong>Investimento:</strong> R$ 1.500,00 (parcelamento disponível). </span>
+                <span><strong>Investimento (Turma Coletiva):</strong> R$ 1.500,00 (parcelamento disponível)</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-primary mr-2">•</span>
+                <span><strong>Solo 1×1 com Sergio:</strong> R$ 3.220,00 — sessão individual, sem aguardar turma coletiva</span>
               </li>
             </ul>
           </div>

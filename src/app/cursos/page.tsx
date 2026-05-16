@@ -160,41 +160,6 @@ export default function CursosPage() {
             
           </AnimatedBorder>
 
-          <AnimatedBorder>
-            <div className="md:flex">
-              <div 
-                className="md:w-1/3 h-64 md:h-auto"
-                style={{
-                  backgroundImage: "url('/images/mediunidade.jpg?v=1')",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center"
-                }}
-              >
-              </div>
-              <div className="md:w-2/3 p-8">
-                <h3 className="text-2xl font-bold mb-2 text-foreground">Curso de Mediunidade</h3>
-                <p className="text-primary mb-4">Duração: Indefinida | Curso Online e Presencial em Vitória-ES</p>
-                <p className="text-muted-foreground mb-6">
-                Nesse trabalho que estamos desenvolvendo, você terá a oportunidade de descobrir quais são as suas equipes, quais são as entidades que te acompanham, quais são as estruturas e tipos de mediunidade que existem, quem são os orixás e como eles atuam e ainda, como você pode alinhar a sua estrutura de trabalho junto às suas equipes.
-Essa proposta de aulas é uma formação contínua para aqueles que tem  interesse em desenvolver a sua mediunidade e ou até mesmo aprender a incorporar (se suas entidades e Orixás permitirem).
-​
-                </p>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  <span className="px-3 py-1 bg-slate-800 rounded-full text-sm text-muted-foreground">Atendimento</span>
-                  <span className="px-3 py-1 bg-slate-800 rounded-full text-sm text-muted-foreground">Auto-atendimento</span>
-                  <span className="px-3 py-1 bg-slate-800 rounded-full text-sm text-muted-foreground">Interação energética</span>
-                </div>
-                <Button asChild>
-                  <Link href="/cursos/mediunidade">
-                    Mais informações
-                  </Link>
-                </Button>
-              </div>
-            </div>
-
-            
-          </AnimatedBorder>
-
         </div>
       </section>
 

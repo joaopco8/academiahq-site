@@ -99,20 +99,31 @@ export default function Nivel2Page() {
             </ul>
             <div className="mt-6 p-4 bg-slate-800 rounded-lg border border-slate-700">
               <h4 className="font-bold text-white mb-3">Investimento:</h4>
-              <ul className="space-y-2 text-gray-300">
-                <li className="flex items-center">
-                  <svg className="w-4 h-4 mr-2 text-primary" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-                  </svg>
-                  <span><strong>PREÇO:</strong> R$1.200,00</span>
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-4 h-4 mr-2 text-primary" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-                  </svg>
-                  <span><strong>Aluno do TEAC - TECNOLOGIA EXTRAÇÃO ATIVAÇÃO CRIPTOGRAFADA:</strong> R$900,00</span>
-                </li>
-              </ul>
+              <div className="space-y-4">
+                <div className="p-4 bg-slate-900 rounded-lg border border-slate-600">
+                  <p className="text-green-400 font-semibold mb-1">Turma Coletiva</p>
+                  <ul className="space-y-2 text-gray-300">
+                    <li className="flex items-center">
+                      <svg className="w-4 h-4 mr-2 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                      </svg>
+                      <span><strong>PREÇO:</strong> R$1.200,00</span>
+                    </li>
+                    <li className="flex items-center">
+                      <svg className="w-4 h-4 mr-2 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                      </svg>
+                      <span><strong>Aluno do TEAC:</strong> R$900,00</span>
+                    </li>
+                  </ul>
+                  <p className="text-xs text-gray-500 mt-2">Aguardar abertura da próxima turma</p>
+                </div>
+                <div className="p-4 bg-slate-900 rounded-lg border border-primary/40">
+                  <p className="text-primary font-semibold mb-1">Solo 1×1 com Sergio</p>
+                  <p className="text-gray-300"><strong>R$2.200,00</strong></p>
+                  <p className="text-xs text-gray-500 mt-1">Sessão individual — sem aguardar turma coletiva</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
