@@ -6,7 +6,7 @@ import { MapPin, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-export interface ArticleCardProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface ArticleCardProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onDrag' | 'onDragStart' | 'onDragEnd' | 'onDragEnter' | 'onDragLeave' | 'onDragOver' | 'onDrop'> {
   tag: string;
   date?: {
     month: string;
