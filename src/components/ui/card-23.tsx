@@ -41,13 +41,13 @@ const ArticleCard = React.forwardRef<HTMLDivElement, ArticleCardProps>(
   ) => {
     const cardVariants = {
       initial: { opacity: 0, y: 20 },
-      animate: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+      animate: { opacity: 1, y: 0 },
       hover: { y: -5, scale: 1.02, boxShadow: "0 25px 50px -12px rgb(0 0 0 / 0.15)" },
-    };
+    } as const;
 
     const imageVariants = {
       hover: { scale: 1.1 },
-    };
+    } as const;
 
     return (
       <motion.div
@@ -60,7 +60,7 @@ const ArticleCard = React.forwardRef<HTMLDivElement, ArticleCardProps>(
         initial="initial"
         animate="animate"
         whileHover="hover"
-        transition={{ duration: 0.3, ease: "easeInOut" }}
+        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         {...props}
       >
         <div className="p-6">
