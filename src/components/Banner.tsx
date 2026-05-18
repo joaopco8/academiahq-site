@@ -1,178 +1,91 @@
-'use client';
+import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import { Button } from "@/components/ui/button";
-import Autoplay from "embla-carousel-autoplay";
-import { useRef, useState, useEffect } from "react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-interface BannerProps {
-  banners: {
-    id: number;
-    title: string;
-    description: string;
-    buttonText?: string;
-    buttonLink?: string;
-    imageUrl?: string;
-    bgColor?: string;
-  }[];
-}
-
-export default function Banner({ banners }: BannerProps) {
-  const plugin = useRef(
-    Autoplay({ delay: 5000, stopOnInteraction: true })
-  );
-  const [isMobile, setIsMobile] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(0);
-  const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({});
-
-  // Detectar se o dispositivo é móvel
-  useEffect(() => {
-    const checkIsMobile = () => {
-      const width = window.innerWidth;
-      setWindowWidth(width);
-      setIsMobile(width < 768);
-      console.log(`Largura da janela: ${width}px, Modo móvel: ${width < 768 ? 'SIM' : 'NÃO'}`);
-    };
-
-    // Verificar inicialmente
-    checkIsMobile();
-
-    // Adicionar listener para redimensionamento
-    window.addEventListener('resize', checkIsMobile);
-
-    // Cleanup
-    return () => window.removeEventListener('resize', checkIsMobile);
-  }, []);
-
-  // Verificar se a imagem existe
-  useEffect(() => {
-    banners.forEach((banner) => {
-      if (banner.imageUrl) {
-        const mobileUrl = `${banner.imageUrl}-mobile.jpg`;
-        const desktopUrl = `${banner.imageUrl}-desktop.jpg`;
-        
-        // Verificar imagem mobile
-        const imgMobile = new Image();
-        imgMobile.onload = () => console.log(`✅ Imagem mobile carregada com sucesso: ${mobileUrl}`);
-        imgMobile.onerror = () => {
-          console.error(`❌ Erro ao carregar imagem mobile: ${mobileUrl}`);
-          setImageErrors(prev => ({ ...prev, [mobileUrl]: true }));
-        };
-        imgMobile.src = mobileUrl;
-        
-        // Verificar imagem desktop
-        const imgDesktop = new Image();
-        imgDesktop.onload = () => console.log(`✅ Imagem desktop carregada com sucesso: ${desktopUrl}`);
-        imgDesktop.onerror = () => {
-          console.error(`❌ Erro ao carregar imagem desktop: ${desktopUrl}`);
-          setImageErrors(prev => ({ ...prev, [desktopUrl]: true }));
-        };
-        imgDesktop.src = desktopUrl;
-      }
-    });
-  }, [banners]);
-
-  // Função para obter a URL da imagem correta (desktop ou mobile)
-  const getImageUrl = (baseUrl?: string) => {
-    if (!baseUrl) return '';
-    
-    // Construir e retornar a URL completa
-    const suffix = isMobile ? '-mobile' : '-desktop';
-    const fullUrl = `${baseUrl}${suffix}.jpg`;
-    console.log(`Gerando URL para banner (${isMobile ? 'Mobile' : 'Desktop'}): ${fullUrl}`);
-    
-    // Verificar se tivemos erro com esta imagem
-    if (imageErrors[fullUrl]) {
-      // Tentar a outra versão como fallback
-      const fallbackSuffix = isMobile ? '-desktop' : '-mobile';
-      const fallbackUrl = `${baseUrl}${fallbackSuffix}.jpg`;
-      console.log(`⚠️ Usando fallback para imagem: ${fallbackUrl}`);
-      return fallbackUrl;
-    }
-    
-    return fullUrl;
-  };
-
-  console.log("Banners recebidos:", banners, "Modo móvel:", isMobile, "Largura:", windowWidth);
-
+export default function Banner() {
   return (
-    <div className="w-full">
-      <Carousel 
-        className="w-full h-[300px] sm:h-[400px] md:h-[500px]"
-        plugins={[plugin.current]}
-        opts={{
-          align: "start",
-          loop: true,
+    <section className="relative flex h-[calc(100vh-4rem)] w-full items-end justify-center">
+      <style dangerouslySetInnerHTML={{ __html: `
+        .hero-btn {
+          transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+        }
+        .hero-btn:hover {
+          transform: translateY(-2px) scale(1.02);
+          background: rgba(255,255,255,0.14) !important;
+          border-color: rgba(176,135,232,0.45) !important;
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 12px 40px rgba(123,63,228,0.35), 0 2px 8px rgba(0,0,0,0.3) !important;
+        }
+        .hero-btn:active {
+          transform: translateY(0) scale(0.99);
+        }
+      `}} />
+      <div
+        className="absolute inset-0 h-full bg-cover"
+        style={{
+          backgroundImage:
+            "url(/images/img-hero.png)",
+          backgroundPosition: "bottom",
         }}
       >
-        <CarouselContent>
-          {banners.map((banner) => {
-            const finalImageUrl = getImageUrl(banner.imageUrl);
-            console.log(`Banner ${banner.id}: ${banner.title}`);
-            console.log(`- URL base: ${banner.imageUrl}`);
-            console.log(`- URL final: ${finalImageUrl}`);
-            
-            // Definir background (imagem ou cor) - aplicando diretamente para evitar problemas
-            const backgroundImage = banner.imageUrl ? `url(${finalImageUrl})` : '';
-            const backgroundColor = !banner.imageUrl ? (banner.bgColor || 'hsl(var(--secondary))') : 'transparent';
-              
-            return (
-              <CarouselItem key={banner.id}>
-                <div
-                  className="relative h-[300px] sm:h-[400px] md:h-[500px] w-full flex items-center bg-cover bg-center"
-                  style={{
-                    backgroundImage: backgroundImage,
-                    backgroundColor: backgroundColor
-                  }}
-                >
-                  {/* Sobreposição escura */}
-                  <div className="absolute inset-0 bg-black bg-opacity-60"></div>
-                  
-                  {/* Conteúdo do banner */}
-                  <div className="relative z-20 max-w-6xl mx-auto px-4 text-white">
-                    <div className="max-w-[280px] sm:max-w-[380px] md:max-w-xl mx-auto sm:mx-0">
-                      <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-1 sm:mb-2 md:mb-4 text-shadow-lg text-center sm:text-left">
-                        {banner.title}
-                      </h2>
-                      <p className="text-sm sm:text-lg md:text-xl mb-3 sm:mb-4 md:mb-6 text-shadow text-center sm:text-left">
-                        {banner.description}
-                      </p>
-                      {banner.buttonText && (
-                        <div className="flex justify-center sm:justify-start">
-                          <Button 
-                            asChild 
-                            className="bg-slate-900 hover:bg-slate-800 text-white px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 text-xs sm:text-sm md:text-base"
-                          >
-                            <a href={banner.buttonLink || '#'}>
-                              {banner.buttonText}
-                            </a>
-                          </Button>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </CarouselItem>
-            );
-          })}
-        </CarouselContent>
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
-          {banners.map((_, index) => (
-            <div
-              key={index}
-              className="w-2 h-2 rounded-full bg-white bg-opacity-50"
-            />
-          ))}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70" />
+      </div>
+
+      <div className="relative z-10 w-full max-w-7xl px-6 pb-16 text-white md:px-8">
+        <div className="flex flex-col gap-8 text-left md:flex-row md:items-end md:justify-between md:gap-0">
+          <div className="max-w-3xl space-y-6">
+            <h1 className="font-normal text-4xl text-white tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
+              Expansão Consciencial Além da Simulação
+            </h1>
+
+            <p className="max-w-2xl font-light text-base text-white/90 sm:text-lg md:text-xl">
+              Uma estrutura de desenvolvimento voltada para lucidez, leitura da realidade, quebra de padrões de aprisionamento e preparação consciente para processos de extração e autonomia fora da simulação.
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-6 md:items-end">
+            <div className="flex items-center gap-3">
+              <div className="flex -space-x-3">
+                {[1, 2, 3, 4].map((i) => (
+                  <Avatar
+                    className="size-10 border-2 border-[#bfdbfe] dark:border-[#bfdbfe]"
+                    key={i}
+                  >
+                    <AvatarImage
+                      src={`https://images.cnippet.dev/image/upload/v1770400411/a${i + 1}.jpg`}
+                    />
+                    <AvatarFallback>U{i}</AvatarFallback>
+                  </Avatar>
+                ))}
+              </div>
+              <div className="flex flex-col font-normal text-sm">
+                <span className="text-base">+2.000</span>
+                <span className="text-white/70">pessoas atendidas</span>
+              </div>
+            </div>
+
+            <Link
+              href="/atendimentos"
+              className="hero-btn inline-flex items-center gap-0 rounded-full text-white text-sm font-normal overflow-hidden w-fit"
+              style={{
+                background: "rgba(255,255,255,0.08)",
+                border: "1px solid rgba(255,255,255,0.18)",
+                backdropFilter: "blur(20px)",
+                WebkitBackdropFilter: "blur(20px)",
+                boxShadow: "inset 0 1px 0 rgba(255,255,255,0.12), 0 8px 32px rgba(123,63,228,0.2)",
+              }}
+            >
+              <span className="px-6 py-3">Agendar Atendimento</span>
+              <span
+                className="flex items-center justify-center p-3 border-l"
+                style={{ borderColor: "rgba(255,255,255,0.18)" }}
+              >
+                <ArrowUpRight className="h-4 w-4" />
+              </span>
+            </Link>
+          </div>
         </div>
-        <CarouselPrevious className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 text-white hover:bg-black/70 border-0" />
-        <CarouselNext className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 text-white hover:bg-black/70 border-0" />
-      </Carousel>
-    </div>
+      </div>
+    </section>
   );
-} 
+}
