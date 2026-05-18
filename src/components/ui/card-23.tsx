@@ -6,7 +6,8 @@ import { MapPin, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-export interface ArticleCardProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onDrag' | 'onDragStart' | 'onDragEnd' | 'onDragEnter' | 'onDragLeave' | 'onDragOver' | 'onDrop'> {
+export interface ArticleCardProps {
+  className?: string;
   tag: string;
   date?: {
     month: string;
@@ -35,33 +36,20 @@ const ArticleCard = React.forwardRef<HTMLDivElement, ArticleCardProps>(
       imageAlt,
       href,
       location,
-      ...props
     },
     ref
   ) => {
-    const cardVariants = {
-      initial: { opacity: 0, y: 20 },
-      animate: { opacity: 1, y: 0 },
-      hover: { y: -5, scale: 1.02, boxShadow: "0 25px 50px -12px rgb(0 0 0 / 0.15)" },
-    } as const;
-
-    const imageVariants = {
-      hover: { scale: 1.1 },
-    } as const;
-
     return (
       <motion.div
         ref={ref}
         className={cn(
-          "w-full max-w-sm overflow-hidden rounded-2xl border bg-card text-card-foreground shadow-sm",
+          "w-full overflow-hidden rounded-2xl border bg-card text-card-foreground shadow-sm",
           className
         )}
-        variants={cardVariants}
-        initial="initial"
-        animate="animate"
-        whileHover="hover"
-        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-        {...props}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        whileHover={{ y: -5, scale: 1.02, boxShadow: "0 25px 50px -12px rgb(0 0 0 / 0.15)" }}
+        transition={{ duration: 0.5 }}
       >
         <div className="p-6">
           <header className="mb-4 flex items-center justify-between">
@@ -103,8 +91,8 @@ const ArticleCard = React.forwardRef<HTMLDivElement, ArticleCardProps>(
             src={imageUrl}
             alt={imageAlt}
             className="h-full w-full object-cover"
-            variants={imageVariants}
-            transition={{ duration: 0.4, ease: "easeOut" }}
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.4 }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
           {location && (
