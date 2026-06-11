@@ -75,6 +75,41 @@
   }
 }
 
+/* Glass buttons */
+.glass-btn {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+.glass-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+}
+.glass-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+.glass-btn-indigo {
+  background: rgba(99,102,241,0.12);
+  border: 1px solid rgba(99,102,241,0.3);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 4px 24px rgba(99,102,241,0.2);
+}
+.glass-btn-indigo:hover {
+  background: rgba(99,102,241,0.22) !important;
+  border-color: rgba(99,102,241,0.55) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.14), 0 10px 36px rgba(99,102,241,0.35) !important;
+}
+.glass-btn-purple {
+  background: rgba(168,85,247,0.12);
+  border: 1px solid rgba(168,85,247,0.3);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 4px 24px rgba(168,85,247,0.2);
+}
+.glass-btn-purple:hover {
+  background: rgba(168,85,247,0.22) !important;
+  border-color: rgba(168,85,247,0.55) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.14), 0 10px 36px rgba(168,85,247,0.35) !important;
+}
+
 /* Adicionando classes de sombra de texto personalizadas */
 .text-shadow {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);

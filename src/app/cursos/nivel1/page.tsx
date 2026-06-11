@@ -1,317 +1,1000 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Metadata } from "next";
+import Link from "next/link";
+import { Space_Grotesk } from "next/font/google";
+import { MatrixText } from "@/components/ui/matrix-text";
+import { Brain, Shield, Zap, Layers, Eye, Orbit } from "lucide-react";
 
+const font = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  title: "Curso Nível I — O Poder do Conhecimento | Academia HQ",
+  description:
+    "Fundamentos para o despertar consciencial. Aprenda PNL, estrutura da simulação, auto-atendimento, geometria sagrada e ativações. Inclui iniciação com sua família cósmica.",
+};
+
+// ─── Matrix rain ──────────────────────────────────────────────────────────────
+const MATRIX_CHARS =
+  "ｦｧｨｩｪｫｬｭｮｯｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ01001101";
+
+const MATRIX_COLS = Array.from({ length: 42 }, (_, i) => ({
+  left: `${((i * 2.45 + 0.3) % 100).toFixed(1)}%`,
+  chars: Array.from({ length: 24 }, (_, j) =>
+    MATRIX_CHARS[(i * 13 + j * 7 + 3) % MATRIX_CHARS.length]
+  ),
+  duration: ((i * 7) % 10) + 6,
+  delay: -(((i * 11) % 15) + 1),
+  opacity: ((i * 19) % 6) * 0.035 + 0.14,
+  fontSize: ((i * 11) % 4) + 12,
+}));
+
+// ─── Accent colors ────────────────────────────────────────────────────────────
+// Indigo palette — distinguishes Nível I from D'JHON RHU'O (gold/purple)
+const A = {
+  base: "#020818",          // bg base
+  mid: "#06102E",           // bg mid
+  accent: "#6366f1",        // indigo-500
+  accentLight: "#818cf8",   // indigo-400
+  accentMuted: "rgba(99,102,241,.18)",
+  accentBorder: "rgba(99,102,241,.25)",
+  accentGlow: "rgba(99,102,241,.35)",
+  text: "#EEF2FF",
+  textMuted: "#6272A8",
+  textFaint: "#2E3A5A",
+};
+
+// ─── Content ──────────────────────────────────────────────────────────────────
+const MODULOS = [
+  {
+    num: "01",
+    title: "Programação Neurolinguística",
+    items: ["Mapas e Paradigmas", "Filtros e Valores", "Crenças e Critérios", "Comunicação", "Ressignificação", "DQI"],
+  },
+  {
+    num: "02",
+    title: "Simulação e seus Operadores",
+    items: ["Extração e Plano Astral", "Raças e Projetos", "Templos Etéricos e Raios", "Federação e Aliança", "Geometria Sagrada", "Apometria", "Merkabas e Ativações"],
+  },
+  {
+    num: "03",
+    title: "Auto-Atendimento",
+    items: ["Elementais (frequências)", "Pensamento", "Chakras", "Corpos sutis", "Verticalização"],
+  },
+  {
+    num: "04",
+    title: "Meditação e Ativação",
+    items: ["Técnicas de Conexão", "Iniciação com família cósmica", "Prática de meditação guiada"],
+  },
+];
+
+const FEATURES = [
+  { Icon: Brain, title: "PNL Aplicada", text: "Compreensão dos filtros e paradigmas que moldam sua percepção da realidade." },
+  { Icon: Layers, title: "Estrutura da Simulação", text: "Entenda a arquitetura consciencial e como operar dentro e além dela." },
+  { Icon: Shield, title: "Auto-Atendimento", text: "Técnicas práticas para cuidar do seu campo energético com autonomia." },
+  { Icon: Orbit, title: "Geometria Sagrada", text: "Merkabas, Raios e estruturas de luz aplicados ao desenvolvimento pessoal." },
+  { Icon: Zap, title: "Ativações", text: "Processo de sintonização com sua família cósmica e mentores espirituais." },
+  { Icon: Eye, title: "Expansão Consciencial", text: "Maior clareza, percepção e autonomia dentro da própria jornada." },
+];
+
+const PILARES = [
+  { num: "01", title: "Fundamento Sólido", text: "Base estruturada para iniciar a jornada de despertar com clareza e segurança." },
+  { num: "02", title: "Método Prático", text: "Técnicas aplicáveis imediatamente na vida cotidiana, sem dependência de terceiros." },
+  { num: "03", title: "Conexão Genuína", text: "Iniciação com sua família cósmica e estruturas de luz em sessão ao vivo." },
+  { num: "04", title: "Autonomia Espiritual", text: "Aprender a operar sua própria consciência sem hierarquias ou intermediários." },
+  { num: "05", title: "Didática Acessível", text: "Conteúdo estruturado para quem está dando os primeiros passos conscientes." },
+  { num: "06", title: "Suporte Pós-Curso", text: "Canal de dúvidas e orientação para continuar a prática após o curso." },
+];
+
+const PARA_QUEM = [
+  "Pessoas iniciando a jornada de despertar consciencial",
+  "Quem quer compreender a estrutura da realidade e da simulação",
+  "Pessoas buscando autonomia espiritual sem dogmas ou hierarquias",
+  "Quem deseja desenvolver auto-atendimento energético",
+  "Pessoas interessadas em PNL aplicada à espiritualidade",
+  "Quem sente que existe algo além da experiência comum",
+];
+
+const NAO_PARA = [
+  "Pessoas buscando milagres ou soluções instantâneas",
+  "Pessoas que querem reforçar crenças sem questionar",
+  "Quem não está disposto a assumir responsabilidade pelo próprio processo",
+  "Pessoas buscando dependência de mestre ou guru",
+];
+
+const WA_URL =
+  "https://wa.me/5514998525760?text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+o+Curso+N%C3%ADvel+1";
+
+// ─── Sub-components ───────────────────────────────────────────────────────────
+const WaIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 flex-shrink-0" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+  </svg>
+);
+
+function SectionLabel({ children }: { children: React.ReactNode }) {
+  return (
+    <p className="text-xs tracking-[.28em] uppercase mb-4 font-light" style={{ color: A.accentLight }}>
+      {children}
+    </p>
+  );
+}
+
+function SectionTitle({ children, className }: { children: React.ReactNode; className?: string }) {
+  return (
+    <h2
+      className={`text-3xl md:text-4xl font-light ${className ?? ""}`}
+      style={{ color: A.text, lineHeight: 1.2 }}
+    >
+      {children}
+    </h2>
+  );
+}
+
+function IndigoDivider() {
+  return (
+    <div className="flex items-center gap-4">
+      <div className="h-px flex-1" style={{ background: `rgba(99,102,241,.2)` }} />
+      <div className="w-1.5 h-1.5 rotate-45" style={{ background: A.accent, opacity: 0.5 }} />
+      <div className="h-px flex-1" style={{ background: `rgba(99,102,241,.2)` }} />
+    </div>
+  );
+}
+
+// ─── Page ─────────────────────────────────────────────────────────────────────
 export default function Nivel1Page() {
   return (
-    <main className="flex flex-col items-center">
-      {/* Hero Section */}
-      <section 
-        className="w-full bg-slate-950 border-b border-slate-800 py-8 md:py-12 px-4 relative overflow-hidden"
+    <main className={font.className} style={{ background: A.base, color: A.text }}>
+      {/* ─── CSS ─── */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        @keyframes matrix-fall {
+          0%   { transform: translateY(-110%); }
+          100% { transform: translateY(110vh); }
+        }
+        @keyframes shimmer {
+          0%   { background-position:-300% center; }
+          100% { background-position:300% center; }
+        }
+        @keyframes fade-up {
+          from { opacity:0; transform:translateY(24px); }
+          to   { opacity:1; transform:translateY(0); }
+        }
+        @keyframes nebula-a {
+          0%,100% { transform:translate(0,0) scale(1); }
+          33%     { transform:translate(30px,-20px) scale(1.05); }
+          66%     { transform:translate(-20px,25px) scale(.97); }
+        }
+        @keyframes nebula-b {
+          0%,100% { transform:translate(0,0) scale(1); }
+          33%     { transform:translate(-40px,30px) scale(1.03); }
+          66%     { transform:translate(25px,-15px) scale(1.07); }
+        }
+        @keyframes glow-pulse {
+          0%,100% { opacity:.4; }
+          50%     { opacity:1; }
+        }
+
+        .fu-1 { animation:fade-up .75s cubic-bezier(.16,1,.3,1) .05s both; }
+        .fu-2 { animation:fade-up .75s cubic-bezier(.16,1,.3,1) .2s  both; }
+        .fu-3 { animation:fade-up .75s cubic-bezier(.16,1,.3,1) .35s both; }
+        .fu-4 { animation:fade-up .75s cubic-bezier(.16,1,.3,1) .5s  both; }
+        .fu-5 { animation:fade-up .75s cubic-bezier(.16,1,.3,1) .65s both; }
+
+        .glass {
+          background: rgba(255,255,255,0.03);
+          border: 1px solid rgba(99,102,241,.12);
+          border-radius: 12px;
+          backdrop-filter: blur(24px);
+          -webkit-backdrop-filter: blur(24px);
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 24px 48px rgba(0,0,0,.35);
+          transition: border-color .3s, background .3s, box-shadow .3s;
+        }
+        .glass:hover {
+          border-color: rgba(99,102,241,.35);
+          background: rgba(99,102,241,.06);
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.07), 0 24px 64px rgba(99,102,241,.12);
+        }
+        .btn-primary {
+          display: inline-flex;
+          align-items: center;
+          transition: transform .2s cubic-bezier(.16,1,.3,1), box-shadow .2s;
+        }
+        .btn-primary:hover {
+          transform: translateY(-2px) scale(1.02);
+          box-shadow: 0 20px 60px rgba(99,102,241,.5), 0 0 0 1px rgba(99,102,241,.5) !important;
+        }
+        .btn-ghost {
+          display: inline-flex;
+          align-items: center;
+          transition: color .2s, background .2s;
+          border-radius: 8px;
+        }
+        .btn-ghost:hover {
+          background: rgba(255,255,255,.05);
+          color: ${A.text} !important;
+        }
+        .step-card {
+          background: rgba(255,255,255,0.02);
+          border: 1px solid rgba(99,102,241,.1);
+          border-radius: 12px;
+          backdrop-filter: blur(16px);
+          transition: border-color .3s, background .3s;
+        }
+        .step-card:hover {
+          border-color: rgba(99,102,241,.3);
+          background: rgba(99,102,241,.05);
+        }
+        .feat-cell {
+          background: rgba(255,255,255,0.015);
+          transition: background .3s;
+        }
+        .feat-cell:hover {
+          background: rgba(99,102,241,.06);
+        }
+      `}} />
+
+      {/* ─── Fixed nebula background ──────────────────────────────────────── */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
+        <div className="absolute" style={{
+          top: "5%", left: "2%", width: 700, height: 700,
+          background: "radial-gradient(circle, rgba(67,56,202,.18) 0%, transparent 65%)",
+          filter: "blur(80px)",
+          animation: "nebula-a 20s ease-in-out infinite",
+        }} />
+        <div className="absolute" style={{
+          bottom: "10%", right: "2%", width: 800, height: 800,
+          background: "radial-gradient(circle, rgba(79,70,229,.14) 0%, transparent 65%)",
+          filter: "blur(100px)",
+          animation: "nebula-b 28s ease-in-out infinite",
+        }} />
+        <div className="absolute" style={{
+          top: "40%", left: "50%", width: 1000, height: 1000,
+          transform: "translate(-50%,-50%)",
+          background: "radial-gradient(circle, rgba(99,102,241,.05) 0%, transparent 60%)",
+          filter: "blur(120px)",
+        }} />
+      </div>
+
+      {/* ══════════════════════════════════════════════════════════════════════
+          1. HERO
+      ══════════════════════════════════════════════════════════════════════ */}
+      <section
+        className="relative w-full min-h-screen flex flex-col items-center justify-center text-center overflow-hidden"
+        style={{ zIndex: 1, padding: "120px 24px 100px" }}
       >
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-            {/* Imagem principal */}
-            <div className="w-full md:w-1/2 lg:w-2/5 flex-shrink-0">
-              <div className="rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
-                <img 
-                  src="/images/SITE-NIVEL1.jpg"
-                  alt="Curso Nível 1 - O Poder do Conhecimento"
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-            </div>
-            
-            {/* Conteúdo destacado */}
-            <div className="w-full md:w-1/2 lg:w-3/5 text-center md:text-left">
-              <div className="inline-block bg-green-950 text-green-200 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                Próxima Turma
-              </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white">
-                Curso Nível 1
-              </h1>
-              <p className="text-xl md:text-2xl mb-6 text-gray-300 font-semibold">
-                O Poder do Conhecimento
-              </p>
-              <p className="text-lg md:text-xl mb-8 text-gray-400">
-                Fundamentos para Despertar Consciencial • Online Via Zoom
-              </p>
-              
-              {/* Destaque da data */}
-              <div className="bg-slate-900/80 backdrop-blur-sm border border-slate-700 rounded-xl p-6 mb-6">
-                <div className="flex flex-col md:flex-row items-center justify-center md:justify-start gap-4">
-                  <div className="flex items-center text-white">
-                    <svg className="w-6 h-6 mr-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    <span className="text-xl font-bold">18 de janeiro de 2026</span>
-                  </div>
-                  <div className="flex items-center text-white">
-                    <svg className="w-6 h-6 mr-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <span className="text-xl font-bold">08:00 - 17:00</span>
-                  </div>
-                </div>
-              </div>
-              
-              <Button size="lg" className="font-bold bg-green-600 hover:bg-green-700 text-white text-lg px-8 py-6" asChild>
-                <a 
-                  href="https://wa.me/5514998525760?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20Curso%20N%C3%ADvel%201" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2"
+        {/* Matrix rain */}
+        <div
+          className="absolute inset-0 pointer-events-none overflow-hidden"
+          aria-hidden="true"
+          style={{ filter: "blur(0.8px)" }}
+        >
+          {MATRIX_COLS.map((col, i) => (
+            <div
+              key={i}
+              className="absolute top-0 flex flex-col"
+              style={{
+                left: col.left,
+                opacity: col.opacity,
+                animation: `matrix-fall ${col.duration}s linear ${col.delay}s infinite`,
+                fontFamily: "monospace",
+                fontSize: col.fontSize,
+                lineHeight: 1.5,
+                userSelect: "none",
+              }}
+            >
+              {col.chars.map((char, j) => (
+                <span
+                  key={j}
+                  style={{
+                    color:
+                      j === col.chars.length - 1
+                        ? "#FFFFFF"
+                        : j >= col.chars.length - 3
+                        ? "#C7D2FE"
+                        : j >= col.chars.length - 8
+                        ? "#818CF8"
+                        : "#4338CA",
+                    opacity: Math.max(0.08, 1 - (col.chars.length - 1 - j) * 0.038),
+                    textShadow:
+                      j === col.chars.length - 1
+                        ? "0 0 12px rgba(199,210,254,1), 0 0 24px rgba(129,140,248,.6)"
+                        : j >= col.chars.length - 3
+                        ? "0 0 6px rgba(129,140,248,.5)"
+                        : "none",
+                  }}
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                  {char}
+                </span>
+              ))}
+            </div>
+          ))}
+
+          <div
+            className="absolute inset-0"
+            style={{
+              background: "radial-gradient(ellipse 55% 55% at 50% 48%, rgba(2,8,24,.75) 0%, rgba(2,8,24,.08) 100%)",
+            }}
+          />
+          <div
+            className="absolute bottom-0 left-0 right-0"
+            style={{ height: 180, background: `linear-gradient(transparent, ${A.base})` }}
+          />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 flex flex-col items-center">
+          {/* Badge */}
+          <div
+            className="inline-flex items-center gap-2 mb-8 px-5 py-2 fu-1"
+            style={{
+              background: A.accentMuted,
+              border: `1px solid ${A.accentBorder}`,
+              borderRadius: 9999,
+              color: A.accentLight,
+              fontSize: ".68rem",
+              letterSpacing: ".22em",
+              fontWeight: 300,
+            }}
+          >
+            <span
+              className="w-1.5 h-1.5 rounded-full flex-shrink-0"
+              style={{ background: A.accent, animation: "glow-pulse 2.5s ease-in-out infinite" }}
+            />
+            Curso Online Ao Vivo
+          </div>
+
+          {/* Eyebrow */}
+          <p
+            className="fu-1 tracking-[.35em] uppercase mb-3"
+            style={{ color: A.textMuted, fontSize: ".72rem", fontWeight: 300 }}
+          >
+            Academia HQ · Nível I
+          </p>
+
+          {/* Title */}
+          <h1
+            className="uppercase fu-2 flex flex-col items-center"
+            style={{
+              fontSize: "clamp(3rem,11vw,8rem)",
+              lineHeight: 0.92,
+              fontWeight: 300,
+              letterSpacing: ".08em",
+            }}
+          >
+            <MatrixText
+              text="NÍVEL"
+              initialDelay={200}
+              letterAnimationDuration={500}
+              letterInterval={80}
+            />
+            <MatrixText
+              text="I"
+              initialDelay={700}
+              letterAnimationDuration={500}
+              letterInterval={80}
+            />
+          </h1>
+
+          {/* Subtitle */}
+          <p
+            className="mt-6 mb-3 fu-3"
+            style={{
+              fontSize: "clamp(1rem,2.5vw,1.4rem)",
+              fontWeight: 300,
+              color: A.accentLight,
+              letterSpacing: ".12em",
+            }}
+          >
+            O Poder do Conhecimento
+          </p>
+
+          {/* Ornament */}
+          <div className="flex items-center gap-4 mb-8 fu-3">
+            <div className="h-px w-20" style={{ background: `linear-gradient(90deg,transparent,${A.accentGlow})` }} />
+            <svg viewBox="0 0 20 20" fill="none" className="w-3.5 h-3.5">
+              <polygon points="10,1 19,17 1,17" stroke={A.accent} strokeWidth="1.2" fill="none" />
+              <circle cx="10" cy="12" r="2" fill={A.accent} />
+            </svg>
+            <div className="h-px w-20" style={{ background: `linear-gradient(90deg,${A.accentGlow},transparent)` }} />
+          </div>
+
+          {/* Lead */}
+          <p
+            className="max-w-xl mx-auto mb-12 leading-relaxed fu-4"
+            style={{ color: A.textMuted, fontSize: "1.05rem", fontWeight: 300 }}
+          >
+            Fundamentos para despertar consciencial.{" "}
+            <span style={{ color: A.text, fontWeight: 400 }}>
+              Aprenda a operar sua própria tecnologia interna.
+            </span>
+          </p>
+
+          {/* CTA */}
+          <a
+            href={WA_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary gap-3 font-medium uppercase tracking-widest fu-5"
+            style={{
+              background: `linear-gradient(135deg,${A.accent},#4338CA)`,
+              color: "#EEF2FF",
+              fontSize: ".8rem",
+              letterSpacing: ".18em",
+              padding: "16px 40px",
+              borderRadius: 8,
+              boxShadow: `0 0 40px ${A.accentGlow}, 0 0 80px rgba(99,102,241,.08)`,
+            }}
+          >
+            <WaIcon />
+            Inscreva-se Agora
+          </a>
+        </div>
+
+        <div
+          className="absolute bottom-0 left-0 right-0 h-px"
+          style={{ background: `linear-gradient(90deg,transparent,${A.accentBorder},transparent)` }}
+        />
+      </section>
+
+      {/* ══════════════════════════════════════════════════════════════════════
+          2. DECLARAÇÃO
+      ══════════════════════════════════════════════════════════════════════ */}
+      <section
+        className="relative w-full py-24 px-6 text-center"
+        style={{ background: `linear-gradient(180deg,${A.base} 0%,${A.mid} 50%,${A.base} 100%)`, zIndex: 1 }}
+      >
+        <div className="max-w-3xl mx-auto">
+          <blockquote
+            className="text-xl md:text-2xl leading-relaxed"
+            style={{ color: A.textMuted, fontWeight: 300 }}
+          >
+            &ldquo;A maioria das pessoas vive sem compreender as estruturas que moldam sua percepção, suas crenças e suas limitações.&rdquo;
+            <br />
+            <span style={{ color: "#C7D2FE", fontWeight: 400 }}>
+              O Nível I é o início da compreensão.
+            </span>
+          </blockquote>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════════════════════
+          3. O QUE VOCÊ VAI APRENDER
+      ══════════════════════════════════════════════════════════════════════ */}
+      <section className="relative w-full py-24 px-6 overflow-hidden" style={{ background: A.base, zIndex: 1 }}>
+        <div className="max-w-5xl mx-auto space-y-16">
+          <div className="text-center space-y-6 max-w-xl mx-auto">
+            <SectionLabel>Conteúdo</SectionLabel>
+            <SectionTitle>O que você vai aprender</SectionTitle>
+            <p className="text-base leading-relaxed" style={{ color: A.textMuted, fontWeight: 300 }}>
+              Uma estrutura didática completa para quem está iniciando.{" "}
+              <span style={{ color: "#C7D2FE" }}>
+                Teoria e prática integradas desde o primeiro dia.
+              </span>
+            </p>
+          </div>
+
+          {/* Features grid */}
+          <div
+            className="relative mx-auto grid max-w-4xl sm:grid-cols-2 lg:grid-cols-3"
+            style={{
+              border: `1px solid ${A.accentBorder}`,
+              borderRadius: 16,
+              overflow: "hidden",
+            }}
+          >
+            {FEATURES.map(({ Icon, title, text }, i) => (
+              <div
+                key={i}
+                className="feat-cell space-y-4 p-10"
+                style={{
+                  borderRight: i % 3 !== 2 ? `1px solid rgba(99,102,241,.18)` : undefined,
+                  borderBottom: i < 3 ? `1px solid rgba(99,102,241,.18)` : undefined,
+                }}
+              >
+                <div className="flex items-center gap-3">
+                  <div
+                    className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+                    style={{ background: A.accentMuted, border: `1px solid ${A.accentBorder}` }}
+                  >
+                    <Icon size={15} style={{ color: A.accentLight }} />
+                  </div>
+                  <h3 className="text-sm font-medium" style={{ color: A.accentLight, letterSpacing: ".04em" }}>
+                    {title}
+                  </h3>
+                </div>
+                <p className="text-sm leading-relaxed" style={{ color: A.textMuted, fontWeight: 300 }}>
+                  {text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════════════════════
+          4. PULL QUOTE
+      ══════════════════════════════════════════════════════════════════════ */}
+      <div
+        className="relative w-full py-16 px-6 text-center"
+        style={{
+          background: A.mid,
+          borderTop: `1px solid rgba(99,102,241,.12)`,
+          borderBottom: `1px solid rgba(99,102,241,.12)`,
+          zIndex: 1,
+        }}
+      >
+        <div className="max-w-3xl mx-auto">
+          <svg viewBox="0 0 40 30" fill="none" className="w-8 h-6 mx-auto mb-6 opacity-20">
+            <path d="M0 30 L0 18 Q0 0 18 0 L18 8 Q8 8 8 18 L16 18 L16 30 Z M22 30 L22 18 Q22 0 40 0 L40 8 Q30 8 30 18 L38 18 L38 30 Z" fill={A.accentLight} />
+          </svg>
+          <blockquote className="text-xl md:text-2xl italic" style={{ color: A.accentLight, fontWeight: 300 }}>
+            Despertar não é sobre acreditar. É sobre compreender como a sua consciência opera.
+          </blockquote>
+        </div>
+      </div>
+
+      {/* ══════════════════════════════════════════════════════════════════════
+          5. MÓDULOS
+      ══════════════════════════════════════════════════════════════════════ */}
+      <section className="relative w-full py-24 px-6" style={{ background: A.base, zIndex: 1 }}>
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <SectionLabel>Programação</SectionLabel>
+            <SectionTitle className="mb-4">Módulos do Curso</SectionTitle>
+            <p className="text-sm max-w-sm mx-auto" style={{ color: A.textFaint, fontWeight: 300 }}>
+              Duração: ~6 horas ao vivo. Online via Zoom.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {MODULOS.map((m, i) => (
+              <div key={i} className="glass p-7 flex flex-col gap-4">
+                <div className="flex items-center justify-between">
+                  <span style={{ color: `rgba(99,102,241,.4)`, fontSize: "2rem", lineHeight: 1, fontWeight: 300, letterSpacing: ".05em" }}>
+                    {m.num}
+                  </span>
+                  <div
+                    className="w-8 h-8 rounded-full"
+                    style={{ background: `radial-gradient(circle,${A.accentMuted} 0%,transparent 70%)`, border: `1px solid ${A.accentBorder}` }}
+                  />
+                </div>
+                <div>
+                  <h3 className="mb-3" style={{ color: A.accentLight, fontSize: ".95rem", fontWeight: 500 }}>
+                    {m.title}
+                  </h3>
+                  <ul className="space-y-1.5">
+                    {m.items.map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-sm" style={{ color: A.textMuted, fontWeight: 300 }}>
+                        <span className="mt-2 w-1 h-1 rounded-full flex-shrink-0" style={{ background: A.accent }} />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════════════════════
+          6. 6 PILARES
+      ══════════════════════════════════════════════════════════════════════ */}
+      <section
+        className="relative w-full py-24 px-6 overflow-hidden"
+        style={{
+          background: `linear-gradient(135deg,${A.mid} 0%,${A.base} 60%,${A.mid} 100%)`,
+          borderTop: `1px solid rgba(99,102,241,.1)`,
+          borderBottom: `1px solid rgba(99,102,241,.1)`,
+          zIndex: 1,
+        }}
+      >
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <SectionLabel>Benefícios</SectionLabel>
+            <SectionTitle className="mb-4">O que você recebe</SectionTitle>
+            <p className="text-sm max-w-sm mx-auto" style={{ color: A.textFaint, fontWeight: 300 }}>
+              Além do conteúdo, você terá suporte e uma iniciação única.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {PILARES.map((p, i) => (
+              <div key={i} className="glass p-7 flex flex-col gap-4">
+                <div className="flex items-center justify-between">
+                  <span style={{ color: `rgba(99,102,241,.4)`, fontSize: "2rem", lineHeight: 1, fontWeight: 300 }}>
+                    {p.num}
+                  </span>
+                  <div
+                    className="w-8 h-8 rounded-full"
+                    style={{ background: `radial-gradient(circle,${A.accentMuted} 0%,transparent 70%)`, border: `1px solid ${A.accentBorder}` }}
+                  />
+                </div>
+                <div>
+                  <h3 className="mb-2" style={{ color: A.accentLight, fontSize: ".95rem", fontWeight: 500 }}>
+                    {p.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed" style={{ color: A.textMuted, fontWeight: 300 }}>
+                    {p.text}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════════════════════
+          7. PARA QUEM É / NÃO É
+      ══════════════════════════════════════════════════════════════════════ */}
+      <section className="relative w-full py-24 px-6" style={{ background: A.base, zIndex: 1 }}>
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <SectionTitle>Este curso é para você?</SectionTitle>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <div
+              className="p-8 rounded-xl"
+              style={{ background: `rgba(99,102,241,.04)`, border: `1px solid rgba(99,102,241,.18)`, backdropFilter: "blur(20px)" }}
+            >
+              <div className="flex items-center gap-3 mb-7">
+                <div
+                  className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0"
+                  style={{ background: A.accentMuted, border: `1px solid ${A.accentBorder}` }}
+                >
+                  <svg viewBox="0 0 16 16" fill="none" className="w-4 h-4">
+                    <path d="M3 8l4 4 6-6" stroke={A.accentLight} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                  Inscreva-se Agora
-                </a>
-              </Button>
+                </div>
+                <h3 style={{ color: A.accentLight, fontWeight: 500, fontSize: "1rem" }}>Para quem é</h3>
+              </div>
+              <ul className="space-y-4">
+                {PARA_QUEM.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "#9BA8C8", fontWeight: 300 }}>
+                    <span className="mt-1.5 w-1 h-1 rounded-full flex-shrink-0" style={{ background: A.accent }} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div
+              className="p-8 rounded-xl"
+              style={{ background: "rgba(180,40,80,.03)", border: "1px solid rgba(180,40,80,.15)", backdropFilter: "blur(20px)" }}
+            >
+              <div className="flex items-center gap-3 mb-7">
+                <div
+                  className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0"
+                  style={{ background: "rgba(180,40,80,.12)", border: "1px solid rgba(180,40,80,.28)" }}
+                >
+                  <svg viewBox="0 0 16 16" fill="none" className="w-4 h-4">
+                    <path d="M4 4l8 8M12 4l-8 8" stroke="#C44569" strokeWidth="1.8" strokeLinecap="round" />
+                  </svg>
+                </div>
+                <h3 style={{ color: "#C44569", fontWeight: 500, fontSize: "1rem" }}>Para quem não é</h3>
+              </div>
+              <ul className="space-y-4">
+                {NAO_PARA.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "#9BA8C8", fontWeight: 300 }}>
+                    <span className="mt-1.5 w-1 h-1 rounded-full flex-shrink-0" style={{ background: "#C44569" }} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Visão Geral */}
-      <section className="py-16 px-4 max-w-4xl mx-auto w-full">
-        <h2 className="text-3xl font-bold mb-8 text-foreground">Visão Geral do Curso</h2>
-        
-        <div className="prose prose-invert max-w-none">
-          <p className="text-muted-foreground text-lg mb-6">
-            O Curso Nível 1 da Academia HQ tem como objetivo atender aos alunos que estão iniciando sua jornada no despertar consciencial. Sua estrutura é extremamente didática, facilitando o aprendizado e a absorção do conteúdo proposto para quem está dando os primeiros passos na expansão da consciência e desenvolvimento espiritual.
-          </p>
-          
-          <p className="text-muted-foreground text-lg mb-6">
-            Ministrado por Sergio Oliveira, fundador da Academia HQ, o curso tem a duração aproximada de 6 horas, podendo se estender de acordo com o desenvolvimento do grupo. Os participantes deste módulo participam no encerramento de uma sintonização individual, onde é feita a sua iniciação junto à sua família cósmica e estruturas do trabalho de Harmonização Quântica.
-          </p>
+      {/* ══════════════════════════════════════════════════════════════════════
+          8. FACILITADOR
+      ══════════════════════════════════════════════════════════════════════ */}
+      <section
+        className="relative w-full py-24 px-6"
+        style={{ background: A.mid, borderTop: `1px solid rgba(99,102,241,.1)`, zIndex: 1 }}
+      >
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <SectionLabel>Facilitador</SectionLabel>
+            <SectionTitle>Sergio Oliveira</SectionTitle>
+          </div>
 
-          <div className="bg-slate-900 p-6 rounded-lg border border-slate-800 mb-8">
-            <h3 className="text-xl font-bold mb-4 text-white">Informações Importantes</h3>
-            <ul className="space-y-2 text-gray-300">
-              <li className="flex items-start">
-                <span className="text-primary mr-2">•</span>
-                <span><strong>Data:</strong> 18 de janeiro de 2026</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary mr-2">•</span>
-                <span><strong>Horário:</strong> 08:00 - 17:00</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary mr-2">•</span>
-                <span><strong>Formato:</strong> Online Via Zoom</span>
-              </li>
-              
-              <li className="flex items-start">
-                <span className="text-primary mr-2">•</span>
-                <span><strong>Certificado:</strong> Sim, após conclusão</span>
-              </li>
-            </ul>
-            <div className="mt-6 p-4 bg-slate-800 rounded-lg border border-slate-700">
-              <h4 className="font-bold text-white mb-3">Investimento:</h4>
-              <div className="space-y-4">
-                <div className="p-4 bg-slate-900 rounded-lg border border-slate-600">
-                  <p className="text-green-400 font-semibold mb-1">Turma Coletiva</p>
-                  <ul className="space-y-2 text-gray-300">
-                    <li className="flex items-center">
-                      <svg className="w-4 h-4 mr-2 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-                      </svg>
-                      <span><strong>PREÇO:</strong> R$1.200,00</span>
-                    </li>
-                    <li className="flex items-center">
-                      <svg className="w-4 h-4 mr-2 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-                      </svg>
-                      <span><strong>Aluno do TEAC:</strong> R$900,00</span>
-                    </li>
-                    <li className="flex items-center">
-                      <svg className="w-4 h-4 mr-2 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-                      </svg>
-                      <span><strong>Fazer novamente:</strong> R$800,00</span>
-                    </li>
-                  </ul>
-                  <p className="text-xs text-gray-500 mt-2">Aguardar abertura da próxima turma</p>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="flex items-center justify-center">
+              <div className="relative" style={{ width: 240, height: 300 }}>
+                {[
+                  "top-0 left-0 border-t border-l",
+                  "top-0 right-0 border-t border-r",
+                  "bottom-0 left-0 border-b border-l",
+                  "bottom-0 right-0 border-b border-r",
+                ].map((cls, i) => (
+                  <div key={i} className={`absolute w-6 h-6 ${cls}`} style={{ borderColor: A.accent }} />
+                ))}
+                <div className="absolute overflow-hidden" style={{ top: 10, left: 10, right: 10, bottom: 10, borderRadius: 6 }}>
+                  <img
+                    src="/images/foto-sergio-v2.png"
+                    alt="Sergio Oliveira"
+                    className="w-full h-full object-cover object-top"
+                    style={{ filter: "brightness(.88) contrast(1.06) saturate(.9)" }}
+                  />
+                  <div
+                    className="absolute inset-0"
+                    style={{ background: `linear-gradient(180deg,transparent 50%,rgba(2,8,24,.85) 100%)` }}
+                  />
                 </div>
-                <div className="p-4 bg-slate-900 rounded-lg border border-primary/40">
-                  <p className="text-primary font-semibold mb-1">Solo 1×1 com Sergio</p>
-                  <p className="text-gray-300"><strong>R$2.200,00</strong></p>
-                  <p className="text-xs text-gray-500 mt-1">Sessão individual — sem aguardar turma coletiva</p>
-                </div>
+              </div>
+            </div>
+
+            <div>
+              <p className="text-base mb-5 leading-relaxed" style={{ color: A.textMuted, fontWeight: 300 }}>
+                Fundador da Academia HQ e facilitador de ativações conscienciais e apometria quântica. Há mais de uma
+                década trabalhando com estruturas de alinhamento, desbloqueio e expansão de percepção.
+              </p>
+              <p className="text-base mb-8 leading-relaxed" style={{ color: A.textMuted, fontWeight: 300 }}>
+                O Curso Nível I é o ponto de entrada estruturado para quem deseja compreender e operar sua própria consciência com clareza, autonomia e sem intermediários.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {["PNL Aplicada", "Apometria Quântica", "Ativações Conscienciais", "Método TEAC"].map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-3 py-1.5 text-xs tracking-wider"
+                    style={{
+                      background: A.accentMuted,
+                      border: `1px solid ${A.accentBorder}`,
+                      color: A.accentLight,
+                      borderRadius: 6,
+                      fontWeight: 300,
+                      letterSpacing: ".12em",
+                    }}
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Conteúdo Programático */}
-      <section className="py-16 px-4 bg-slate-950 w-full border-y border-slate-800">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-10 text-center text-foreground">Conteúdo Programático</h2>
-          
-          <div className="space-y-8">
-            <Card className="bg-card border-border">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-4 text-foreground">O que você vai aprender</h3>
-                <div className="space-y-6">
-                  {/* PNL */}
-                  <div>
-                    <h4 className="text-lg font-semibold mb-3 text-foreground">Programação Neurolinguística – PNL</h4>
-                    <ul className="list-disc pl-6 space-y-1 text-muted-foreground">
-                      <li>Mapas e Paradigmas</li>
-                      <li>Filtros</li>
-                      <li>Valores</li>
-                      <li>Critérios</li>
-                      <li>Crenças</li>
-                      <li>Comunicação</li>
-                      <li>Ressignificação</li>
-                      <li>DQI</li>
-                    </ul>
-                  </div>
-
-                  {/* Simulação */}
-                  <div>
-                    <h4 className="text-lg font-semibold mb-3 text-foreground">Simulação e seus operadores</h4>
-                    <ul className="list-disc pl-6 space-y-1 text-muted-foreground">
-                      <li>Extração</li>
-                      <li>Plano Astral</li>
-                      <li>Raças e Projetos</li>
-                      <li>Templos Etéricos e Raios</li>
-                      <li>Federação e Aliança – Galáctica e Planetária</li>
-                      <li>Geometria Sagrada</li>
-                      <li>Apometria</li>
-                      <li>Merkabas</li>
-                      <li>Merkaba para utilização inicial</li>
-                      <li>Ativações</li>
-                      <li>Merkabas de Luz da Harmonização Quântica</li>
-                      <li>Conexões</li>
-                    </ul>
-                  </div>
-
-                  {/* Auto Atendimento */}
-                  <div>
-                    <h4 className="text-lg font-semibold mb-3 text-foreground">Auto – Atendimento</h4>
-                    <ul className="list-disc pl-6 space-y-1 text-muted-foreground">
-                      <li>Elementais (frequências)</li>
-                      <li>Pensamento</li>
-                      <li>Chakras</li>
-                      <li>Corpos sutis</li>
-                      <li>Verticalização</li>
-                    </ul>
-                  </div>
-
-                  {/* Meditação */}
-                  <div>
-                    <h4 className="text-lg font-semibold mb-3 text-foreground">Meditação / Ativação</h4>
-                    <ul className="list-disc pl-6 space-y-1 text-muted-foreground">
-                      <li>Conexão</li>
-                      <li>Sugestão para o início da prática de Meditação / Ativação</li>
-                    </ul>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+      {/* ══════════════════════════════════════════════════════════════════════
+          9. INVESTIMENTO
+      ══════════════════════════════════════════════════════════════════════ */}
+      <section
+        className="relative w-full py-24 px-6"
+        style={{ background: A.base, borderTop: `1px solid rgba(255,255,255,.05)`, zIndex: 1 }}
+      >
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-12">
+            <SectionLabel>Investimento</SectionLabel>
+            <SectionTitle>Acesso ao Curso</SectionTitle>
           </div>
-        </div>
-      </section>
 
-      {/* Benefícios */}
-      <section className="py-16 px-4 max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold mb-10 text-center text-foreground">O Que Você Receberá</h2>
-        
-        <div className="grid md:grid-cols-2 gap-6">
-          {[
-            {
-              title: "Base Sólida de Conhecimento",
-              description: "Aprenda os fundamentos essenciais para iniciar sua jornada espiritual de forma segura e eficaz."
-            },
-            {
-              title: "Iniciação Coletiva",
-              description: "Você participará da iniciação coletiva para conectar-se com sua família cósmica."
-            },
-            {
-              title: "Material de Apoio",
-              description: "Acesso a apostilas e materiais complementares para estudo contínuo."
-            },
-            {
-              title: "Técnicas Práticas",
-              description: "Aprenda técnicas que podem ser aplicadas imediatamente no seu dia a dia."
-            },
-            {
-              title: "Certificado de Conclusão",
-              description: "Receba um certificado oficial da Academia HQ, reconhecido para cursos subsequentes."
-            },
-            {
-              title: "Suporte Pós-Curso",
-              description: "Acesso a canal de dúvidas e suporte para auxiliar em sua prática após o curso."
-            },
-          ].map((item, index) => (
-            <Card key={index} className="bg-card border-border p-6">
-              <h3 className="text-xl font-bold mb-2 text-foreground">{item.title}</h3>
-              <p className="text-muted-foreground">{item.description}</p>
-            </Card>
-          ))}
-        </div>
-      </section>
-
-      {/* Inscrição
-       <section className="py-16 px-4 bg-slate-900 w-full border-y border-slate-800">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6 text-white">Dê o Primeiro Passo na Sua Evolução Espiritual</h2>
-          <p className="text-lg mb-8 text-gray-300">
-            Reserve seu lugar agora!
-          </p>
-          <Button size="lg" className="font-bold bg-green-600 hover:bg-green-700 text-white" asChild>
-            <a 
-              href="https://wa.me/5514998525760?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20Curso%20N%C3%ADvel%201" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center gap-2"
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Turma Coletiva */}
+            <div
+              className="relative overflow-hidden"
+              style={{
+                background: "rgba(255,255,255,0.03)",
+                border: `1px solid ${A.accentBorder}`,
+                borderRadius: 16,
+                backdropFilter: "blur(24px)",
+                boxShadow: `inset 0 1px 0 rgba(255,255,255,0.05), 0 32px 64px rgba(0,0,0,.4)`,
+              }}
             >
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                width="20" 
-                height="20" 
-                viewBox="0 0 24 24" 
-                fill="currentColor"
-              >
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-              </svg>
-              Inscreva-se pelo WhatsApp
-            </a>
-          </Button>
+              <div className="p-8">
+                <div
+                  className="inline-flex items-center gap-2 mb-6 px-4 py-1.5"
+                  style={{ background: A.accentMuted, border: `1px solid ${A.accentBorder}`, borderRadius: 9999, color: A.accentLight, fontSize: ".68rem", letterSpacing: ".15em", fontWeight: 300 }}
+                >
+                  <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: A.accent }} />
+                  Turma Coletiva
+                </div>
+
+                <p className="text-xs tracking-widest uppercase mb-2" style={{ color: A.textFaint, letterSpacing: ".2em", fontWeight: 300 }}>A partir de</p>
+                <div className="flex items-end gap-1.5 mb-1">
+                  <span style={{ color: A.textMuted, fontSize: "1.1rem", fontWeight: 300, marginBottom: 6 }}>R$</span>
+                  <span style={{
+                    fontSize: "clamp(2.5rem,8vw,4rem)", lineHeight: 1, fontWeight: 300,
+                    background: `linear-gradient(135deg,${A.accent},${A.accentLight})`,
+                    WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
+                  }}>
+                    900
+                  </span>
+                  <span style={{ color: A.textMuted, fontSize: "1.1rem", fontWeight: 300, marginBottom: 6 }}>,00</span>
+                </div>
+                <p className="text-xs mb-6" style={{ color: A.textMuted, fontWeight: 300 }}>
+                  Aluno TEAC — ou R$1.200 público geral
+                </p>
+
+                <IndigoDivider />
+
+                <ul className="space-y-2 my-6">
+                  {["Aguardar próxima turma", "Duração: ~6 horas ao vivo", "Certificado de conclusão", "Material de apoio"].map((item) => (
+                    <li key={item} className="flex items-center gap-2 text-xs" style={{ color: A.textMuted, fontWeight: 300 }}>
+                      <span className="w-1 h-1 rounded-full flex-shrink-0" style={{ background: A.accent }} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+
+                <a
+                  href={WA_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary w-full justify-center gap-3 font-medium uppercase tracking-widest"
+                  style={{
+                    background: `linear-gradient(135deg,${A.accent},#4338CA)`,
+                    color: A.text,
+                    fontSize: ".75rem",
+                    letterSpacing: ".18em",
+                    padding: "14px 24px",
+                    borderRadius: 8,
+                    boxShadow: `0 0 30px rgba(99,102,241,.18)`,
+                  }}
+                >
+                  <WaIcon />
+                  Inscrever-se
+                </a>
+              </div>
+            </div>
+
+            {/* Solo 1×1 */}
+            <div
+              className="relative overflow-hidden"
+              style={{
+                background: "rgba(255,255,255,0.02)",
+                border: "1px solid rgba(255,255,255,.07)",
+                borderRadius: 16,
+                backdropFilter: "blur(24px)",
+              }}
+            >
+              <div className="p-8">
+                <div
+                  className="inline-flex items-center gap-2 mb-6 px-4 py-1.5"
+                  style={{ background: "rgba(255,255,255,.04)", border: "1px solid rgba(255,255,255,.08)", borderRadius: 9999, color: "#9BA8C8", fontSize: ".68rem", letterSpacing: ".15em", fontWeight: 300 }}
+                >
+                  <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: "#6272A8" }} />
+                  Solo 1×1 com Sergio
+                </div>
+
+                <p className="text-xs tracking-widest uppercase mb-2" style={{ color: A.textFaint, letterSpacing: ".2em", fontWeight: 300 }}>Sessão individual</p>
+                <div className="flex items-end gap-1.5 mb-1">
+                  <span style={{ color: A.textMuted, fontSize: "1.1rem", fontWeight: 300, marginBottom: 6 }}>R$</span>
+                  <span style={{ fontSize: "clamp(2.5rem,8vw,4rem)", lineHeight: 1, fontWeight: 300, color: "#9BA8C8" }}>
+                    2.200
+                  </span>
+                  <span style={{ color: A.textMuted, fontSize: "1.1rem", fontWeight: 300, marginBottom: 6 }}>,00</span>
+                </div>
+                <p className="text-xs mb-6" style={{ color: A.textMuted, fontWeight: 300 }}>
+                  Sem aguardar turma coletiva
+                </p>
+
+                <IndigoDivider />
+
+                <ul className="space-y-2 my-6">
+                  {["Data à sua escolha", "Sessão individual exclusiva", "Duração: ~6 horas ao vivo", "Certificado de conclusão"].map((item) => (
+                    <li key={item} className="flex items-center gap-2 text-xs" style={{ color: A.textMuted, fontWeight: 300 }}>
+                      <span className="w-1 h-1 rounded-full flex-shrink-0" style={{ background: "#6272A8" }} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+
+                <a
+                  href={WA_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary w-full justify-center gap-3 font-medium uppercase tracking-widest"
+                  style={{
+                    background: "rgba(255,255,255,.06)",
+                    border: "1px solid rgba(255,255,255,.1)",
+                    color: "#9BA8C8",
+                    fontSize: ".75rem",
+                    letterSpacing: ".18em",
+                    padding: "14px 24px",
+                    borderRadius: 8,
+                  }}
+                >
+                  <WaIcon />
+                  Falar com Sergio
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <p className="text-xs text-center mt-6" style={{ color: A.textFaint, fontWeight: 300 }}>
+            Após o contato, você receberá todas as informações sobre datas e formas de pagamento.
+          </p>
         </div>
       </section>
-      */} 
 
-      {/* Pronto para Transformar */}
-      <section className="py-16 px-4 bg-slate-900 w-full border-y border-slate-800">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6 text-white">Pronto para Transformar sua Conexão Espiritual?</h2>
-          <p className="text-lg mb-8 text-gray-300">
-            Reserve seu lugar agora!
+      {/* ══════════════════════════════════════════════════════════════════════
+          10. FECHAMENTO
+      ══════════════════════════════════════════════════════════════════════ */}
+      <section
+        className="relative w-full py-28 px-6 text-center overflow-hidden"
+        style={{
+          background: `linear-gradient(180deg,${A.base} 0%,${A.mid} 50%,${A.base} 100%)`,
+          borderTop: `1px solid rgba(99,102,241,.1)`,
+          zIndex: 1,
+        }}
+      >
+        <div
+          className="absolute inset-0 flex items-center justify-center pointer-events-none"
+          style={{ opacity: 0.04 }}
+          aria-hidden="true"
+        >
+          <svg viewBox="0 0 800 800" fill="none" className="w-full max-w-2xl">
+            <circle cx="400" cy="400" r="380" stroke={A.accent} strokeWidth="1" strokeDasharray="6 4" />
+            <circle cx="400" cy="400" r="280" stroke={A.accentLight} strokeWidth=".5" />
+            <circle cx="400" cy="400" r="180" stroke={A.accent} strokeWidth="1" strokeDasharray="3 6" />
+          </svg>
+        </div>
+
+        <div className="relative z-10 max-w-3xl mx-auto">
+          <div className="flex items-center justify-center gap-4 mb-10">
+            <div className="h-px w-16" style={{ background: `linear-gradient(90deg,transparent,${A.accentGlow})` }} />
+            <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
+              <polygon points="12,2 22,20 2,20" stroke={A.accent} strokeWidth="1.2" fill="none" />
+              <circle cx="12" cy="14" r="2" fill={A.accent} />
+            </svg>
+            <div className="h-px w-16" style={{ background: `linear-gradient(90deg,${A.accentGlow},transparent)` }} />
+          </div>
+
+          <h2
+            className="mb-6 leading-snug"
+            style={{ color: A.text, fontWeight: 300, fontSize: "clamp(1.8rem,4vw,2.5rem)", lineHeight: 1.3 }}
+          >
+            Se você sente que é hora de compreender,{" "}
+            <span style={{ color: A.accentLight }}>este é o primeiro passo.</span>
+          </h2>
+
+          <p className="text-base mb-4 leading-relaxed" style={{ color: A.textMuted, fontWeight: 300 }}>
+            O Nível I é estruturado, didático e transformador.
+            <br />
+            Não exige crença prévia. Apenas disposição para aprender.
           </p>
-          <Button size="lg" className="font-bold bg-green-600 hover:bg-green-700 text-white" asChild>
-            <a 
-              href="https://wa.me/5514998525760?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20Curso%20N%C3%ADvel%201" 
-              target="_blank" 
+
+          <p className="text-xs tracking-[.3em] uppercase mb-12" style={{ color: A.textFaint, fontWeight: 300 }}>
+            Academia HQ · Apometria Quântica
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a
+              href={WA_URL}
+              target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2"
+              className="btn-primary gap-3 font-medium uppercase tracking-widest"
+              style={{
+                background: `linear-gradient(135deg,${A.accent},#4338CA)`,
+                color: A.text,
+                fontSize: ".78rem",
+                letterSpacing: ".18em",
+                padding: "16px 40px",
+                borderRadius: 8,
+                boxShadow: `0 0 40px ${A.accentGlow}, 0 0 80px rgba(99,102,241,.06)`,
+              }}
             >
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                width="20" 
-                height="20" 
-                viewBox="0 0 24 24" 
-                fill="currentColor"
-              >
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-              </svg>
-              Inscreva-se pelo WhatsApp
+              <WaIcon />
+              Inscreva-se no Nível I
             </a>
-          </Button>
+
+            <Link
+              href="/cursos"
+              className="btn-ghost gap-2 text-sm px-6 py-4"
+              style={{ color: A.textFaint, fontWeight: 300 }}
+            >
+              Ver todos os cursos
+              <svg viewBox="0 0 16 16" fill="none" className="w-4 h-4">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
+            </Link>
+          </div>
         </div>
       </section>
     </main>
   );
-} 
+}

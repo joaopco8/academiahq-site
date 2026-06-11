@@ -9,28 +9,7 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <main className="flex flex-col items-center relative">
-      <style dangerouslySetInnerHTML={{ __html: `
-        .glass-btn {
-          transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
-        }
-        .glass-btn:hover {
-          transform: translateY(-2px) scale(1.03);
-        }
-        .glass-btn:active {
-          transform: translateY(0) scale(0.98);
-        }
-        .glass-btn-indigo:hover {
-          background: rgba(99,102,241,0.22) !important;
-          border-color: rgba(99,102,241,0.55) !important;
-          box-shadow: inset 0 1px 0 rgba(255,255,255,0.14), 0 10px 36px rgba(99,102,241,0.35) !important;
-        }
-        .glass-btn-purple:hover {
-          background: rgba(168,85,247,0.22) !important;
-          border-color: rgba(168,85,247,0.55) !important;
-          box-shadow: inset 0 1px 0 rgba(255,255,255,0.14), 0 10px 36px rgba(168,85,247,0.35) !important;
-        }
-      `}} />
-      <MatrixRain />
+<MatrixRain />
       {/* Banner principal */}
       <Banner />
 
@@ -90,26 +69,12 @@ export default function Home() {
               <Link
                 href="/cursos"
                 className="glass-btn glass-btn-indigo inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-normal text-white"
-                style={{
-                  background: "rgba(99,102,241,0.12)",
-                  border: "1px solid rgba(99,102,241,0.3)",
-                  backdropFilter: "blur(20px)",
-                  WebkitBackdropFilter: "blur(20px)",
-                  boxShadow: "inset 0 1px 0 rgba(255,255,255,0.1), 0 4px 24px rgba(99,102,241,0.2)",
-                }}
               >
                 Ver Cursos
               </Link>
               <Link
                 href="/atendimentos"
                 className="glass-btn glass-btn-purple inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-normal text-white"
-                style={{
-                  background: "rgba(168,85,247,0.12)",
-                  border: "1px solid rgba(168,85,247,0.3)",
-                  backdropFilter: "blur(20px)",
-                  WebkitBackdropFilter: "blur(20px)",
-                  boxShadow: "inset 0 1px 0 rgba(255,255,255,0.1), 0 4px 24px rgba(168,85,247,0.2)",
-                }}
               >
                 Agendar Atendimento
               </Link>

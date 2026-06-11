@@ -1,25 +1,25 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AnimatedBorder } from "@/components/animated-border";
+import Link from "next/link";
 
 export default function SobrePage() {
   return (
-    <main className="flex flex-col items-center">
+    <main className="flex flex-col items-center relative">
       {/* Hero Section */}
-      <section className="w-full bg-slate-950 border-b border-slate-800 py-16 px-4">
+      <section className="w-full border-b border-purple-900/30 py-16 px-4 relative z-10">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-4xl font-bold mb-4 text-foreground">Sobre Sergio Oliveira</h1>
-          <p className="text-xl max-w-3xl mx-auto text-muted-foreground">
+          <h1 className="text-4xl font-normal tracking-tighter mb-4 text-foreground">Sobre Sergio Oliveira</h1>
+          <p className="text-xl max-w-3xl mx-auto font-light text-muted-foreground">
             Conheça um pouco sobre mim, o fundador da Academia HQ.
           </p>
         </div>
       </section>
 
       {/* Sobre Nós */}
-      <section className="py-16 px-4 max-w-6xl mx-auto">
+      <section className="py-16 px-4 max-w-6xl mx-auto relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <AnimatedBorder>
             <div className="overflow-hidden rounded-lg">
-              <img 
+              <img
                 src="/images/foto-sergio-v2.png"
                 alt="Sergio Oliveira"
                 className="w-full h-auto object-cover"
@@ -27,8 +27,8 @@ export default function SobrePage() {
             </div>
           </AnimatedBorder>
           <div>
-            <h2 className="text-3xl font-bold mb-6 text-foreground">Minha História</h2>
-            <div className="space-y-4 text-muted-foreground">
+            <h2 className="text-3xl font-normal tracking-tighter mb-6 text-foreground">Minha História</h2>
+            <div className="space-y-4 font-light text-muted-foreground">
               <p>
                 Durante boa parte da minha vida, eu procurei respostas, sobre quem eu era, de onde vinha e o que realmente estávamos fazendo aqui.
               </p>
@@ -87,37 +87,51 @@ export default function SobrePage() {
                 Talvez seja o momento de lembrar quem você é, e o que veio fazer aqui.
               </p>
             </div>
+            <div className="flex flex-wrap gap-4 mt-8">
+              <Link
+                href="/cursos"
+                className="glass-btn glass-btn-indigo inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-normal text-white"
+              >
+                Ver Cursos
+              </Link>
+              <Link
+                href="/atendimentos"
+                className="glass-btn glass-btn-purple inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-normal text-white"
+              >
+                Agendar Atendimento
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Missão, Visão e Valores */}
-      <section className="py-16 px-4 bg-slate-950 w-full border-y border-slate-800">
+      {/* Pilares */}
+      <section className="py-16 px-4 border-y border-purple-900/30 w-full relative z-10">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold mb-12 text-center text-foreground">Pilares da conexão com o plano astral</h2>
+          <h2 className="text-3xl font-normal tracking-tighter mb-12 text-center text-foreground">Pilares da conexão com o plano astral</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <AnimatedBorder>
               <div className="p-6">
-                <h3 className="text-2xl font-bold mb-4 text-foreground">Alinhamento Energético</h3>
-                <p className="text-muted-foreground">
+                <h3 className="text-2xl font-normal tracking-tighter mb-4 text-foreground">Alinhamento Energético</h3>
+                <p className="font-light text-muted-foreground">
                   Para se conectar com planos sutis, é essencial que sua energia esteja em equilíbrio. Isso significa cuidar do seu campo vibracional, limpar interferências externas e fortalecer sua conexão interna para evitar distorções e bloqueios.
                 </p>
               </div>
             </AnimatedBorder>
-            
+
             <AnimatedBorder>
               <div className="p-6">
-                <h3 className="text-2xl font-bold mb-4 text-foreground">Método e Intenção</h3>
-                <p className="text-muted-foreground">
+                <h3 className="text-2xl font-normal tracking-tighter mb-4 text-foreground">Método e Intenção</h3>
+                <p className="font-light text-muted-foreground">
                   A comunicação espiritual não acontece de forma aleatória. É preciso ter um método claro e uma intenção bem definida para acessar as frequências corretas. Técnicas como foco mental, elevação vibracional e comandos específicos ajudam a estabelecer uma conexão segura e confiável.
                 </p>
               </div>
             </AnimatedBorder>
-            
+
             <AnimatedBorder>
               <div className="p-6">
-                <h3 className="text-2xl font-bold mb-4 text-foreground">Interpretação e Aplicação</h3>
-                <p className="text-muted-foreground">
+                <h3 className="text-2xl font-normal tracking-tighter mb-4 text-foreground">Interpretação e Aplicação</h3>
+                <p className="font-light text-muted-foreground">
                   Receber informações é apenas o começo. O mais importante é interpretar corretamente e aplicar esse conhecimento na sua vida. A verdadeira comunicação espiritual gera transformação e traz clareza para suas escolhas e seu caminho.
                 </p>
               </div>
@@ -127,4 +141,4 @@ export default function SobrePage() {
       </section>
     </main>
   );
-} 
+}
