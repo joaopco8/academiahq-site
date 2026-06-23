@@ -801,8 +801,8 @@ export default function Nivel1Page() {
                     background: `linear-gradient(135deg,${A.accent},${A.accentLight})`,
                     WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
                   }}>
-                    900
-                  </span>
+                    1.600
+</span>
                   <span style={{ color: A.textMuted, fontSize: "1.1rem", fontWeight: 300, marginBottom: 6 }}>,00</span>
                 </div>
                 <p className="text-xs mb-6" style={{ color: A.textMuted, fontWeight: 300 }}>
