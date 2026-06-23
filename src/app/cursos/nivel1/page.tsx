@@ -793,7 +793,7 @@ export default function Nivel1Page() {
                   Turma Coletiva
                 </div>
 
-                <p className="text-xs tracking-widest uppercase mb-2" style={{ color: A.textFaint, letterSpacing: ".2em", fontWeight: 300 }}>A partir de</p>
+                <p className="text-xs tracking-widest uppercase mb-2" style={{ color: A.textFaint, letterSpacing: ".2em", fontWeight: 300 }}>Investimento</p>
                 <div className="flex items-end gap-1.5 mb-1">
                   <span style={{ color: A.textMuted, fontSize: "1.1rem", fontWeight: 300, marginBottom: 6 }}>R$</span>
                   <span style={{
@@ -805,9 +805,6 @@ export default function Nivel1Page() {
 </span>
                   <span style={{ color: A.textMuted, fontSize: "1.1rem", fontWeight: 300, marginBottom: 6 }}>,00</span>
                 </div>
-                <p className="text-xs mb-6" style={{ color: A.textMuted, fontWeight: 300 }}>
-                  Aluno TEAC — ou R$1.200 público geral
-                </p>
 
                 <IndigoDivider />
 

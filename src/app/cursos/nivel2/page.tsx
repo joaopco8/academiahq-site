@@ -483,13 +483,12 @@ export default function Nivel2Page() {
                   <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: A.accent }} />
                   Turma Coletiva
                 </div>
-                <p className="text-xs tracking-widest uppercase mb-2" style={{ color: A.textFaint, fontWeight: 300 }}>A partir de</p>
+                <p className="text-xs tracking-widest uppercase mb-2" style={{ color: A.textFaint, fontWeight: 300 }}>Investimento</p>
                 <div className="flex items-end gap-1.5 mb-1">
                   <span style={{ color: A.textMuted, fontSize: "1.1rem", fontWeight: 300, marginBottom: 6 }}>R$</span>
                   <span style={{ fontSize: "clamp(2.5rem,8vw,4rem)", lineHeight: 1, fontWeight: 300, background: `linear-gradient(135deg,${A.accent},${A.accentLight})`, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>1.600</span>
                   <span style={{ color: A.textMuted, fontSize: "1.1rem", fontWeight: 300, marginBottom: 6 }}>,00</span>
                 </div>
-                <p className="text-xs mb-6" style={{ color: A.textMuted, fontWeight: 300 }}>Aluno TEAC — ou R$1.200 público geral</p>
                 <VioletDivider />
                 <ul className="space-y-2 my-6">
                   {["17 de maio de 2026 · 08:00–17:00", "Online ao vivo via Zoom", "Sintonização coletiva especial", "Certificado de conclusão"].map((item) => (
