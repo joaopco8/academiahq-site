@@ -190,72 +190,69 @@ export default function PNLParaTerapeutasPage() {
 
       {/* ══ 1. HERO ══ */}
       <section className="relative w-full min-h-screen flex items-center overflow-hidden" style={{ background: P.bg }}>
-        {/* imagem direita */}
-        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        {/* imagem — ocupa metade direita, posicionada à direita */}
+        <div className="absolute inset-y-0 right-0 pointer-events-none" style={{ width:"58%", left:"42%" }} aria-hidden="true">
           <Image
             src="/bg-pnl.png"
             alt=""
             fill
             priority
-            style={{ objectFit:"cover", objectPosition:"center right" }}
-            sizes="100vw"
+            style={{ objectFit:"cover", objectPosition:"left center" }}
+            sizes="58vw"
           />
+          {/* degrade interno da imagem pra fundir com o fundo */}
+          <div style={{ position:"absolute", inset:0, background:"linear-gradient(90deg, #04081A 0%, rgba(4,8,26,0.6) 30%, rgba(4,8,26,0.1) 65%, transparent 100%)" }} />
         </div>
 
-        {/* gradiente esquerda sobre imagem */}
-        <div className="absolute inset-0 pointer-events-none" aria-hidden="true"
-          style={{ background:`linear-gradient(90deg, ${P.bg} 0%, ${P.bg} 38%, rgba(4,8,26,0.92) 55%, rgba(4,8,26,0.55) 72%, transparent 100%)` }} />
+        {/* fundo sólido esquerda */}
+        <div className="absolute inset-y-0 left-0 pointer-events-none" style={{ width:"42%", background: P.bg }} aria-hidden="true" />
+
         {/* escurecer topo e base */}
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true"
-          style={{ background:`linear-gradient(180deg, rgba(4,8,26,0.5) 0%, transparent 18%, transparent 78%, ${P.bg} 100%)` }} />
+          style={{ background:`linear-gradient(180deg, rgba(4,8,26,0.6) 0%, transparent 15%, transparent 80%, ${P.bg} 100%)` }} />
 
         {/* grid animado só na esquerda */}
-        <div className="absolute inset-0 grid-bg pointer-events-none opacity-30" aria-hidden="true"
-          style={{ maskImage:"linear-gradient(90deg, black 0%, black 30%, transparent 60%)", WebkitMaskImage:"linear-gradient(90deg, black 0%, black 30%, transparent 60%)" }} />
+        <div className="absolute inset-0 grid-bg pointer-events-none opacity-25" aria-hidden="true"
+          style={{ maskImage:"linear-gradient(90deg, black 0%, black 25%, transparent 50%)", WebkitMaskImage:"linear-gradient(90deg, black 0%, black 25%, transparent 50%)" }} />
 
         {/* orbs */}
-        <div className="absolute pointer-events-none" style={{ top:"20%", left:"5%", width:600, height:600, background:"radial-gradient(circle,rgba(37,99,235,0.12) 0%,transparent 65%)", filter:"blur(80px)", animation:"orb-a 18s ease-in-out infinite" }} aria-hidden="true" />
-        <div className="absolute pointer-events-none" style={{ bottom:"10%", left:"15%", width:400, height:400, background:"radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 65%)", filter:"blur(60px)", animation:"orb-b 22s ease-in-out infinite" }} aria-hidden="true" />
+        <div className="absolute pointer-events-none" style={{ top:"20%", left:"2%", width:500, height:500, background:"radial-gradient(circle,rgba(37,99,235,0.12) 0%,transparent 65%)", filter:"blur(80px)", animation:"orb-a 18s ease-in-out infinite" }} aria-hidden="true" />
+        <div className="absolute pointer-events-none" style={{ bottom:"10%", left:"5%", width:350, height:350, background:"radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 65%)", filter:"blur(60px)", animation:"orb-b 22s ease-in-out infinite" }} aria-hidden="true" />
 
-        {/* partículas só na esquerda */}
+        {/* partículas esquerda */}
         {[
-          { top:"25%", left:"8%",  size:3, delay:"0s",   dur:"5s" },
-          { top:"55%", left:"22%", size:4, delay:"1.5s", dur:"6s" },
-          { top:"75%", left:"10%", size:2, delay:"2.5s", dur:"4.5s" },
-          { top:"38%", left:"35%", size:3, delay:"0.8s", dur:"7s" },
+          { top:"28%", left:"4%",  size:3, delay:"0s",   dur:"5s" },
+          { top:"58%", left:"18%", size:4, delay:"1.5s", dur:"6s" },
+          { top:"78%", left:"7%",  size:2, delay:"2.5s", dur:"4.5s" },
+          { top:"42%", left:"30%", size:3, delay:"0.8s", dur:"7s" },
         ].map((p, i) => (
           <div key={i} className="absolute pointer-events-none rounded-full" aria-hidden="true"
             style={{ top:p.top, left:p.left, width:p.size, height:p.size, background: i % 2 === 0 ? P.gold : P.blueLight, animation:`float-particle ${p.dur} ease-in-out ${p.delay} infinite` }} />
         ))}
 
-        {/* conteúdo esquerda */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-16 pt-24 pb-20">
-          <div className="max-w-xl">
-            <div className="pill fu-1 mb-8" style={{ background:P.goldMuted, border:`1px solid ${P.goldBorder}`, color:P.goldLight }}>
-              <span style={{ width:6, height:6, borderRadius:"50%", background:P.gold, display:"inline-block", animation:"glow-pulse-gold 2.5s ease-in-out infinite", flexShrink:0 }} />
-              FORMAÇÃO PROFISSIONAL · ONLINE AO VIVO
-            </div>
+        {/* conteúdo — alinhado à esquerda */}
+        <div className="relative z-10 w-full pt-24 pb-20 px-8 lg:px-20" style={{ maxWidth:"50%" }}>
+          <div className="pill fu-1 mb-8" style={{ background:P.goldMuted, border:`1px solid ${P.goldBorder}`, color:P.goldLight }}>
+            <span style={{ width:6, height:6, borderRadius:"50%", background:P.gold, display:"inline-block", animation:"glow-pulse-gold 2.5s ease-in-out infinite", flexShrink:0 }} />
+            FORMAÇÃO PROFISSIONAL · ONLINE AO VIVO
+          </div>
 
-            <h1 className="fu-2 mb-6" style={{ fontWeight:300, fontSize:"clamp(2.8rem,6vw,5.2rem)", lineHeight:1.08, color:P.white }}>
-              PNL para{" "}
-              <span className="gold-text" style={{ fontStyle:"italic", fontFamily:"Georgia,'Times New Roman',serif" }}>Terapeutas</span>
-            </h1>
+          <h1 className="fu-2 mb-6" style={{ fontWeight:300, fontSize:"clamp(2.6rem,5vw,5rem)", lineHeight:1.08, color:P.white }}>
+            PNL para{" "}
+            <span className="gold-text" style={{ fontStyle:"italic", fontFamily:"Georgia,'Times New Roman',serif" }}>Terapeutas</span>
+          </h1>
 
-            <p className="fu-3 mb-4" style={{ fontSize:"clamp(1rem,2vw,1.18rem)", lineHeight:1.75, color:P.textMuted, fontWeight:300 }}>
-              Aprenda a investigar com profundidade, entregar com precisão e comunicar o valor do seu trabalho com clareza.
-            </p>
-            <p className="fu-3 mb-12" style={{ fontSize:".95rem", lineHeight:1.75, color:P.textMuted, fontWeight:300 }}>
-              Um curso prático de Programação Neurolinguística desenvolvido para terapeutas que querem ir além da intuição e operar com método.
-            </p>
+          <p className="fu-3 mb-12" style={{ maxWidth:460, fontSize:"clamp(.95rem,1.6vw,1.12rem)", lineHeight:1.8, color:P.textMuted, fontWeight:300 }}>
+            Um curso prático de PNL para terapeutas que querem ir além da intuição — investigar com profundidade, entregar com precisão e comunicar o valor do seu trabalho.
+          </p>
 
-            <div className="fu-4 flex flex-col sm:flex-row gap-4 items-start">
-              <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn-base btn-blue-solid">
-                <WaIcon />Quero me inscrever
-              </a>
-              <a href={WA_AULA} target="_blank" rel="noopener noreferrer" className="btn-base btn-ghost-gold">
-                Assistir aula gratuita
-              </a>
-            </div>
+          <div className="fu-4 flex flex-col sm:flex-row gap-4 items-start">
+            <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn-base btn-blue-solid">
+              <WaIcon />Quero me inscrever
+            </a>
+            <a href={WA_AULA} target="_blank" rel="noopener noreferrer" className="btn-base btn-ghost-gold">
+              Assistir aula gratuita
+            </a>
           </div>
         </div>
 
