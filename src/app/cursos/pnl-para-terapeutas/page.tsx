@@ -41,7 +41,7 @@ const CheckIcon = ({ color }: { color: string }) => (
 );
 
 const XIcon = () => (
-  <svg viewBox="0 0 16 16" fill="none" width="14" height="14" style={{ color: P.textFaint, flexShrink: 0, marginTop: 3 }}>
+  <svg viewBox="0 0 16 16" fill="none" width="14" height="14" style={{ color: "rgba(239,68,68,0.65)", flexShrink: 0, marginTop: 3 }}>
     <path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
   </svg>
 );
@@ -249,9 +249,10 @@ export default function PNLParaTerapeutasPage() {
         </div>
 
         {/* ── MOBILE: imagem abaixo do texto (oculta no desktop) ── */}
-        <div className="relative md:hidden w-full pointer-events-none" style={{ height:"70vw", maxHeight:480 }} aria-hidden="true">
+        <div className="relative md:hidden w-full" style={{ height:"75vw", maxHeight:500 }} aria-hidden="true">
           <Image src="/bg-pnl.png" alt="" fill priority style={{ objectFit:"cover", objectPosition:"center top" }} sizes="100vw" />
-          <div style={{ position:"absolute", inset:0, background:`linear-gradient(180deg,${P.bg} 0%,transparent 25%,transparent 72%,${P.bg} 100%)` }} />
+          {/* gradiente topo forte */}
+          <div style={{ position:"absolute", inset:0, background:`linear-gradient(180deg, ${P.bg} 0%, rgba(4,8,26,0.7) 18%, transparent 42%, transparent 62%, rgba(4,8,26,0.75) 82%, ${P.bg} 100%)` }} />
         </div>
 
         <div className="hidden md:block absolute bottom-0 left-0 right-0 pointer-events-none" style={{ height:120, background:`linear-gradient(transparent,${P.bg})` }} />
@@ -382,16 +383,16 @@ export default function PNLParaTerapeutasPage() {
             </div>
 
             <div className="card-hover p-8 rounded-xl reveal reveal-delay-2"
-              style={{ background:"rgba(255,255,255,0.02)", border:"1px solid rgba(255,255,255,0.06)" }}>
+              style={{ background:"rgba(239,68,68,0.04)", border:"1px solid rgba(239,68,68,0.18)" }}>
               <div className="flex items-center gap-3 mb-7">
-                <span style={{ width:8, height:8, borderRadius:"50%", background:P.textFaint, display:"inline-block", flexShrink:0 }} />
-                <span className="text-xs uppercase" style={{ color:P.textFaint, letterSpacing:".18em", fontWeight:300 }}>Para quem não é</span>
+                <span style={{ width:8, height:8, borderRadius:"50%", background:"rgba(239,68,68,0.6)", display:"inline-block", flexShrink:0 }} />
+                <span className="text-xs uppercase" style={{ color:"rgba(239,68,68,0.7)", letterSpacing:".18em", fontWeight:300 }}>Para quem não é</span>
               </div>
               <ul className="space-y-4">
                 {NAO_PARA.map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <XIcon />
-                    <span style={{ color:P.textFaint, fontWeight:300, lineHeight:1.65, fontSize:".93rem" }}>{item}</span>
+                    <span style={{ color:"rgba(248,180,180,0.85)", fontWeight:300, lineHeight:1.65, fontSize:".93rem" }}>{item}</span>
                   </li>
                 ))}
               </ul>
