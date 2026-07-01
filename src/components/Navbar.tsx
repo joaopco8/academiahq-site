@@ -15,6 +15,7 @@ const navLinks = [
   { href: '/', label: 'Início' },
   { href: '/sobre', label: 'Sobre' },
   { href: '/cursos', label: 'Cursos' },
+  { href: '/cursos/pnl-para-terapeutas', label: 'PNL Terapeutas' },
   { href: '/ativacoes', label: 'Ativações' },
   { href: '/ativacoes/djhon-rhuo', label: "D'JHON RHU'O" },
   { href: '/atendimentos', label: 'Atendimentos' },
