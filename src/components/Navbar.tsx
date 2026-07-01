@@ -15,9 +15,9 @@ const navLinks = [
   { href: '/', label: 'Início' },
   { href: '/sobre', label: 'Sobre' },
   { href: '/cursos', label: 'Cursos' },
-  { href: '/cursos/pnl-para-terapeutas', label: 'PNL Terapeutas' },
+  { href: '/cursos/pnl-para-terapeutas', label: 'PNL' },
   { href: '/ativacoes', label: 'Ativações' },
-  { href: '/ativacoes/djhon-rhuo', label: "D'JHON RHU'O" },
+  { href: '/ativacoes/djhon-rhuo', label: "D'Jhon" },
   { href: '/atendimentos', label: 'Atendimentos' },
   { href: '/loja', label: 'Loja' },
   { href: '/agenda', label: 'Agenda' },
@@ -78,7 +78,7 @@ export default function Navbar() {
           </div>
           
           {/* Menu para desktop */}
-          <nav className="hidden md:flex space-x-6 items-center">
+          <nav className="hidden md:flex space-x-4 items-center text-sm">
             {navLinks.map((link) => (
               <Link 
                 key={link.href}

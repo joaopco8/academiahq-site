@@ -225,7 +225,7 @@ export default function PNLParaTerapeutasPage() {
           <p className="fu-3 mb-4 mx-auto" style={{ maxWidth:640, fontSize:"clamp(1.05rem,2.5vw,1.22rem)", lineHeight:1.75, color:P.textMuted, fontWeight:300 }}>
             Aprenda a investigar com profundidade, entregar com precisão e comunicar o valor do seu trabalho com clareza.
           </p>
-          <p className="fu-3 mb-12 mx-auto" style={{ maxWidth:540, fontSize:".93rem", lineHeight:1.75, color:P.textFaint, fontWeight:300 }}>
+          <p className="fu-3 mb-12 mx-auto" style={{ maxWidth:540, fontSize:".95rem", lineHeight:1.75, color:P.textMuted, fontWeight:300 }}>
             Um curso prático de Programação Neurolinguística desenvolvido para terapeutas que querem ir além da intuição e operar com método.
           </p>
 
