@@ -189,57 +189,77 @@ export default function PNLParaTerapeutasPage() {
       `}</style>
 
       {/* ══ 1. HERO ══ */}
-      <section className="relative w-full min-h-screen flex flex-col items-center justify-center px-6 pt-24 pb-20 text-center overflow-hidden">
-        {/* bg */}
-        <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(160deg,#050B22 0%,#04081A 55%,#050A18 100%)" }} aria-hidden="true" />
-        {/* animated grid */}
-        <div className="absolute inset-0 grid-bg pointer-events-none opacity-60" aria-hidden="true" />
+      <section className="relative w-full min-h-screen flex items-center overflow-hidden" style={{ background: P.bg }}>
+        {/* imagem direita */}
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <Image
+            src="/bg-pnl.png"
+            alt=""
+            fill
+            priority
+            style={{ objectFit:"cover", objectPosition:"center right" }}
+            sizes="100vw"
+          />
+        </div>
+
+        {/* gradiente esquerda sobre imagem */}
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true"
+          style={{ background:`linear-gradient(90deg, ${P.bg} 0%, ${P.bg} 38%, rgba(4,8,26,0.92) 55%, rgba(4,8,26,0.55) 72%, transparent 100%)` }} />
+        {/* escurecer topo e base */}
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true"
+          style={{ background:`linear-gradient(180deg, rgba(4,8,26,0.5) 0%, transparent 18%, transparent 78%, ${P.bg} 100%)` }} />
+
+        {/* grid animado só na esquerda */}
+        <div className="absolute inset-0 grid-bg pointer-events-none opacity-30" aria-hidden="true"
+          style={{ maskImage:"linear-gradient(90deg, black 0%, black 30%, transparent 60%)", WebkitMaskImage:"linear-gradient(90deg, black 0%, black 30%, transparent 60%)" }} />
+
         {/* orbs */}
-        <div className="absolute pointer-events-none" style={{ top:"15%", left:"50%", width:900, height:700, background:"radial-gradient(circle,rgba(37,99,235,0.13) 0%,transparent 65%)", filter:"blur(80px)", animation:"orb-a 18s ease-in-out infinite", transformOrigin:"50% 50%" }} aria-hidden="true" />
-        <div className="absolute pointer-events-none" style={{ bottom:"10%", right:"5%", width:500, height:500, background:"radial-gradient(circle,rgba(201,168,76,0.09) 0%,transparent 65%)", filter:"blur(70px)", animation:"orb-b 22s ease-in-out infinite" }} aria-hidden="true" />
-        <div className="absolute pointer-events-none" style={{ top:"55%", left:"3%", width:420, height:420, background:"radial-gradient(circle,rgba(37,99,235,0.07) 0%,transparent 65%)", filter:"blur(60px)", animation:"orb-c 26s ease-in-out infinite" }} aria-hidden="true" />
-        {/* floating particles */}
+        <div className="absolute pointer-events-none" style={{ top:"20%", left:"5%", width:600, height:600, background:"radial-gradient(circle,rgba(37,99,235,0.12) 0%,transparent 65%)", filter:"blur(80px)", animation:"orb-a 18s ease-in-out infinite" }} aria-hidden="true" />
+        <div className="absolute pointer-events-none" style={{ bottom:"10%", left:"15%", width:400, height:400, background:"radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 65%)", filter:"blur(60px)", animation:"orb-b 22s ease-in-out infinite" }} aria-hidden="true" />
+
+        {/* partículas só na esquerda */}
         {[
-          { top:"22%", left:"18%", size:4, delay:"0s", dur:"5s" },
-          { top:"38%", left:"82%", size:3, delay:"1.2s", dur:"6.5s" },
-          { top:"68%", left:"12%", size:5, delay:"2s", dur:"4.5s" },
-          { top:"75%", left:"72%", size:3, delay:"0.6s", dur:"7s" },
-          { top:"30%", left:"60%", size:2, delay:"1.8s", dur:"5.5s" },
-          { top:"85%", left:"40%", size:4, delay:"3s", dur:"6s" },
+          { top:"25%", left:"8%",  size:3, delay:"0s",   dur:"5s" },
+          { top:"55%", left:"22%", size:4, delay:"1.5s", dur:"6s" },
+          { top:"75%", left:"10%", size:2, delay:"2.5s", dur:"4.5s" },
+          { top:"38%", left:"35%", size:3, delay:"0.8s", dur:"7s" },
         ].map((p, i) => (
           <div key={i} className="absolute pointer-events-none rounded-full" aria-hidden="true"
-            style={{ top: p.top, left: p.left, width: p.size, height: p.size, background: i % 2 === 0 ? P.gold : P.blueLight, animation: `float-particle ${p.dur} ease-in-out ${p.delay} infinite` }} />
+            style={{ top:p.top, left:p.left, width:p.size, height:p.size, background: i % 2 === 0 ? P.gold : P.blueLight, animation:`float-particle ${p.dur} ease-in-out ${p.delay} infinite` }} />
         ))}
 
-        <div className="relative z-10 max-w-4xl mx-auto">
-          <div className="pill fu-1 mx-auto mb-8" style={{ background: P.goldMuted, border:`1px solid ${P.goldBorder}`, color: P.goldLight }}>
-            <span style={{ width:6, height:6, borderRadius:"50%", background:P.gold, display:"inline-block", animation:"glow-pulse-gold 2.5s ease-in-out infinite", flexShrink:0 }} />
-            FORMAÇÃO PROFISSIONAL · ONLINE AO VIVO
-          </div>
+        {/* conteúdo esquerda */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-16 pt-24 pb-20">
+          <div className="max-w-xl">
+            <div className="pill fu-1 mb-8" style={{ background:P.goldMuted, border:`1px solid ${P.goldBorder}`, color:P.goldLight }}>
+              <span style={{ width:6, height:6, borderRadius:"50%", background:P.gold, display:"inline-block", animation:"glow-pulse-gold 2.5s ease-in-out infinite", flexShrink:0 }} />
+              FORMAÇÃO PROFISSIONAL · ONLINE AO VIVO
+            </div>
 
-          <h1 className="fu-2 mb-6" style={{ fontWeight:300, fontSize:"clamp(3rem,9vw,6rem)", lineHeight:1.06, color:P.white }}>
-            PNL para{" "}
-            <span className="gold-text" style={{ fontStyle:"italic", fontFamily:"Georgia,'Times New Roman',serif" }}>Terapeutas</span>
-          </h1>
+            <h1 className="fu-2 mb-6" style={{ fontWeight:300, fontSize:"clamp(2.8rem,6vw,5.2rem)", lineHeight:1.08, color:P.white }}>
+              PNL para{" "}
+              <span className="gold-text" style={{ fontStyle:"italic", fontFamily:"Georgia,'Times New Roman',serif" }}>Terapeutas</span>
+            </h1>
 
-          <p className="fu-3 mb-4 mx-auto" style={{ maxWidth:640, fontSize:"clamp(1.05rem,2.5vw,1.22rem)", lineHeight:1.75, color:P.textMuted, fontWeight:300 }}>
-            Aprenda a investigar com profundidade, entregar com precisão e comunicar o valor do seu trabalho com clareza.
-          </p>
-          <p className="fu-3 mb-12 mx-auto" style={{ maxWidth:540, fontSize:".95rem", lineHeight:1.75, color:P.textMuted, fontWeight:300 }}>
-            Um curso prático de Programação Neurolinguística desenvolvido para terapeutas que querem ir além da intuição e operar com método.
-          </p>
+            <p className="fu-3 mb-4" style={{ fontSize:"clamp(1rem,2vw,1.18rem)", lineHeight:1.75, color:P.textMuted, fontWeight:300 }}>
+              Aprenda a investigar com profundidade, entregar com precisão e comunicar o valor do seu trabalho com clareza.
+            </p>
+            <p className="fu-3 mb-12" style={{ fontSize:".95rem", lineHeight:1.75, color:P.textMuted, fontWeight:300 }}>
+              Um curso prático de Programação Neurolinguística desenvolvido para terapeutas que querem ir além da intuição e operar com método.
+            </p>
 
-          <div className="fu-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn-base btn-blue-solid">
-              <WaIcon />Quero me inscrever
-            </a>
-            <a href={WA_AULA} target="_blank" rel="noopener noreferrer" className="btn-base btn-ghost-gold">
-              Assistir aula gratuita
-            </a>
+            <div className="fu-4 flex flex-col sm:flex-row gap-4 items-start">
+              <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn-base btn-blue-solid">
+                <WaIcon />Quero me inscrever
+              </a>
+              <a href={WA_AULA} target="_blank" rel="noopener noreferrer" className="btn-base btn-ghost-gold">
+                Assistir aula gratuita
+              </a>
+            </div>
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 pointer-events-none" style={{ height:160, background:`linear-gradient(transparent,${P.bg})` }} />
+        <div className="absolute bottom-0 left-0 right-0 pointer-events-none" style={{ height:120, background:`linear-gradient(transparent,${P.bg})` }} />
       </section>
 
       {/* ══ 2. PROBLEMA ══ */}
