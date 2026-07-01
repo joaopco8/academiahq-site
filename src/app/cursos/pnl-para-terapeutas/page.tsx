@@ -179,6 +179,12 @@ export default function PNLParaTerapeutasPage() {
         .pill { display:inline-flex; align-items:center; gap:8px; border-radius:9999px; font-size:.67rem; letter-spacing:.2em; font-weight:300; padding:6px 18px; }
         .tag { font-size:.72rem; font-weight:300; letter-spacing:.09em; border-radius:6px; padding:4px 10px; }
 
+        /* ── responsive ── */
+        @media (max-width: 767px) {
+          .btn-base { width:100%; justify-content:center; }
+          .pill { font-size:.6rem; letter-spacing:.14em; padding:5px 14px; }
+        }
+
         /* ── sergio photo ring ── */
         @keyframes ring-spin { 0% { transform:rotate(0deg); } 100% { transform:rotate(360deg); } }
         .photo-ring {
@@ -189,74 +195,66 @@ export default function PNLParaTerapeutasPage() {
       `}</style>
 
       {/* ══ 1. HERO ══ */}
-      <section className="relative w-full min-h-screen flex items-center overflow-hidden" style={{ background: P.bg }}>
-        {/* imagem — ocupa metade direita, posicionada à direita */}
-        <div className="absolute inset-y-0 right-0 pointer-events-none" style={{ width:"58%", left:"42%" }} aria-hidden="true">
-          <Image
-            src="/bg-pnl.png"
-            alt=""
-            fill
-            priority
-            style={{ objectFit:"cover", objectPosition:"left center" }}
-            sizes="58vw"
-          />
-          {/* degrade interno da imagem pra fundir com o fundo */}
-          <div style={{ position:"absolute", inset:0, background:"linear-gradient(90deg, #04081A 0%, rgba(4,8,26,0.6) 30%, rgba(4,8,26,0.1) 65%, transparent 100%)" }} />
+      <section className="relative w-full overflow-hidden" style={{ background: P.bg }}>
+
+        {/* ── DESKTOP: imagem absoluta direita (oculta no mobile) ── */}
+        <div className="hidden md:block absolute inset-y-0 right-0 pointer-events-none" style={{ width:"58%", left:"42%" }} aria-hidden="true">
+          <Image src="/bg-pnl.png" alt="" fill priority style={{ objectFit:"cover", objectPosition:"left center" }} sizes="58vw" />
+          <div style={{ position:"absolute", inset:0, background:"linear-gradient(90deg,#04081A 0%,rgba(4,8,26,0.55) 28%,rgba(4,8,26,0.1) 60%,transparent 100%)" }} />
         </div>
+        <div className="hidden md:block absolute inset-y-0 left-0 pointer-events-none" style={{ width:"42%", background: P.bg }} aria-hidden="true" />
+        <div className="hidden md:block absolute inset-0 pointer-events-none" aria-hidden="true"
+          style={{ background:`linear-gradient(180deg,rgba(4,8,26,0.55) 0%,transparent 14%,transparent 80%,${P.bg} 100%)` }} />
 
-        {/* fundo sólido esquerda */}
-        <div className="absolute inset-y-0 left-0 pointer-events-none" style={{ width:"42%", background: P.bg }} aria-hidden="true" />
-
-        {/* escurecer topo e base */}
-        <div className="absolute inset-0 pointer-events-none" aria-hidden="true"
-          style={{ background:`linear-gradient(180deg, rgba(4,8,26,0.6) 0%, transparent 15%, transparent 80%, ${P.bg} 100%)` }} />
-
-        {/* grid animado só na esquerda */}
-        <div className="absolute inset-0 grid-bg pointer-events-none opacity-25" aria-hidden="true"
-          style={{ maskImage:"linear-gradient(90deg, black 0%, black 25%, transparent 50%)", WebkitMaskImage:"linear-gradient(90deg, black 0%, black 25%, transparent 50%)" }} />
-
-        {/* orbs */}
-        <div className="absolute pointer-events-none" style={{ top:"20%", left:"2%", width:500, height:500, background:"radial-gradient(circle,rgba(37,99,235,0.12) 0%,transparent 65%)", filter:"blur(80px)", animation:"orb-a 18s ease-in-out infinite" }} aria-hidden="true" />
-        <div className="absolute pointer-events-none" style={{ bottom:"10%", left:"5%", width:350, height:350, background:"radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 65%)", filter:"blur(60px)", animation:"orb-b 22s ease-in-out infinite" }} aria-hidden="true" />
-
-        {/* partículas esquerda */}
+        {/* grid + orbs (desktop only) */}
+        <div className="hidden md:block absolute inset-0 grid-bg pointer-events-none opacity-25" aria-hidden="true"
+          style={{ maskImage:"linear-gradient(90deg,black 0%,black 25%,transparent 50%)", WebkitMaskImage:"linear-gradient(90deg,black 0%,black 25%,transparent 50%)" }} />
+        <div className="hidden md:block absolute pointer-events-none" style={{ top:"20%", left:"2%", width:500, height:500, background:"radial-gradient(circle,rgba(37,99,235,0.12) 0%,transparent 65%)", filter:"blur(80px)", animation:"orb-a 18s ease-in-out infinite" }} aria-hidden="true" />
+        <div className="hidden md:block absolute pointer-events-none" style={{ bottom:"10%", left:"5%", width:350, height:350, background:"radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 65%)", filter:"blur(60px)", animation:"orb-b 22s ease-in-out infinite" }} aria-hidden="true" />
         {[
-          { top:"28%", left:"4%",  size:3, delay:"0s",   dur:"5s" },
+          { top:"28%", left:"4%", size:3, delay:"0s", dur:"5s" },
           { top:"58%", left:"18%", size:4, delay:"1.5s", dur:"6s" },
-          { top:"78%", left:"7%",  size:2, delay:"2.5s", dur:"4.5s" },
           { top:"42%", left:"30%", size:3, delay:"0.8s", dur:"7s" },
         ].map((p, i) => (
-          <div key={i} className="absolute pointer-events-none rounded-full" aria-hidden="true"
+          <div key={i} className="hidden md:block absolute pointer-events-none rounded-full" aria-hidden="true"
             style={{ top:p.top, left:p.left, width:p.size, height:p.size, background: i % 2 === 0 ? P.gold : P.blueLight, animation:`float-particle ${p.dur} ease-in-out ${p.delay} infinite` }} />
         ))}
 
-        {/* conteúdo — alinhado à esquerda */}
-        <div className="relative z-10 w-full pt-24 pb-20 px-8 lg:px-20" style={{ maxWidth:"50%" }}>
-          <div className="pill fu-1 mb-8" style={{ background:P.goldMuted, border:`1px solid ${P.goldBorder}`, color:P.goldLight }}>
-            <span style={{ width:6, height:6, borderRadius:"50%", background:P.gold, display:"inline-block", animation:"glow-pulse-gold 2.5s ease-in-out infinite", flexShrink:0 }} />
-            FORMAÇÃO PROFISSIONAL · ONLINE AO VIVO
-          </div>
+        {/* ── TEXTO (mobile: full width + centered | desktop: left 50%) ── */}
+        <div className="relative z-10 md:min-h-screen md:flex md:items-center">
+          <div className="w-full md:max-w-[50%] pt-24 pb-8 md:pb-20 px-6 md:px-20 text-center md:text-left">
+            <div className="pill fu-1 mb-8 mx-auto md:mx-0" style={{ background:P.goldMuted, border:`1px solid ${P.goldBorder}`, color:P.goldLight }}>
+              <span style={{ width:6, height:6, borderRadius:"50%", background:P.gold, display:"inline-block", animation:"glow-pulse-gold 2.5s ease-in-out infinite", flexShrink:0 }} />
+              FORMAÇÃO PROFISSIONAL · ONLINE AO VIVO
+            </div>
 
-          <h1 className="fu-2 mb-6" style={{ fontWeight:300, fontSize:"clamp(2.6rem,5vw,5rem)", lineHeight:1.08, color:P.white }}>
-            PNL para{" "}
-            <span className="gold-text" style={{ fontStyle:"italic", fontFamily:"Georgia,'Times New Roman',serif" }}>Terapeutas</span>
-          </h1>
+            <h1 className="fu-2 mb-6" style={{ fontWeight:300, fontSize:"clamp(2.5rem,6vw,5rem)", lineHeight:1.08, color:P.white }}>
+              PNL para{" "}
+              <span className="gold-text" style={{ fontStyle:"italic", fontFamily:"Georgia,'Times New Roman',serif" }}>Terapeutas</span>
+            </h1>
 
-          <p className="fu-3 mb-12" style={{ maxWidth:460, fontSize:"clamp(.95rem,1.6vw,1.12rem)", lineHeight:1.8, color:P.textMuted, fontWeight:300 }}>
-            Um curso prático de PNL para terapeutas que querem ir além da intuição — investigar com profundidade, entregar com precisão e comunicar o valor do seu trabalho.
-          </p>
+            <p className="fu-3 mb-10 mx-auto md:mx-0" style={{ maxWidth:460, fontSize:"clamp(.95rem,1.6vw,1.1rem)", lineHeight:1.8, color:P.textMuted, fontWeight:300 }}>
+              Um curso prático de PNL para terapeutas que querem ir além da intuição — investigar com profundidade, entregar com precisão e comunicar o valor do seu trabalho.
+            </p>
 
-          <div className="fu-4 flex flex-col sm:flex-row gap-4 items-start">
-            <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn-base btn-blue-solid">
-              <WaIcon />Quero me inscrever
-            </a>
-            <a href={WA_AULA} target="_blank" rel="noopener noreferrer" className="btn-base btn-ghost-gold">
-              Assistir aula gratuita
-            </a>
+            <div className="fu-4 flex flex-col sm:flex-row gap-3 items-center md:items-start justify-center md:justify-start">
+              <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn-base btn-blue-solid w-full sm:w-auto">
+                <WaIcon />Quero me inscrever
+              </a>
+              <a href={WA_AULA} target="_blank" rel="noopener noreferrer" className="btn-base btn-ghost-gold w-full sm:w-auto">
+                Assistir aula gratuita
+              </a>
+            </div>
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 pointer-events-none" style={{ height:120, background:`linear-gradient(transparent,${P.bg})` }} />
+        {/* ── MOBILE: imagem abaixo do texto (oculta no desktop) ── */}
+        <div className="relative md:hidden w-full pointer-events-none" style={{ height:"70vw", maxHeight:480 }} aria-hidden="true">
+          <Image src="/bg-pnl.png" alt="" fill priority style={{ objectFit:"cover", objectPosition:"center top" }} sizes="100vw" />
+          <div style={{ position:"absolute", inset:0, background:`linear-gradient(180deg,${P.bg} 0%,transparent 25%,transparent 72%,${P.bg} 100%)` }} />
+        </div>
+
+        <div className="hidden md:block absolute bottom-0 left-0 right-0 pointer-events-none" style={{ height:120, background:`linear-gradient(transparent,${P.bg})` }} />
       </section>
 
       {/* ══ 2. PROBLEMA ══ */}
