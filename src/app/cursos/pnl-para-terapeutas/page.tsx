@@ -460,7 +460,7 @@ export default function PNLParaTerapeutasPage() {
       {/* ══ 7. INVESTIMENTO ══ */}
       <section className="relative w-full py-24 px-6 overflow-hidden" style={{ background:P.bg }}>
         <div className="absolute inset-0 grid-bg pointer-events-none opacity-25" aria-hidden="true" />
-        <div className="relative max-w-3xl mx-auto">
+        <div className="relative max-w-6xl mx-auto">
           <div className="text-center mb-14 reveal">
             <p className="text-xs uppercase mb-4" style={{ color:P.gold, fontWeight:300, letterSpacing:".22em" }}>Investimento</p>
             <h2 style={{ fontFamily:"Georgia,'Times New Roman',serif", fontWeight:400, fontSize:"clamp(1.8rem,4vw,2.8rem)", color:P.white }}>
@@ -468,90 +468,96 @@ export default function PNLParaTerapeutasPage() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="card-hover card-hover-gold p-8 rounded-xl reveal reveal-delay-1"
-              style={{ background:P.goldMuted, border:`1px solid ${P.goldBorder}`, backdropFilter:"blur(24px)" }}>
-              <div className="pill mb-6" style={{ background:"rgba(201,168,76,0.10)", border:`1px solid ${P.goldBorder}`, color:P.goldLight }}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            {/* Card 1 — Turma Coletiva */}
+            <div className="card-hover card-hover-gold rounded-xl reveal reveal-delay-1 flex flex-col"
+              style={{ background:P.goldMuted, border:`1px solid ${P.goldBorder}`, backdropFilter:"blur(24px)", padding:"2rem" }}>
+              <div className="pill mb-5" style={{ background:"rgba(201,168,76,0.10)", border:`1px solid ${P.goldBorder}`, color:P.goldLight }}>
                 <span style={{ width:6, height:6, borderRadius:"50%", background:P.gold, display:"inline-block", flexShrink:0 }} />
                 Turma Coletiva
               </div>
-              <p className="text-xs uppercase mb-3" style={{ color:P.textFaint, fontWeight:300, letterSpacing:".18em" }}>Investimento</p>
-              <div className="flex items-end gap-1.5 mb-6">
-                <span style={{ color:P.textMuted, fontSize:"1.1rem", fontWeight:300, marginBottom:8 }}>R$</span>
-                <span className="gold-text" style={{ fontSize:"clamp(2.5rem,8vw,4rem)", lineHeight:1, fontWeight:300, fontFamily:"Georgia,serif" }}>4.400</span>
-                <span style={{ color:P.textMuted, fontSize:"1.1rem", fontWeight:300, marginBottom:8 }}>,00</span>
+              <p className="text-xs uppercase mb-2" style={{ color:P.textFaint, fontWeight:300, letterSpacing:".18em" }}>Investimento</p>
+              <div className="flex items-end gap-1 mb-4">
+                <span style={{ color:P.textMuted, fontSize:"1rem", fontWeight:300, marginBottom:6 }}>R$</span>
+                <span className="gold-text" style={{ fontSize:"clamp(2rem,3.5vw,3rem)", lineHeight:1, fontWeight:300, fontFamily:"Georgia,serif" }}>4.400</span>
+                <span style={{ color:P.textMuted, fontSize:"1rem", fontWeight:300, marginBottom:6 }}>,00</span>
               </div>
               <Divider color={P.goldBorder} />
-              <ul className="space-y-3 my-6">
+              <ul className="space-y-3 my-5 flex-1">
                 {INCLUSOS.map((item, i) => (
-                  <li key={i} className="flex items-center gap-3">
+                  <li key={i} className="flex items-start gap-3">
                     <CheckIcon color={P.gold} />
-                    <span style={{ color:P.textMuted, fontWeight:300, fontSize:".9rem" }}>{item}</span>
+                    <span style={{ color:P.textMuted, fontWeight:300, fontSize:".85rem", lineHeight:1.5 }}>{item}</span>
                   </li>
                 ))}
               </ul>
-              <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn-base btn-gold-solid w-full">
-                <WaIcon />Falar com o Sergio no WhatsApp
+              <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn-base btn-gold-solid"
+                style={{ width:"100%", fontSize:".78rem", padding:"12px 16px" }}>
+                <WaIcon />WhatsApp — Sergio
               </a>
             </div>
 
-            {/* ── Aula Individual: Níveis Neurológicos ── */}
-            <div className="card-hover p-8 rounded-xl reveal reveal-delay-2"
-              style={{ background:P.blueMuted, border:`1px solid ${P.blueBorder}`, backdropFilter:"blur(24px)" }}>
-              <div className="pill mb-6" style={{ background:"rgba(37,99,235,0.10)", border:`1px solid ${P.blueBorder}`, color:P.blueLight }}>
+            {/* Card 2 — Aula Individual Níveis Neurológicos */}
+            <div className="card-hover rounded-xl reveal reveal-delay-2 flex flex-col"
+              style={{ background:P.blueMuted, border:`1px solid ${P.blueBorder}`, backdropFilter:"blur(24px)", padding:"2rem" }}>
+              <div className="pill mb-5" style={{ background:"rgba(37,99,235,0.10)", border:`1px solid ${P.blueBorder}`, color:P.blueLight }}>
                 <span style={{ width:6, height:6, borderRadius:"50%", background:P.blue, display:"inline-block", flexShrink:0 }} />
                 Aula Individual
               </div>
               <p className="text-xs uppercase mb-2" style={{ color:P.textFaint, fontWeight:300, letterSpacing:".18em" }}>Investimento</p>
-              <div className="flex items-end gap-1.5 mb-2">
-                <span style={{ color:P.textMuted, fontSize:"1.1rem", fontWeight:300, marginBottom:8 }}>R$</span>
-                <span style={{ fontSize:"clamp(2.5rem,8vw,4rem)", lineHeight:1, fontWeight:300, fontFamily:"Georgia,serif", color:P.blueLight }}>840</span>
-                <span style={{ color:P.textMuted, fontSize:"1.1rem", fontWeight:300, marginBottom:8 }}>,00</span>
+              <div className="flex items-end gap-1 mb-1">
+                <span style={{ color:P.textMuted, fontSize:"1rem", fontWeight:300, marginBottom:6 }}>R$</span>
+                <span style={{ fontSize:"clamp(2rem,3.5vw,3rem)", lineHeight:1, fontWeight:300, fontFamily:"Georgia,serif", color:P.blueLight }}>840</span>
+                <span style={{ color:P.textMuted, fontSize:"1rem", fontWeight:300, marginBottom:6 }}>,00</span>
               </div>
-              <p className="mb-6" style={{ color:P.textFaint, fontWeight:300, fontSize:".78rem", lineHeight:1.5 }}>
-                Apenas sobre o tema<br />
-                <span style={{ color:P.blueLight, fontWeight:400 }}>Níveis Neurológicos</span>
+              <p className="mb-4" style={{ color:P.textFaint, fontWeight:300, fontSize:".78rem", lineHeight:1.5 }}>
+                Apenas sobre o tema{" "}
+                <span style={{ color:P.blueLight }}>Níveis Neurológicos</span>
               </p>
               <Divider color={P.blueBorder} />
-              <ul className="space-y-3 my-6">
-                <li className="flex items-center gap-3">
+              <ul className="space-y-3 my-5 flex-1">
+                <li className="flex items-start gap-3">
                   <CheckIcon color={P.blueLight} />
-                  <span style={{ color:P.textMuted, fontWeight:300, fontSize:".9rem" }}>Sessão individual via videochamada</span>
+                  <span style={{ color:P.textMuted, fontWeight:300, fontSize:".85rem", lineHeight:1.5 }}>Sessão individual via videochamada</span>
                 </li>
-                <li className="flex items-center gap-3">
+                <li className="flex items-start gap-3">
                   <CheckIcon color={P.blueLight} />
-                  <span style={{ color:P.textMuted, fontWeight:300, fontSize:".9rem" }}>Foco exclusivo em Níveis Neurológicos</span>
+                  <span style={{ color:P.textMuted, fontWeight:300, fontSize:".85rem", lineHeight:1.5 }}>Foco exclusivo em Níveis Neurológicos</span>
                 </li>
-                <li className="flex items-center gap-3">
+                <li className="flex items-start gap-3">
                   <CheckIcon color={P.blueLight} />
-                  <span style={{ color:P.textMuted, fontWeight:300, fontSize:".9rem" }}>Aplicação direta à sua prática clínica</span>
+                  <span style={{ color:P.textMuted, fontWeight:300, fontSize:".85rem", lineHeight:1.5 }}>Aplicação direta à sua prática clínica</span>
                 </li>
               </ul>
-              <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn-base w-full"
-                style={{ background:P.blue, color:P.white, border:"none", display:"flex", alignItems:"center", justifyContent:"center", gap:8 }}>
+              <a href={WA_URL} target="_blank" rel="noopener noreferrer"
+                style={{ width:"100%", display:"flex", alignItems:"center", justifyContent:"center", gap:8, background:P.blue, color:P.white, border:"none", borderRadius:8, padding:"12px 16px", fontSize:".78rem", fontWeight:500, letterSpacing:".09em", textDecoration:"none", transition:"transform .2s, box-shadow .2s" }}>
                 <WaIcon />Tenho interesse
               </a>
             </div>
 
-            <div className="p-8 rounded-xl flex flex-col justify-between reveal reveal-delay-3"
-              style={{ background:"rgba(255,255,255,0.02)", border:"1px solid rgba(255,255,255,0.06)" }}>
+            {/* Card 3 — Info */}
+            <div className="rounded-xl flex flex-col justify-between reveal reveal-delay-3"
+              style={{ background:"rgba(255,255,255,0.02)", border:"1px solid rgba(255,255,255,0.06)", padding:"2rem" }}>
               <div>
                 <svg viewBox="0 0 32 32" fill="none" className="mb-6" width="32" height="32">
                   <circle cx="16" cy="16" r="15" stroke={P.goldBorder} strokeWidth="1" />
                   <path d="M16 10v7" stroke={P.gold} strokeWidth="1.8" strokeLinecap="round" />
                   <circle cx="16" cy="21.5" r="1.5" fill={P.gold} />
                 </svg>
-                <p style={{ color:P.textMuted, lineHeight:1.9, fontWeight:300, fontSize:".95rem" }}>
+                <p style={{ color:P.textMuted, lineHeight:1.9, fontWeight:300, fontSize:".9rem" }}>
                   Após o contato, você recebe todas as informações sobre{" "}
                   <span style={{ color:P.white }}>datas e formas de pagamento</span>.
                 </p>
               </div>
-              <div className="mt-10">
-                <a href={WA_AULA} target="_blank" rel="noopener noreferrer" className="btn-base btn-ghost-gold w-full">
-                  Assistir aula gratuita antes
+              <div className="mt-8">
+                <a href={WA_AULA} target="_blank" rel="noopener noreferrer" className="btn-base btn-ghost-gold"
+                  style={{ width:"100%", fontSize:".78rem", padding:"12px 16px" }}>
+                  Aula gratuita antes
                 </a>
               </div>
             </div>
+
           </div>
         </div>
       </section>
