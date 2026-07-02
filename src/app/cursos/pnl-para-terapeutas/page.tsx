@@ -468,7 +468,7 @@ export default function PNLParaTerapeutasPage() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             <div className="card-hover card-hover-gold p-8 rounded-xl reveal reveal-delay-1"
               style={{ background:P.goldMuted, border:`1px solid ${P.goldBorder}`, backdropFilter:"blur(24px)" }}>
               <div className="pill mb-6" style={{ background:"rgba(201,168,76,0.10)", border:`1px solid ${P.goldBorder}`, color:P.goldLight }}>
@@ -495,7 +495,45 @@ export default function PNLParaTerapeutasPage() {
               </a>
             </div>
 
-            <div className="p-8 rounded-xl flex flex-col justify-between reveal reveal-delay-2"
+            {/* ── Aula Individual: Níveis Neurológicos ── */}
+            <div className="card-hover p-8 rounded-xl reveal reveal-delay-2"
+              style={{ background:P.blueMuted, border:`1px solid ${P.blueBorder}`, backdropFilter:"blur(24px)" }}>
+              <div className="pill mb-6" style={{ background:"rgba(37,99,235,0.10)", border:`1px solid ${P.blueBorder}`, color:P.blueLight }}>
+                <span style={{ width:6, height:6, borderRadius:"50%", background:P.blue, display:"inline-block", flexShrink:0 }} />
+                Aula Individual
+              </div>
+              <p className="text-xs uppercase mb-2" style={{ color:P.textFaint, fontWeight:300, letterSpacing:".18em" }}>Investimento</p>
+              <div className="flex items-end gap-1.5 mb-2">
+                <span style={{ color:P.textMuted, fontSize:"1.1rem", fontWeight:300, marginBottom:8 }}>R$</span>
+                <span style={{ fontSize:"clamp(2.5rem,8vw,4rem)", lineHeight:1, fontWeight:300, fontFamily:"Georgia,serif", color:P.blueLight }}>840</span>
+                <span style={{ color:P.textMuted, fontSize:"1.1rem", fontWeight:300, marginBottom:8 }}>,00</span>
+              </div>
+              <p className="mb-6" style={{ color:P.textFaint, fontWeight:300, fontSize:".78rem", lineHeight:1.5 }}>
+                Apenas sobre o tema<br />
+                <span style={{ color:P.blueLight, fontWeight:400 }}>Níveis Neurológicos</span>
+              </p>
+              <Divider color={P.blueBorder} />
+              <ul className="space-y-3 my-6">
+                <li className="flex items-center gap-3">
+                  <CheckIcon color={P.blueLight} />
+                  <span style={{ color:P.textMuted, fontWeight:300, fontSize:".9rem" }}>Sessão individual via videochamada</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <CheckIcon color={P.blueLight} />
+                  <span style={{ color:P.textMuted, fontWeight:300, fontSize:".9rem" }}>Foco exclusivo em Níveis Neurológicos</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <CheckIcon color={P.blueLight} />
+                  <span style={{ color:P.textMuted, fontWeight:300, fontSize:".9rem" }}>Aplicação direta à sua prática clínica</span>
+                </li>
+              </ul>
+              <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn-base w-full"
+                style={{ background:P.blue, color:P.white, border:"none", display:"flex", alignItems:"center", justifyContent:"center", gap:8 }}>
+                <WaIcon />Tenho interesse
+              </a>
+            </div>
+
+            <div className="p-8 rounded-xl flex flex-col justify-between reveal reveal-delay-3"
               style={{ background:"rgba(255,255,255,0.02)", border:"1px solid rgba(255,255,255,0.06)" }}>
               <div>
                 <svg viewBox="0 0 32 32" fill="none" className="mb-6" width="32" height="32">
