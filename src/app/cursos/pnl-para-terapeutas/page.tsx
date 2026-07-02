@@ -47,7 +47,7 @@ const XIcon = () => (
 );
 
 const Divider = ({ color }: { color: string }) => (
-  <div style={{ height: 1, background: `linear-gradient(90deg, transparent, ${color}, transparent)`, margin: "24px 0" }} />
+  <div style={{ height: 1, background: `linear-gradient(90deg, transparent, ${color}, transparent)`, margin: "20px 0" }} />
 );
 
 const MODULOS = [
@@ -97,7 +97,7 @@ export default function PNLParaTerapeutasPage() {
           }
         });
       },
-      { threshold: 0.08 }
+      { threshold: 0.06 }
     );
 
     const els = mainRef.current?.querySelectorAll(".reveal");
@@ -106,13 +106,13 @@ export default function PNLParaTerapeutasPage() {
   }, []);
 
   return (
-    <main ref={mainRef} style={{ background: P.bg, color: P.text, minHeight: "100vh" }}>
+    <main ref={mainRef} style={{ background: P.bg, color: P.text, minHeight: "100vh", overflowX: "hidden" }}>
       <style>{`
         /* ── scroll reveal ── */
         .reveal {
           opacity: 0;
-          transform: translateY(32px) scale(0.99);
-          filter: blur(8px);
+          transform: translateY(28px) scale(0.99);
+          filter: blur(6px);
           transition: opacity .75s cubic-bezier(.22,1,.36,1),
                       transform .75s cubic-bezier(.22,1,.36,1),
                       filter .6s ease;
@@ -166,7 +166,7 @@ export default function PNLParaTerapeutasPage() {
         .card-hover-gold:hover { border-color: ${P.gold} !important; box-shadow: 0 10px 60px ${P.goldGlow}; }
 
         /* ── buttons ── */
-        .btn-base { display:inline-flex; align-items:center; justify-content:center; gap:10px; font-size:.82rem; font-weight:500; letter-spacing:.09em; border-radius:8px; padding:14px 32px; text-decoration:none; transition:transform .2s, box-shadow .2s, background .2s; cursor:pointer; border:none; }
+        .btn-base { display:inline-flex; align-items:center; justify-content:center; gap:10px; font-size:.82rem; font-weight:500; letter-spacing:.09em; border-radius:8px; padding:14px 28px; text-decoration:none; transition:transform .2s, box-shadow .2s, background .2s; cursor:pointer; border:none; white-space:nowrap; }
         .btn-base:hover { transform:translateY(-2px); }
         .btn-blue-solid { background:linear-gradient(135deg,${P.blue},${P.blueDark}); color:#fff; box-shadow:0 0 36px ${P.blueGlow}; }
         .btn-blue-solid:hover { box-shadow:0 0 64px ${P.blueGlow}; }
@@ -179,12 +179,6 @@ export default function PNLParaTerapeutasPage() {
         .pill { display:inline-flex; align-items:center; gap:8px; border-radius:9999px; font-size:.67rem; letter-spacing:.2em; font-weight:300; padding:6px 18px; }
         .tag { font-size:.72rem; font-weight:300; letter-spacing:.09em; border-radius:6px; padding:4px 10px; }
 
-        /* ── responsive ── */
-        @media (max-width: 767px) {
-          .btn-base { width:100%; justify-content:center; }
-          .pill { font-size:.6rem; letter-spacing:.14em; padding:5px 14px; }
-        }
-
         /* ── sergio photo ring ── */
         @keyframes ring-spin { 0% { transform:rotate(0deg); } 100% { transform:rotate(360deg); } }
         .photo-ring {
@@ -192,12 +186,37 @@ export default function PNLParaTerapeutasPage() {
           background: conic-gradient(${P.gold}, ${P.goldLight}, ${P.blue}, ${P.gold});
           animation: ring-spin 8s linear infinite;
         }
+
+        /* ══ MOBILE RESPONSIVE ══ */
+        @media (max-width: 767px) {
+          /* buttons */
+          .btn-base { width:100%; justify-content:center; padding:13px 20px; font-size:.8rem; white-space:normal; }
+          .pill { font-size:.58rem; letter-spacing:.12em; padding:5px 12px; }
+
+          /* section spacing */
+          .sec-pad { padding-top:3.5rem !important; padding-bottom:3.5rem !important; }
+          .sec-pad-sm { padding-top:2.5rem !important; padding-bottom:2.5rem !important; }
+
+          /* card padding */
+          .card-p { padding:1.25rem !important; }
+
+          /* heading sizes */
+          h1 { font-size: clamp(1.9rem, 8vw, 2.8rem) !important; }
+          h2 { font-size: clamp(1.5rem, 6vw, 2.2rem) !important; }
+
+          /* price number */
+          .price-num { font-size: 2.5rem !important; }
+
+          /* facilitator */
+          .facilitator-gap { gap: 2rem !important; }
+          .photo-size { width: 160px !important; height: 160px !important; }
+        }
       `}</style>
 
       {/* ══ 1. HERO ══ */}
       <section className="relative w-full overflow-hidden" style={{ background: P.bg }}>
 
-        {/* ── DESKTOP: imagem absoluta direita (oculta no mobile) ── */}
+        {/* DESKTOP: imagem absoluta direita */}
         <div className="hidden md:block absolute inset-y-0 right-0 pointer-events-none" style={{ width:"58%", left:"42%" }} aria-hidden="true">
           <Image src="/bg-pnl.png" alt="" fill priority style={{ objectFit:"cover", objectPosition:"left center" }} sizes="58vw" />
           <div style={{ position:"absolute", inset:0, background:"linear-gradient(90deg,#04081A 0%,rgba(4,8,26,0.55) 28%,rgba(4,8,26,0.1) 60%,transparent 100%)" }} />
@@ -206,7 +225,7 @@ export default function PNLParaTerapeutasPage() {
         <div className="hidden md:block absolute inset-0 pointer-events-none" aria-hidden="true"
           style={{ background:`linear-gradient(180deg,rgba(4,8,26,0.55) 0%,transparent 14%,transparent 80%,${P.bg} 100%)` }} />
 
-        {/* grid + orbs (desktop only) */}
+        {/* grid + orbs desktop only */}
         <div className="hidden md:block absolute inset-0 grid-bg pointer-events-none opacity-25" aria-hidden="true"
           style={{ maskImage:"linear-gradient(90deg,black 0%,black 25%,transparent 50%)", WebkitMaskImage:"linear-gradient(90deg,black 0%,black 25%,transparent 50%)" }} />
         <div className="hidden md:block absolute pointer-events-none" style={{ top:"20%", left:"2%", width:500, height:500, background:"radial-gradient(circle,rgba(37,99,235,0.12) 0%,transparent 65%)", filter:"blur(80px)", animation:"orb-a 18s ease-in-out infinite" }} aria-hidden="true" />
@@ -220,38 +239,37 @@ export default function PNLParaTerapeutasPage() {
             style={{ top:p.top, left:p.left, width:p.size, height:p.size, background: i % 2 === 0 ? P.gold : P.blueLight, animation:`float-particle ${p.dur} ease-in-out ${p.delay} infinite` }} />
         ))}
 
-        {/* ── TEXTO (mobile: full width + centered | desktop: left 50%) ── */}
+        {/* TEXTO — mobile: full-width centered | desktop: left 50% */}
         <div className="relative z-10 md:min-h-screen md:flex md:items-center">
-          <div className="w-full md:max-w-[50%] pt-24 pb-8 md:pb-20 px-6 md:px-20 text-center md:text-left">
-            <div className="pill fu-1 mb-8 mx-auto md:mx-0" style={{ background:P.goldMuted, border:`1px solid ${P.goldBorder}`, color:P.goldLight }}>
+          <div className="w-full md:max-w-[50%] pt-24 pb-8 md:pb-20 px-5 md:px-20 text-center md:text-left">
+            <div className="pill fu-1 mb-6 mx-auto md:mx-0" style={{ background:P.goldMuted, border:`1px solid ${P.goldBorder}`, color:P.goldLight }}>
               <span style={{ width:6, height:6, borderRadius:"50%", background:P.gold, display:"inline-block", animation:"glow-pulse-gold 2.5s ease-in-out infinite", flexShrink:0 }} />
               FORMAÇÃO PROFISSIONAL · ONLINE AO VIVO
             </div>
 
-            <h1 className="fu-2 mb-6" style={{ fontWeight:300, fontSize:"clamp(2.5rem,6vw,5rem)", lineHeight:1.08, color:P.white }}>
+            <h1 className="fu-2 mb-5" style={{ fontWeight:300, fontSize:"clamp(2.2rem,6vw,5rem)", lineHeight:1.1, color:P.white }}>
               PNL para{" "}
               <span className="gold-text" style={{ fontStyle:"italic", fontFamily:"Georgia,'Times New Roman',serif" }}>Terapeutas</span>
             </h1>
 
-            <p className="fu-3 mb-10 mx-auto md:mx-0" style={{ maxWidth:460, fontSize:"clamp(.95rem,1.6vw,1.1rem)", lineHeight:1.8, color:P.textMuted, fontWeight:300 }}>
+            <p className="fu-3 mb-8 mx-auto md:mx-0" style={{ maxWidth:460, fontSize:"clamp(.9rem,1.6vw,1.1rem)", lineHeight:1.8, color:P.textMuted, fontWeight:300 }}>
               Um curso prático de PNL para terapeutas que querem ir além da intuição — investigar com profundidade, entregar com precisão e comunicar o valor do seu trabalho.
             </p>
 
-            <div className="fu-4 flex flex-col sm:flex-row gap-3 items-center md:items-start justify-center md:justify-start">
-              <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn-base btn-blue-solid w-full sm:w-auto">
+            <div className="fu-4 flex flex-col sm:flex-row gap-3 items-stretch sm:items-center md:items-start justify-center md:justify-start">
+              <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn-base btn-blue-solid">
                 <WaIcon />Quero me inscrever
               </a>
-              <a href={WA_AULA} target="_blank" rel="noopener noreferrer" className="btn-base btn-ghost-gold w-full sm:w-auto">
-                Assistir aula gratuita
+              <a href={WA_AULA} target="_blank" rel="noopener noreferrer" className="btn-base btn-ghost-gold">
+                Aula gratuita
               </a>
             </div>
           </div>
         </div>
 
-        {/* ── MOBILE: imagem abaixo do texto (oculta no desktop) ── */}
+        {/* MOBILE: imagem abaixo do texto */}
         <div className="relative md:hidden w-full" style={{ height:"75vw", maxHeight:500 }} aria-hidden="true">
           <Image src="/bg-pnl.png" alt="" fill priority style={{ objectFit:"cover", objectPosition:"center top" }} sizes="100vw" />
-          {/* gradiente topo forte */}
           <div style={{ position:"absolute", inset:0, background:`linear-gradient(180deg, ${P.bg} 0%, rgba(4,8,26,0.7) 18%, transparent 42%, transparent 62%, rgba(4,8,26,0.75) 82%, ${P.bg} 100%)` }} />
         </div>
 
@@ -259,29 +277,29 @@ export default function PNLParaTerapeutasPage() {
       </section>
 
       {/* ══ 2. PROBLEMA ══ */}
-      <section className="relative w-full py-24 px-6 overflow-hidden" style={{ background:P.mid }}>
+      <section className="relative w-full sec-pad overflow-hidden" style={{ background:P.mid, paddingTop:"6rem", paddingBottom:"6rem", paddingLeft:"1.25rem", paddingRight:"1.25rem" }}>
         <div className="absolute inset-0 pointer-events-none" style={{ background:"radial-gradient(ellipse 80% 50% at 50% 100%,rgba(37,99,235,0.05) 0%,transparent 70%)" }} aria-hidden="true" />
         <div className="relative max-w-4xl mx-auto">
-          <div className="text-center mb-16 reveal">
+          <div className="text-center mb-10 md:mb-16 reveal">
             <p className="text-xs uppercase mb-4" style={{ color:P.gold, fontWeight:300, letterSpacing:".22em" }}>O Problema</p>
-            <h2 style={{ fontFamily:"Georgia,'Times New Roman',serif", fontWeight:400, fontSize:"clamp(1.8rem,4vw,2.8rem)", color:P.white, lineHeight:1.25 }}>
+            <h2 style={{ fontFamily:"Georgia,'Times New Roman',serif", fontWeight:400, fontSize:"clamp(1.6rem,4vw,2.8rem)", color:P.white, lineHeight:1.25 }}>
               O que ninguém te ensinou<br />na formação de terapeuta
             </h2>
             <Divider color={P.goldBorder} />
-            <p className="mx-auto" style={{ maxWidth:600, color:P.textMuted, lineHeight:1.85, fontWeight:300, fontSize:"1.02rem" }}>
+            <p className="mx-auto" style={{ maxWidth:600, color:P.textMuted, lineHeight:1.85, fontWeight:300, fontSize:"clamp(.9rem,1.4vw,1.02rem)" }}>
               A maioria dos terapeutas aprendeu técnicas. Poucos aprenderam a fazer as perguntas certas. A anamnese mal conduzida gera atendimentos genéricos, resultados abaixo do potencial e clientes que não voltam.{" "}
               <span style={{ color:P.white }}>Esse curso existe para mudar isso.</span>
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-5">
+          <div className="grid md:grid-cols-3 gap-4 md:gap-5">
             {DORES.map((d, i) => (
-              <div key={i} className={`card-hover card-hover-blue p-8 rounded-xl reveal reveal-delay-${i + 1}`}
-                style={{ background:P.surface, border:`1px solid rgba(255,255,255,0.06)`, backdropFilter:"blur(20px)" }}>
-                <span style={{ color:`${P.blue}44`, fontSize:"2.2rem", lineHeight:1, fontWeight:300, fontFamily:"Georgia,serif" }}>
+              <div key={i} className={`card-hover card-hover-blue card-p rounded-xl reveal reveal-delay-${i + 1}`}
+                style={{ background:P.surface, border:`1px solid rgba(255,255,255,0.06)`, backdropFilter:"blur(20px)", padding:"1.75rem" }}>
+                <span style={{ color:`${P.blue}44`, fontSize:"2rem", lineHeight:1, fontWeight:300, fontFamily:"Georgia,serif" }}>
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <p className="mt-5" style={{ color:P.textMuted, fontWeight:300, lineHeight:1.75, fontSize:".93rem", fontStyle:"italic" }}>
+                <p className="mt-4" style={{ color:P.textMuted, fontWeight:300, lineHeight:1.75, fontSize:".93rem", fontStyle:"italic" }}>
                   "{d}"
                 </p>
               </div>
@@ -291,30 +309,30 @@ export default function PNLParaTerapeutasPage() {
       </section>
 
       {/* ══ 3. MÓDULOS ══ */}
-      <section className="relative w-full py-24 px-6 overflow-hidden" style={{ background:P.bg }}>
+      <section className="relative w-full sec-pad overflow-hidden" style={{ background:P.bg, paddingTop:"6rem", paddingBottom:"6rem", paddingLeft:"1.25rem", paddingRight:"1.25rem" }}>
         <div className="absolute inset-0 grid-bg pointer-events-none opacity-30" aria-hidden="true" />
         <div className="absolute inset-0 pointer-events-none" style={{ background:"radial-gradient(ellipse 60% 50% at 50% 50%,rgba(37,99,235,0.06) 0%,transparent 70%)" }} aria-hidden="true" />
         <div className="relative max-w-5xl mx-auto">
-          <div className="text-center mb-16 reveal">
+          <div className="text-center mb-10 md:mb-16 reveal">
             <p className="text-xs uppercase mb-4" style={{ color:P.blueLight, fontWeight:300, letterSpacing:".22em" }}>Conteúdo do Curso</p>
-            <h2 style={{ fontFamily:"Georgia,'Times New Roman',serif", fontWeight:400, fontSize:"clamp(1.8rem,4vw,2.8rem)", color:P.white, lineHeight:1.25 }}>
+            <h2 style={{ fontFamily:"Georgia,'Times New Roman',serif", fontWeight:400, fontSize:"clamp(1.6rem,4vw,2.8rem)", color:P.white, lineHeight:1.25 }}>
               O que você vai aprender
             </h2>
             <Divider color={P.blueBorder} />
           </div>
 
-          <div className="grid md:grid-cols-2 gap-5">
+          <div className="grid md:grid-cols-2 gap-4 md:gap-5">
             {MODULOS.map((m, i) => (
-              <div key={m.num} className={`card-hover card-hover-blue p-8 rounded-xl reveal reveal-delay-${(i % 2) + 1}`}
-                style={{ background:P.blueMuted, border:`1px solid ${P.blueBorder}`, backdropFilter:"blur(20px)" }}>
-                <div className="flex items-start gap-5">
-                  <span style={{ color:`${P.blue}44`, fontSize:"2rem", fontWeight:300, lineHeight:1, fontFamily:"Georgia,serif", flexShrink:0, minWidth:36 }}>
+              <div key={m.num} className={`card-hover card-hover-blue card-p rounded-xl reveal reveal-delay-${(i % 2) + 1}`}
+                style={{ background:P.blueMuted, border:`1px solid ${P.blueBorder}`, backdropFilter:"blur(20px)", padding:"1.75rem" }}>
+                <div className="flex items-start gap-4">
+                  <span style={{ color:`${P.blue}44`, fontSize:"1.8rem", fontWeight:300, lineHeight:1, fontFamily:"Georgia,serif", flexShrink:0, minWidth:32 }}>
                     {m.num}
                   </span>
-                  <div>
-                    <h3 className="mb-3" style={{ color:P.white, fontWeight:400, fontSize:"1.05rem", lineHeight:1.4 }}>{m.title}</h3>
-                    <p style={{ color:P.textMuted, fontWeight:300, lineHeight:1.75, fontSize:".9rem" }}>{m.desc}</p>
-                    <div className="flex flex-wrap gap-2 mt-5">
+                  <div className="min-w-0">
+                    <h3 className="mb-3" style={{ color:P.white, fontWeight:400, fontSize:"1rem", lineHeight:1.4 }}>{m.title}</h3>
+                    <p style={{ color:P.textMuted, fontWeight:300, lineHeight:1.75, fontSize:".88rem" }}>{m.desc}</p>
+                    <div className="flex flex-wrap gap-2 mt-4">
                       {m.tags.map((t) => (
                         <span key={t} className="tag" style={{ background:"rgba(37,99,235,0.14)", border:`1px solid ${P.blueBorder}`, color:P.blueLight }}>{t}</span>
                       ))}
@@ -328,21 +346,21 @@ export default function PNLParaTerapeutasPage() {
       </section>
 
       {/* ══ 4. AULA GRATUITA ══ */}
-      <section className="relative w-full py-24 px-6 overflow-hidden text-center"
-        style={{ background:P.mid, borderTop:`1px solid ${P.goldBorder}`, borderBottom:`1px solid ${P.goldBorder}` }}>
+      <section className="relative w-full sec-pad overflow-hidden text-center"
+        style={{ background:P.mid, paddingTop:"5rem", paddingBottom:"5rem", paddingLeft:"1.25rem", paddingRight:"1.25rem", borderTop:`1px solid ${P.goldBorder}`, borderBottom:`1px solid ${P.goldBorder}` }}>
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          <div style={{ position:"absolute", top:"50%", left:"50%", transform:"translate(-50%,-50%)", width:1000, height:600, background:"radial-gradient(ellipse,rgba(201,168,76,0.08) 0%,transparent 65%)", filter:"blur(80px)", animation:"orb-a 20s ease-in-out infinite" }} />
+          <div style={{ position:"absolute", top:"50%", left:"50%", transform:"translate(-50%,-50%)", width:"min(1000px,200vw)", height:600, background:"radial-gradient(ellipse,rgba(201,168,76,0.08) 0%,transparent 65%)", filter:"blur(80px)", animation:"orb-a 20s ease-in-out infinite" }} />
         </div>
         <div className="relative z-10 max-w-3xl mx-auto">
           <div className="reveal">
-            <div className="pill mx-auto mb-8" style={{ background:P.goldMuted, border:`1px solid ${P.goldBorder}`, color:P.goldLight }}>
+            <div className="pill mx-auto mb-6 md:mb-8" style={{ background:P.goldMuted, border:`1px solid ${P.goldBorder}`, color:P.goldLight }}>
               <span style={{ width:6, height:6, borderRadius:"50%", background:P.gold, display:"inline-block", flexShrink:0 }} />
               AULA GRATUITA
             </div>
-            <h2 className="mb-6" style={{ fontFamily:"Georgia,'Times New Roman',serif", fontWeight:400, fontSize:"clamp(1.8rem,4vw,2.6rem)", color:P.white, lineHeight:1.3 }}>
+            <h2 className="mb-5" style={{ fontFamily:"Georgia,'Times New Roman',serif", fontWeight:400, fontSize:"clamp(1.6rem,4vw,2.6rem)", color:P.white, lineHeight:1.3 }}>
               Antes de decidir,{" "}<span className="gold-text">assista gratuitamente</span>
             </h2>
-            <p className="mb-10 mx-auto" style={{ maxWidth:560, color:P.textMuted, lineHeight:1.85, fontWeight:300, fontSize:"1rem" }}>
+            <p className="mb-8 md:mb-10 mx-auto" style={{ maxWidth:560, color:P.textMuted, lineHeight:1.85, fontWeight:300, fontSize:"clamp(.9rem,1.4vw,1rem)" }}>
               O Sergio vai conduzir uma aula online completa sobre o alinhamento dos Níveis Neurológicos — uma das ferramentas mais poderosas da PNL para o trabalho terapêutico.{" "}
               <span style={{ color:P.white }}>Sem custo, sem compromisso.</span>
             </p>
@@ -354,10 +372,10 @@ export default function PNLParaTerapeutasPage() {
       </section>
 
       {/* ══ 5. PARA QUEM ══ */}
-      <section className="relative w-full py-24 px-6" style={{ background:P.bg }}>
+      <section className="relative w-full sec-pad" style={{ background:P.bg, paddingTop:"5rem", paddingBottom:"5rem", paddingLeft:"1.25rem", paddingRight:"1.25rem" }}>
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16 reveal">
-            <h2 style={{ fontFamily:"Georgia,'Times New Roman',serif", fontWeight:400, fontSize:"clamp(1.8rem,4vw,2.8rem)", color:P.white }}>
+          <div className="text-center mb-10 md:mb-16 reveal">
+            <h2 style={{ fontFamily:"Georgia,'Times New Roman',serif", fontWeight:400, fontSize:"clamp(1.6rem,4vw,2.8rem)", color:P.white }}>
               Este curso é para você?
             </h2>
             <div className="mx-auto" style={{ maxWidth:160 }}>
@@ -365,10 +383,10 @@ export default function PNLParaTerapeutasPage() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="card-hover card-hover-blue p-8 rounded-xl reveal reveal-delay-1"
-              style={{ background:"rgba(37,99,235,0.04)", border:`1px solid ${P.blueBorder}` }}>
-              <div className="flex items-center gap-3 mb-7">
+          <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+            <div className="card-hover card-hover-blue card-p rounded-xl reveal reveal-delay-1"
+              style={{ background:"rgba(37,99,235,0.04)", border:`1px solid ${P.blueBorder}`, padding:"1.75rem" }}>
+              <div className="flex items-center gap-3 mb-6">
                 <span style={{ width:8, height:8, borderRadius:"50%", background:P.blue, display:"inline-block", flexShrink:0 }} />
                 <span className="text-xs uppercase" style={{ color:P.blueLight, letterSpacing:".18em", fontWeight:300 }}>Para quem é</span>
               </div>
@@ -382,9 +400,9 @@ export default function PNLParaTerapeutasPage() {
               </ul>
             </div>
 
-            <div className="card-hover p-8 rounded-xl reveal reveal-delay-2"
-              style={{ background:"rgba(239,68,68,0.04)", border:"1px solid rgba(239,68,68,0.18)" }}>
-              <div className="flex items-center gap-3 mb-7">
+            <div className="card-hover card-p rounded-xl reveal reveal-delay-2"
+              style={{ background:"rgba(239,68,68,0.04)", border:"1px solid rgba(239,68,68,0.18)", padding:"1.75rem" }}>
+              <div className="flex items-center gap-3 mb-6">
                 <span style={{ width:8, height:8, borderRadius:"50%", background:"rgba(239,68,68,0.6)", display:"inline-block", flexShrink:0 }} />
                 <span className="text-xs uppercase" style={{ color:"rgba(239,68,68,0.7)", letterSpacing:".18em", fontWeight:300 }}>Para quem não é</span>
               </div>
@@ -402,24 +420,24 @@ export default function PNLParaTerapeutasPage() {
       </section>
 
       {/* ══ 6. FACILITADOR ══ */}
-      <section className="relative w-full py-24 px-6 overflow-hidden" style={{ background:P.mid, borderTop:"1px solid rgba(255,255,255,0.04)" }}>
+      <section className="relative w-full sec-pad overflow-hidden" style={{ background:P.mid, paddingTop:"5rem", paddingBottom:"5rem", paddingLeft:"1.25rem", paddingRight:"1.25rem", borderTop:"1px solid rgba(255,255,255,0.04)" }}>
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
           <div style={{ position:"absolute", top:"50%", left:"30%", transform:"translate(-50%,-50%)", width:700, height:700, background:"radial-gradient(circle,rgba(201,168,76,0.06) 0%,transparent 65%)", filter:"blur(80px)", animation:"orb-b 24s ease-in-out infinite" }} />
           <div style={{ position:"absolute", top:"50%", right:"10%", transform:"translateY(-50%)", width:400, height:400, background:"radial-gradient(circle,rgba(37,99,235,0.06) 0%,transparent 65%)", filter:"blur(60px)", animation:"orb-c 18s ease-in-out infinite" }} />
         </div>
 
         <div className="relative max-w-5xl mx-auto">
-          <div className="text-center mb-16 reveal">
+          <div className="text-center mb-10 md:mb-16 reveal">
             <p className="text-xs uppercase mb-4" style={{ color:P.gold, fontWeight:300, letterSpacing:".22em" }}>Facilitador</p>
-            <h2 style={{ fontFamily:"Georgia,'Times New Roman',serif", fontWeight:400, fontSize:"clamp(1.6rem,4vw,2.4rem)", color:P.white }}>
+            <h2 style={{ fontFamily:"Georgia,'Times New Roman',serif", fontWeight:400, fontSize:"clamp(1.4rem,4vw,2.4rem)", color:P.white }}>
               Quem vai te guiar nessa jornada
             </h2>
           </div>
 
-          <div className="flex flex-col md:flex-row items-center gap-12 reveal">
+          <div className="facilitator-gap flex flex-col md:flex-row items-center gap-8 md:gap-12 reveal">
             {/* foto */}
             <div className="flex-shrink-0 flex items-center justify-center">
-              <div style={{ position:"relative", width:220, height:220 }}>
+              <div className="photo-size" style={{ position:"relative", width:200, height:200 }}>
                 <div className="photo-ring" />
                 <div style={{ position:"absolute", inset:3, borderRadius:"50%", overflow:"hidden", background:P.mid }}>
                   <Image
@@ -427,22 +445,22 @@ export default function PNLParaTerapeutasPage() {
                     alt="Sergio Oliveira"
                     fill
                     style={{ objectFit:"cover", objectPosition:"center top" }}
-                    sizes="220px"
+                    sizes="(max-width:767px) 160px, 200px"
                   />
                 </div>
               </div>
             </div>
 
             {/* texto */}
-            <div className="flex-1 text-center md:text-left">
-              <h3 style={{ fontFamily:"Georgia,'Times New Roman',serif", fontWeight:400, fontSize:"clamp(1.4rem,3vw,2rem)", color:P.white, marginBottom:8 }}>
+            <div className="flex-1 min-w-0 text-center md:text-left">
+              <h3 style={{ fontFamily:"Georgia,'Times New Roman',serif", fontWeight:400, fontSize:"clamp(1.3rem,3vw,2rem)", color:P.white, marginBottom:8 }}>
                 Sergio Oliveira
               </h3>
               <p className="mb-4" style={{ color:P.gold, fontWeight:300, fontSize:".82rem", letterSpacing:".18em", textTransform:"uppercase" }}>
                 Fundador da Academia HQ
               </p>
               <Divider color={P.goldBorder} />
-              <p style={{ color:P.textMuted, lineHeight:1.95, fontWeight:300, fontSize:"1.02rem" }}>
+              <p style={{ color:P.textMuted, lineHeight:1.95, fontWeight:300, fontSize:"clamp(.9rem,1.4vw,1.02rem)" }}>
                 Mais de{" "}
                 <span style={{ color:P.white, fontWeight:400 }}>15 anos</span>{" "}
                 trabalhando com estruturas cognitivas, espiritualidade e desenvolvimento humano. A PNL é parte do método que sustenta todos os cursos da Academia HQ desde o início.
@@ -458,21 +476,21 @@ export default function PNLParaTerapeutasPage() {
       </section>
 
       {/* ══ 7. INVESTIMENTO ══ */}
-      <section className="relative w-full py-24 px-6 overflow-hidden" style={{ background:P.bg }}>
+      <section className="relative w-full sec-pad overflow-hidden" style={{ background:P.bg, paddingTop:"5rem", paddingBottom:"5rem", paddingLeft:"1.25rem", paddingRight:"1.25rem" }}>
         <div className="absolute inset-0 grid-bg pointer-events-none opacity-25" aria-hidden="true" />
         <div className="relative max-w-6xl mx-auto">
-          <div className="text-center mb-14 reveal">
+          <div className="text-center mb-10 md:mb-14 reveal">
             <p className="text-xs uppercase mb-4" style={{ color:P.gold, fontWeight:300, letterSpacing:".22em" }}>Investimento</p>
-            <h2 style={{ fontFamily:"Georgia,'Times New Roman',serif", fontWeight:400, fontSize:"clamp(1.8rem,4vw,2.8rem)", color:P.white }}>
+            <h2 style={{ fontFamily:"Georgia,'Times New Roman',serif", fontWeight:400, fontSize:"clamp(1.6rem,4vw,2.8rem)", color:P.white }}>
               Acesso ao curso
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
 
             {/* Card 1 — Turma Coletiva */}
-            <div className="card-hover card-hover-gold rounded-xl reveal reveal-delay-1 flex flex-col"
-              style={{ background:P.goldMuted, border:`1px solid ${P.goldBorder}`, backdropFilter:"blur(24px)", padding:"2rem" }}>
+            <div className="card-hover card-hover-gold card-p rounded-xl reveal reveal-delay-1 flex flex-col"
+              style={{ background:P.goldMuted, border:`1px solid ${P.goldBorder}`, backdropFilter:"blur(24px)", padding:"1.75rem" }}>
               <div className="pill mb-5" style={{ background:"rgba(201,168,76,0.10)", border:`1px solid ${P.goldBorder}`, color:P.goldLight }}>
                 <span style={{ width:6, height:6, borderRadius:"50%", background:P.gold, display:"inline-block", flexShrink:0 }} />
                 Turma Coletiva
@@ -480,11 +498,11 @@ export default function PNLParaTerapeutasPage() {
               <p className="text-xs uppercase mb-2" style={{ color:P.textFaint, fontWeight:300, letterSpacing:".18em" }}>Investimento</p>
               <div className="flex items-end gap-1 mb-4">
                 <span style={{ color:P.textMuted, fontSize:"1rem", fontWeight:300, marginBottom:6 }}>R$</span>
-                <span className="gold-text" style={{ fontSize:"clamp(2rem,3.5vw,3rem)", lineHeight:1, fontWeight:300, fontFamily:"Georgia,serif" }}>4.400</span>
+                <span className="gold-text price-num" style={{ fontSize:"2.8rem", lineHeight:1, fontWeight:300, fontFamily:"Georgia,serif" }}>4.400</span>
                 <span style={{ color:P.textMuted, fontSize:"1rem", fontWeight:300, marginBottom:6 }}>,00</span>
               </div>
               <Divider color={P.goldBorder} />
-              <ul className="space-y-3 my-5 flex-1">
+              <ul className="space-y-3 my-4 flex-1">
                 {INCLUSOS.map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <CheckIcon color={P.gold} />
@@ -493,14 +511,14 @@ export default function PNLParaTerapeutasPage() {
                 ))}
               </ul>
               <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn-base btn-gold-solid"
-                style={{ width:"100%", fontSize:".78rem", padding:"12px 16px" }}>
+                style={{ fontSize:".78rem", padding:"12px 16px" }}>
                 <WaIcon />WhatsApp — Sergio
               </a>
             </div>
 
             {/* Card 2 — Aula Individual Níveis Neurológicos */}
-            <div className="card-hover rounded-xl reveal reveal-delay-2 flex flex-col"
-              style={{ background:P.blueMuted, border:`1px solid ${P.blueBorder}`, backdropFilter:"blur(24px)", padding:"2rem" }}>
+            <div className="card-hover card-p rounded-xl reveal reveal-delay-2 flex flex-col"
+              style={{ background:P.blueMuted, border:`1px solid ${P.blueBorder}`, backdropFilter:"blur(24px)", padding:"1.75rem" }}>
               <div className="pill mb-5" style={{ background:"rgba(37,99,235,0.10)", border:`1px solid ${P.blueBorder}`, color:P.blueLight }}>
                 <span style={{ width:6, height:6, borderRadius:"50%", background:P.blue, display:"inline-block", flexShrink:0 }} />
                 Aula Individual
@@ -508,7 +526,7 @@ export default function PNLParaTerapeutasPage() {
               <p className="text-xs uppercase mb-2" style={{ color:P.textFaint, fontWeight:300, letterSpacing:".18em" }}>Investimento</p>
               <div className="flex items-end gap-1 mb-1">
                 <span style={{ color:P.textMuted, fontSize:"1rem", fontWeight:300, marginBottom:6 }}>R$</span>
-                <span style={{ fontSize:"clamp(2rem,3.5vw,3rem)", lineHeight:1, fontWeight:300, fontFamily:"Georgia,serif", color:P.blueLight }}>840</span>
+                <span className="price-num" style={{ fontSize:"2.8rem", lineHeight:1, fontWeight:300, fontFamily:"Georgia,serif", color:P.blueLight }}>840</span>
                 <span style={{ color:P.textMuted, fontSize:"1rem", fontWeight:300, marginBottom:6 }}>,00</span>
               </div>
               <p className="mb-4" style={{ color:P.textFaint, fontWeight:300, fontSize:".78rem", lineHeight:1.5 }}>
@@ -516,7 +534,7 @@ export default function PNLParaTerapeutasPage() {
                 <span style={{ color:P.blueLight }}>Níveis Neurológicos</span>
               </p>
               <Divider color={P.blueBorder} />
-              <ul className="space-y-3 my-5 flex-1">
+              <ul className="space-y-3 my-4 flex-1">
                 <li className="flex items-start gap-3">
                   <CheckIcon color={P.blueLight} />
                   <span style={{ color:P.textMuted, fontWeight:300, fontSize:".85rem", lineHeight:1.5 }}>Sessão individual via videochamada</span>
@@ -530,17 +548,17 @@ export default function PNLParaTerapeutasPage() {
                   <span style={{ color:P.textMuted, fontWeight:300, fontSize:".85rem", lineHeight:1.5 }}>Aplicação direta à sua prática clínica</span>
                 </li>
               </ul>
-              <a href={WA_URL} target="_blank" rel="noopener noreferrer"
-                style={{ width:"100%", display:"flex", alignItems:"center", justifyContent:"center", gap:8, background:P.blue, color:P.white, border:"none", borderRadius:8, padding:"12px 16px", fontSize:".78rem", fontWeight:500, letterSpacing:".09em", textDecoration:"none", transition:"transform .2s, box-shadow .2s" }}>
+              <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn-base"
+                style={{ background:P.blue, color:P.white, border:"none", fontSize:".78rem", padding:"12px 16px" }}>
                 <WaIcon />Tenho interesse
               </a>
             </div>
 
             {/* Card 3 — Info */}
-            <div className="rounded-xl flex flex-col justify-between reveal reveal-delay-3"
-              style={{ background:"rgba(255,255,255,0.02)", border:"1px solid rgba(255,255,255,0.06)", padding:"2rem" }}>
+            <div className="card-p rounded-xl flex flex-col justify-between reveal reveal-delay-3"
+              style={{ background:"rgba(255,255,255,0.02)", border:"1px solid rgba(255,255,255,0.06)", padding:"1.75rem" }}>
               <div>
-                <svg viewBox="0 0 32 32" fill="none" className="mb-6" width="32" height="32">
+                <svg viewBox="0 0 32 32" fill="none" className="mb-5" width="28" height="28">
                   <circle cx="16" cy="16" r="15" stroke={P.goldBorder} strokeWidth="1" />
                   <path d="M16 10v7" stroke={P.gold} strokeWidth="1.8" strokeLinecap="round" />
                   <circle cx="16" cy="21.5" r="1.5" fill={P.gold} />
@@ -552,7 +570,7 @@ export default function PNLParaTerapeutasPage() {
               </div>
               <div className="mt-8">
                 <a href={WA_AULA} target="_blank" rel="noopener noreferrer" className="btn-base btn-ghost-gold"
-                  style={{ width:"100%", fontSize:".78rem", padding:"12px 16px" }}>
+                  style={{ fontSize:".78rem", padding:"12px 16px" }}>
                   Aula gratuita antes
                 </a>
               </div>
@@ -563,38 +581,38 @@ export default function PNLParaTerapeutasPage() {
       </section>
 
       {/* ══ 8. CTA FINAL ══ */}
-      <section className="relative w-full py-28 px-6 text-center overflow-hidden"
-        style={{ background:`linear-gradient(180deg,${P.bg} 0%,#040818 100%)`, borderTop:"1px solid rgba(255,255,255,0.04)" }}>
+      <section className="relative w-full sec-pad text-center overflow-hidden"
+        style={{ background:`linear-gradient(180deg,${P.bg} 0%,#040818 100%)`, paddingTop:"5rem", paddingBottom:"5rem", paddingLeft:"1.25rem", paddingRight:"1.25rem", borderTop:"1px solid rgba(255,255,255,0.04)" }}>
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          <div style={{ position:"absolute", top:"40%", left:"50%", transform:"translate(-50%,-50%)", width:1000, height:700, background:"radial-gradient(ellipse,rgba(37,99,235,0.08) 0%,transparent 65%)", filter:"blur(100px)", animation:"orb-a 22s ease-in-out infinite" }} />
-          <div style={{ position:"absolute", bottom:0, left:"50%", transform:"translateX(-50%)", width:700, height:400, background:"radial-gradient(ellipse,rgba(201,168,76,0.07) 0%,transparent 65%)", filter:"blur(80px)", animation:"orb-b 18s ease-in-out infinite" }} />
+          <div style={{ position:"absolute", top:"40%", left:"50%", transform:"translate(-50%,-50%)", width:"min(1000px,200vw)", height:700, background:"radial-gradient(ellipse,rgba(37,99,235,0.08) 0%,transparent 65%)", filter:"blur(100px)", animation:"orb-a 22s ease-in-out infinite" }} />
+          <div style={{ position:"absolute", bottom:0, left:"50%", transform:"translateX(-50%)", width:"min(700px,150vw)", height:400, background:"radial-gradient(ellipse,rgba(201,168,76,0.07) 0%,transparent 65%)", filter:"blur(80px)", animation:"orb-b 18s ease-in-out infinite" }} />
         </div>
         <div className="relative z-10 max-w-3xl mx-auto reveal">
-          <div className="flex items-center justify-center gap-4 mb-10">
-            <div style={{ height:1, width:64, background:`linear-gradient(90deg,transparent,${P.goldBorder})` }} />
+          <div className="flex items-center justify-center gap-4 mb-8 md:mb-10">
+            <div style={{ height:1, width:48, background:`linear-gradient(90deg,transparent,${P.goldBorder})` }} />
             <svg viewBox="0 0 20 20" fill="none" width="16" height="16">
               <polygon points="10,1 19,18 1,18" stroke={P.gold} strokeWidth="1.2" fill="none" />
               <circle cx="10" cy="13" r="1.8" fill={P.gold} />
             </svg>
-            <div style={{ height:1, width:64, background:`linear-gradient(90deg,${P.goldBorder},transparent)` }} />
+            <div style={{ height:1, width:48, background:`linear-gradient(90deg,${P.goldBorder},transparent)` }} />
           </div>
 
-          <h2 className="mb-6" style={{ fontFamily:"Georgia,'Times New Roman',serif", fontWeight:400, fontSize:"clamp(1.8rem,4vw,2.8rem)", color:P.white, lineHeight:1.32 }}>
+          <h2 className="mb-5" style={{ fontFamily:"Georgia,'Times New Roman',serif", fontWeight:400, fontSize:"clamp(1.6rem,4vw,2.8rem)", color:P.white, lineHeight:1.32 }}>
             Se você atende pessoas,<br />
             <span className="gold-text">você merece atender melhor.</span>
           </h2>
-          <p className="mb-12 mx-auto" style={{ maxWidth:520, color:P.textMuted, lineHeight:1.85, fontWeight:300, fontSize:"1rem" }}>
+          <p className="mb-10 mx-auto" style={{ maxWidth:520, color:P.textMuted, lineHeight:1.85, fontWeight:300, fontSize:"clamp(.9rem,1.4vw,1rem)" }}>
             A PNL não é uma técnica a mais no seu repertório. É a estrutura que faz todas as outras técnicas funcionarem melhor. Esse curso é o próximo passo.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center">
             <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn-base btn-blue-solid">
               <WaIcon />Quero me inscrever
             </a>
             <a href={WA_AULA} target="_blank" rel="noopener noreferrer" className="btn-base btn-ghost-gold">
-              Assistir aula gratuita
+              Aula gratuita
             </a>
           </div>
-          <div className="mt-12">
+          <div className="mt-10">
             <Link href="/cursos" style={{ color:P.textFaint, fontSize:".83rem", fontWeight:300, letterSpacing:".04em" }}>
               ← Ver todos os cursos
             </Link>
