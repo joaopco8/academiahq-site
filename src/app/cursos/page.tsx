@@ -131,6 +131,40 @@ export default function CursosPage() {
             </div>
           </AnimatedBorder>
 
+          {/* PNL para Terapeutas */}
+          <AnimatedBorder>
+            <div className="md:flex">
+              <div
+                className="md:w-1/3 h-64 md:h-auto"
+                style={{
+                  backgroundImage: "url('/bg-pnl.png')",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              />
+              <div className="md:w-2/3 p-8">
+                <h3 className="text-2xl font-normal tracking-tight mb-2 text-foreground">PNL para Terapeutas</h3>
+                <p className="text-indigo-400 font-light mb-4">20 horas · Online Ao Vivo · Individual 1:1</p>
+                <p className="font-light text-muted-foreground mb-6 leading-relaxed">
+                  Curso prático de Programação Neurolinguística desenvolvido para terapeutas que querem ir além da intuição — investigar com profundidade, entregar com precisão e comunicar o valor do seu trabalho.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {["PNL", "Terapeutas", "Níveis Neurológicos", "1:1"].map((tag) => (
+                    <span key={tag} className="px-2.5 py-1 bg-indigo-950/40 border border-indigo-500/20 text-indigo-300 rounded-full text-xs">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <Link
+                  href="/cursos/pnl-para-terapeutas"
+                  className="glass-btn glass-btn-indigo inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-normal text-white"
+                >
+                  Mais informações
+                </Link>
+              </div>
+            </div>
+          </AnimatedBorder>
+
           {/* Curso de Apometria */}
           <AnimatedBorder>
             <div className="md:flex">
