@@ -314,9 +314,9 @@ export default function PNLParaTerapeutasPage() {
         <div className="absolute inset-0 pointer-events-none" style={{ background:"radial-gradient(ellipse 60% 50% at 50% 50%,rgba(37,99,235,0.06) 0%,transparent 70%)" }} aria-hidden="true" />
         <div className="relative max-w-5xl mx-auto">
           <div className="text-center mb-10 md:mb-16 reveal">
-            <p className="text-xs uppercase mb-4" style={{ color:P.blueLight, fontWeight:300, letterSpacing:".22em" }}>Conteúdo do Curso</p>
+            <p className="text-xs uppercase mb-4" style={{ color:P.blueLight, fontWeight:300, letterSpacing:".22em" }}>~20 horas de aula · Desenvolvimento de Habilidades</p>
             <h2 style={{ fontFamily:"Georgia,'Times New Roman',serif", fontWeight:400, fontSize:"clamp(1.6rem,4vw,2.8rem)", color:P.white, lineHeight:1.25 }}>
-              O que você vai aprender
+              O que será desenvolvido no curso
             </h2>
             <Divider color={P.blueBorder} />
           </div>
@@ -486,7 +486,7 @@ export default function PNLParaTerapeutasPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
 
             {/* Card 1 — Turma Coletiva */}
             <div className="card-hover card-hover-gold card-p rounded-xl reveal reveal-delay-1 flex flex-col"
@@ -519,20 +519,23 @@ export default function PNLParaTerapeutasPage() {
             {/* Card 2 — Aula Individual Níveis Neurológicos */}
             <div className="card-hover card-p rounded-xl reveal reveal-delay-2 flex flex-col"
               style={{ background:P.blueMuted, border:`1px solid ${P.blueBorder}`, backdropFilter:"blur(24px)", padding:"1.75rem" }}>
+              {/* destaque topo */}
+              <div className="mb-4" style={{ background:"rgba(37,99,235,0.18)", border:`1px solid ${P.blue}`, borderRadius:10, padding:"10px 14px" }}>
+                <p style={{ color:P.white, fontWeight:500, fontSize:"1rem", lineHeight:1.3, letterSpacing:".01em", fontFamily:"Georgia,serif", fontStyle:"italic" }}>
+                  Níveis Neurológicos
+                </p>
+                <p style={{ color:P.blueLight, fontWeight:300, fontSize:".75rem", letterSpacing:".12em", textTransform:"uppercase", marginTop:4 }}>Aula Individual</p>
+              </div>
               <div className="pill mb-5" style={{ background:"rgba(37,99,235,0.10)", border:`1px solid ${P.blueBorder}`, color:P.blueLight }}>
                 <span style={{ width:6, height:6, borderRadius:"50%", background:P.blue, display:"inline-block", flexShrink:0 }} />
-                Aula Individual
+                Sessão exclusiva 1:1
               </div>
               <p className="text-xs uppercase mb-2" style={{ color:P.textFaint, fontWeight:300, letterSpacing:".18em" }}>Investimento</p>
-              <div className="flex items-end gap-1 mb-1">
+              <div className="flex items-end gap-1 mb-4">
                 <span style={{ color:P.textMuted, fontSize:"1rem", fontWeight:300, marginBottom:6 }}>R$</span>
                 <span className="price-num" style={{ fontSize:"2.8rem", lineHeight:1, fontWeight:300, fontFamily:"Georgia,serif", color:P.blueLight }}>840</span>
                 <span style={{ color:P.textMuted, fontSize:"1rem", fontWeight:300, marginBottom:6 }}>,00</span>
               </div>
-              <p className="mb-4" style={{ color:P.textFaint, fontWeight:300, fontSize:".78rem", lineHeight:1.5 }}>
-                Apenas sobre o tema{" "}
-                <span style={{ color:P.blueLight }}>Níveis Neurológicos</span>
-              </p>
               <Divider color={P.blueBorder} />
               <ul className="space-y-3 my-4 flex-1">
                 <li className="flex items-start gap-3">
@@ -552,28 +555,6 @@ export default function PNLParaTerapeutasPage() {
                 style={{ background:P.blue, color:P.white, border:"none", fontSize:".78rem", padding:"12px 16px" }}>
                 <WaIcon />Tenho interesse
               </a>
-            </div>
-
-            {/* Card 3 — Info */}
-            <div className="card-p rounded-xl flex flex-col justify-between reveal reveal-delay-3"
-              style={{ background:"rgba(255,255,255,0.02)", border:"1px solid rgba(255,255,255,0.06)", padding:"1.75rem" }}>
-              <div>
-                <svg viewBox="0 0 32 32" fill="none" className="mb-5" width="28" height="28">
-                  <circle cx="16" cy="16" r="15" stroke={P.goldBorder} strokeWidth="1" />
-                  <path d="M16 10v7" stroke={P.gold} strokeWidth="1.8" strokeLinecap="round" />
-                  <circle cx="16" cy="21.5" r="1.5" fill={P.gold} />
-                </svg>
-                <p style={{ color:P.textMuted, lineHeight:1.9, fontWeight:300, fontSize:".9rem" }}>
-                  Após o contato, você recebe todas as informações sobre{" "}
-                  <span style={{ color:P.white }}>datas e formas de pagamento</span>.
-                </p>
-              </div>
-              <div className="mt-8">
-                <a href={WA_AULA} target="_blank" rel="noopener noreferrer" className="btn-base btn-ghost-gold"
-                  style={{ fontSize:".78rem", padding:"12px 16px" }}>
-                  Aula gratuita antes
-                </a>
-              </div>
             </div>
 
           </div>
