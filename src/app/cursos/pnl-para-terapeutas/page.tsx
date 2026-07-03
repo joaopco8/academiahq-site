@@ -321,6 +321,27 @@ export default function PNLParaTerapeutasPage() {
             <Divider color={P.blueBorder} />
           </div>
 
+          {/* card destaque — carga horária */}
+          <div className="reveal mb-6 md:mb-8 rounded-xl overflow-hidden"
+            style={{ background:`linear-gradient(135deg, rgba(37,99,235,0.15) 0%, rgba(201,168,76,0.08) 100%)`, border:`1px solid ${P.blueBorder}` }}>
+            <div className="flex flex-col sm:flex-row items-center sm:items-stretch gap-0">
+              <div className="flex items-center justify-center px-8 py-6 sm:py-8 sm:border-r" style={{ borderColor:P.blueBorder, minWidth:180 }}>
+                <div className="text-center">
+                  <p style={{ fontFamily:"Georgia,serif", fontWeight:300, fontSize:"clamp(3rem,8vw,4.5rem)", lineHeight:1, color:P.white }}>~20</p>
+                  <p style={{ color:P.blueLight, fontWeight:300, fontSize:".75rem", letterSpacing:".2em", textTransform:"uppercase", marginTop:4 }}>horas de aula</p>
+                </div>
+              </div>
+              <div className="flex flex-col justify-center px-8 py-6 text-center sm:text-left">
+                <p style={{ color:P.white, fontWeight:400, fontSize:"1.05rem", lineHeight:1.4, marginBottom:6 }}>
+                  Desenvolvimento de Habilidades
+                </p>
+                <p style={{ color:P.textMuted, fontWeight:300, fontSize:".88rem", lineHeight:1.65 }}>
+                  Aulas ao vivo com o Sergio — conteúdo prático, aplicável direto na sua atuação clínica.
+                </p>
+              </div>
+            </div>
+          </div>
+
           <div className="grid md:grid-cols-2 gap-4 md:gap-5">
             {MODULOS.map((m, i) => (
               <div key={m.num} className={`card-hover card-hover-blue card-p rounded-xl reveal reveal-delay-${(i % 2) + 1}`}
