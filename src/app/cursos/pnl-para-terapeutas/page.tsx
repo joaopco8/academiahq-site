@@ -493,7 +493,7 @@ export default function PNLParaTerapeutasPage() {
               style={{ background:P.goldMuted, border:`1px solid ${P.goldBorder}`, backdropFilter:"blur(24px)", padding:"1.75rem" }}>
               <div className="pill mb-5" style={{ background:"rgba(201,168,76,0.10)", border:`1px solid ${P.goldBorder}`, color:P.goldLight }}>
                 <span style={{ width:6, height:6, borderRadius:"50%", background:P.gold, display:"inline-block", flexShrink:0 }} />
-                Turma Coletiva
+                Curso Individual · 1:1
               </div>
               <p className="text-xs uppercase mb-2" style={{ color:P.textFaint, fontWeight:300, letterSpacing:".18em" }}>Investimento</p>
               <div className="flex items-end gap-1 mb-4">
