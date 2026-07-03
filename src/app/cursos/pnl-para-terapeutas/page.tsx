@@ -314,7 +314,7 @@ export default function PNLParaTerapeutasPage() {
         <div className="absolute inset-0 pointer-events-none" style={{ background:"radial-gradient(ellipse 60% 50% at 50% 50%,rgba(37,99,235,0.06) 0%,transparent 70%)" }} aria-hidden="true" />
         <div className="relative max-w-5xl mx-auto">
           <div className="text-center mb-10 md:mb-16 reveal">
-            <p className="text-xs uppercase mb-4" style={{ color:P.blueLight, fontWeight:300, letterSpacing:".22em" }}>~20 horas de aula · Desenvolvimento de Habilidades</p>
+            <p className="text-xs uppercase mb-4" style={{ color:P.blueLight, fontWeight:300, letterSpacing:".22em" }}>Conteúdo do Curso</p>
             <h2 style={{ fontFamily:"Georgia,'Times New Roman',serif", fontWeight:400, fontSize:"clamp(1.6rem,4vw,2.8rem)", color:P.white, lineHeight:1.25 }}>
               O que será desenvolvido no curso
             </h2>
@@ -327,7 +327,7 @@ export default function PNLParaTerapeutasPage() {
             <div className="flex flex-col sm:flex-row items-center sm:items-stretch gap-0">
               <div className="flex items-center justify-center px-8 py-6 sm:py-8 sm:border-r" style={{ borderColor:P.blueBorder, minWidth:180 }}>
                 <div className="text-center">
-                  <p style={{ fontFamily:"Georgia,serif", fontWeight:300, fontSize:"clamp(3rem,8vw,4.5rem)", lineHeight:1, color:P.white }}>~20</p>
+                  <p style={{ fontFamily:"Georgia,serif", fontWeight:300, fontSize:"clamp(3rem,8vw,4.5rem)", lineHeight:1, color:P.white }}>20</p>
                   <p style={{ color:P.blueLight, fontWeight:300, fontSize:".75rem", letterSpacing:".2em", textTransform:"uppercase", marginTop:4 }}>horas de aula</p>
                 </div>
               </div>
