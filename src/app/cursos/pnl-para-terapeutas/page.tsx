@@ -26,7 +26,7 @@ const P = {
 };
 
 const WA_URL = "https://wa.me/5514998525760?text=Ol%C3%A1%2C+tenho+interesse+no+curso+PNL+para+Terapeutas";
-const WA_AULA = "https://wa.me/5514998525760?text=Ol%C3%A1%2C+quero+assistir+a+aula+gratuita+sobre+N%C3%ADveis+Neurol%C3%B3gicos";
+const WA_AULA = "https://www.youtube.com/watch?v=kbtMDXWqt6A";
 
 const WaIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 flex-shrink-0" aria-hidden="true">
