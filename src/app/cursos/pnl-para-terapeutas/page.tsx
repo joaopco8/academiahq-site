@@ -389,19 +389,17 @@ export default function PNLParaTerapeutasPage() {
             {/* ── YouTube mockup ── */}
             <a href={WA_AULA} target="_blank" rel="noopener noreferrer" className="reveal mx-auto block"
               style={{ maxWidth:680, borderRadius:14, overflow:"hidden", position:"relative", boxShadow:"0 24px 80px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.07)", display:"block", textDecoration:"none" }}>
-              {/* thumbnail */}
-              <div style={{ position:"relative", width:"100%", paddingTop:"56.25%" /* 16:9 */ }}>
+              <div style={{ position:"relative", width:"100%", paddingTop:"56.25%" }}>
                 <Image
-                  src={`https://img.youtube.com/vi/kbtMDXWqt6A/maxresdefault.jpg`}
+                  src="https://img.youtube.com/vi/kbtMDXWqt6A/maxresdefault.jpg"
                   alt="Aula gratuita — Níveis Neurológicos"
                   fill
                   style={{ objectFit:"cover" }}
                   sizes="(max-width:767px) 100vw, 680px"
                   unoptimized
                 />
-                {/* dark overlay */}
-                <div style={{ position:"absolute", inset:0, background:"rgba(0,0,0,0.28)", transition:"background .2s" }} />
-                {/* YouTube logo top-right */}
+                <div style={{ position:"absolute", inset:0, background:"rgba(0,0,0,0.28)" }} />
+                {/* YouTube badge */}
                 <div style={{ position:"absolute", top:14, right:14, background:"#FF0000", borderRadius:6, padding:"4px 8px", display:"flex", alignItems:"center", gap:5 }}>
                   <svg viewBox="0 0 24 24" fill="white" width="14" height="14">
                     <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
@@ -416,12 +414,25 @@ export default function PNLParaTerapeutasPage() {
                     </svg>
                   </div>
                 </div>
-                {/* bottom bar */}
-                <div style={{ position:"absolute", bottom:0, left:0, right:0, padding:"10px 14px", background:"linear-gradient(transparent,rgba(0,0,0,0.8))", display:"flex", alignItems:"center", gap:8 }}>
+                {/* bottom label */}
+                <div style={{ position:"absolute", bottom:0, left:0, right:0, padding:"10px 14px", background:"linear-gradient(transparent,rgba(0,0,0,0.8))" }}>
                   <span style={{ color:"white", fontSize:".8rem", fontWeight:400 }}>Níveis Neurológicos — Aula Gratuita com Sergio Oliveira</span>
                 </div>
               </div>
             </a>
+
+            {/* ── botões abaixo do vídeo ── */}
+            <div className="flex flex-col sm:flex-row gap-3 justify-center items-stretch sm:items-center mt-8 mx-auto" style={{ maxWidth:680 }}>
+              <a href={WA_AULA} target="_blank" rel="noopener noreferrer" className="btn-base btn-gold-solid" style={{ flex:1 }}>
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 flex-shrink-0" aria-hidden="true">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+                Assistir aula gratuita
+              </a>
+              <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn-base btn-blue-solid" style={{ flex:1 }}>
+                <WaIcon />Quero me inscrever
+              </a>
+            </div>
           </div>
         </div>
       </section>
