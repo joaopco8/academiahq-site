@@ -238,52 +238,6 @@ export default function DjhonRhuoPage() {
         }
       `}} />
 
-      {/* ─── Fixed bg image ───────────────────────────────────────────────── */}
-      <div
-        className="fixed inset-0 pointer-events-none"
-        style={{
-          zIndex: 0,
-          backgroundImage: "url('/images/bg-djhon-rhuo.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          opacity: 0.5,
-        }}
-      />
-
-      {/* ─── Fixed nebula background ──────────────────────────────────────── */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
-        <div
-          className="absolute"
-          style={{
-            top: "5%", left: "2%",
-            width: 600, height: 600,
-            background: "radial-gradient(circle, rgba(160,110,20,.2) 0%, transparent 65%)",
-            filter: "blur(70px)",
-            animation: "nebula-a 18s ease-in-out infinite",
-          }}
-        />
-        <div
-          className="absolute"
-          style={{
-            bottom: "10%", right: "2%",
-            width: 700, height: 700,
-            background: "radial-gradient(circle, rgba(100,65,10,.22) 0%, transparent 65%)",
-            filter: "blur(90px)",
-            animation: "nebula-b 25s ease-in-out infinite",
-          }}
-        />
-        <div
-          className="absolute"
-          style={{
-            top: "40%", left: "50%",
-            width: 900, height: 900,
-            transform: "translate(-50%,-50%)",
-            background: "radial-gradient(circle, rgba(180,130,20,.07) 0%, transparent 60%)",
-            filter: "blur(110px)",
-          }}
-        />
-      </div>
 
       {/* ══════════════════════════════════════════════════════════════════════
           1. HERO
@@ -292,6 +246,21 @@ export default function DjhonRhuoPage() {
         className="relative w-full min-h-screen flex flex-col items-center justify-center text-center overflow-hidden"
         style={{ zIndex: 1, padding: "120px 24px 100px" }}
       >
+        {/* Hero background image */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: "url('/Prancheta 1.jpg.jpeg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        />
+        {/* Dark overlay for readability */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: "rgba(8,6,0,.55)" }}
+        />
         {/* Matrix rain */}
         <div
           className="absolute inset-0 pointer-events-none overflow-hidden"
