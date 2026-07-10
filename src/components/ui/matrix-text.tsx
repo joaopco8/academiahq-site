@@ -100,16 +100,16 @@ export const MatrixText = ({
           style={
             letter.isMatrix
               ? {
-                  color: "#9B55D4",
-                  WebkitTextFillColor: "#9B55D4",
+                  color: "#C9A84C",
+                  WebkitTextFillColor: "#C9A84C",
                   textShadow:
-                    "0 0 12px rgba(155,85,212,1), 0 0 24px rgba(123,63,228,.6)",
+                    "0 0 12px rgba(220,180,60,1), 0 0 24px rgba(180,140,20,.6)",
                   transition: "color 0.08s, text-shadow 0.08s",
                   fontFamily: "monospace",
                 }
               : {
                   background:
-                    "linear-gradient(130deg,#C9A84C 0%,#E8C66A 28%,#D4A8F5 58%,#C9A84C 100%)",
+                    "linear-gradient(130deg,#C9A84C 0%,#E8C66A 28%,#F0C84A 58%,#C9A84C 100%)",
                   backgroundSize: "300% auto",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
