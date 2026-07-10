@@ -124,7 +124,7 @@ function SectionTitle({ children, className }: { children: React.ReactNode; clas
   return (
     <h2
       className={`text-3xl md:text-4xl font-light ${className ?? ""}`}
-      style={{ color: "#F4F0FF", lineHeight: 1.2 }}
+      style={{ color: "#F0E8D0", lineHeight: 1.2 }}
     >
       {children}
     </h2>
@@ -146,7 +146,7 @@ export default function DjhonRhuoPage() {
   return (
     <main
       className={font.className}
-      style={{ background: "#030110", color: "#F4F0FF" }}
+      style={{ background: "#080600", color: "#F0E8D0" }}
     >
       {/* ─── CSS ─── */}
       <style dangerouslySetInnerHTML={{ __html: `
@@ -195,9 +195,9 @@ export default function DjhonRhuoPage() {
           transition: border-color .3s, background .3s, box-shadow .3s;
         }
         .glass:hover {
-          border-color: rgba(123,63,228,.3);
-          background: rgba(123,63,228,.06);
-          box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 24px 64px rgba(123,63,228,.12);
+          border-color: rgba(180,130,20,.3);
+          background: rgba(180,130,20,.06);
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 24px 64px rgba(180,130,20,.12);
         }
         .btn-primary {
           display: inline-flex;
@@ -216,7 +216,7 @@ export default function DjhonRhuoPage() {
         }
         .btn-ghost:hover {
           background: rgba(255,255,255,.05);
-          color: #F4F0FF !important;
+          color: #F0E8D0 !important;
         }
         .step-card {
           background: rgba(255,255,255,0.03);
@@ -226,15 +226,15 @@ export default function DjhonRhuoPage() {
           transition: border-color .3s, background .3s;
         }
         .step-card:hover {
-          border-color: rgba(123,63,228,.3);
-          background: rgba(123,63,228,.05);
+          border-color: rgba(180,130,20,.3);
+          background: rgba(180,130,20,.05);
         }
         .feat-cell {
           background: rgba(255,255,255,0.02);
           transition: background .3s;
         }
         .feat-cell:hover {
-          background: rgba(123,63,228,.06);
+          background: rgba(180,130,20,.06);
         }
       `}} />
 
@@ -258,7 +258,7 @@ export default function DjhonRhuoPage() {
           style={{
             top: "5%", left: "2%",
             width: 600, height: 600,
-            background: "radial-gradient(circle, rgba(92,47,160,.2) 0%, transparent 65%)",
+            background: "radial-gradient(circle, rgba(160,110,20,.2) 0%, transparent 65%)",
             filter: "blur(70px)",
             animation: "nebula-a 18s ease-in-out infinite",
           }}
@@ -268,7 +268,7 @@ export default function DjhonRhuoPage() {
           style={{
             bottom: "10%", right: "2%",
             width: 700, height: 700,
-            background: "radial-gradient(circle, rgba(59,31,107,.22) 0%, transparent 65%)",
+            background: "radial-gradient(circle, rgba(100,65,10,.22) 0%, transparent 65%)",
             filter: "blur(90px)",
             animation: "nebula-b 25s ease-in-out infinite",
           }}
@@ -279,7 +279,7 @@ export default function DjhonRhuoPage() {
             top: "40%", left: "50%",
             width: 900, height: 900,
             transform: "translate(-50%,-50%)",
-            background: "radial-gradient(circle, rgba(123,63,228,.07) 0%, transparent 60%)",
+            background: "radial-gradient(circle, rgba(180,130,20,.07) 0%, transparent 60%)",
             filter: "blur(110px)",
           }}
         />
@@ -321,16 +321,16 @@ export default function DjhonRhuoPage() {
                       j === col.chars.length - 1
                         ? "#FFFFFF"
                         : j >= col.chars.length - 3
-                        ? "#DCC8FF"
+                        ? "#FFE8A0"
                         : j >= col.chars.length - 8
-                        ? "#B087E8"
-                        : "#7B4FC4",
+                        ? "#C9A84C"
+                        : "#A07820",
                     opacity: Math.max(0.08, 1 - (col.chars.length - 1 - j) * 0.038),
                     textShadow:
                       j === col.chars.length - 1
-                        ? "0 0 12px rgba(220,200,255,1), 0 0 24px rgba(180,135,232,.6)"
+                        ? "0 0 12px rgba(220,180,60,1), 0 0 24px rgba(180,140,20,.6)"
                         : j >= col.chars.length - 3
-                        ? "0 0 6px rgba(176,135,232,.5)"
+                        ? "0 0 6px rgba(180,140,20,.5)"
                         : "none",
                   }}
                 >
@@ -345,12 +345,12 @@ export default function DjhonRhuoPage() {
             className="absolute inset-0"
             style={{
               background:
-                "radial-gradient(ellipse 55% 55% at 50% 48%, rgba(3,1,16,.72) 0%, rgba(3,1,16,.08) 100%)",
+                "radial-gradient(ellipse 55% 55% at 50% 48%, rgba(8,6,0,.72) 0%, rgba(8,6,0,.08) 100%)",
             }}
           />
           <div
             className="absolute bottom-0 left-0 right-0"
-            style={{ height: 180, background: "linear-gradient(transparent, #030110)" }}
+            style={{ height: 180, background: "linear-gradient(transparent, #080600)" }}
           />
         </div>
 
@@ -404,7 +404,7 @@ export default function DjhonRhuoPage() {
           <p
             className="mt-5 mb-8 tracking-[.35em] uppercase fu-3"
             style={{
-              color: "#7B3FE4",
+              color: "#C9A84C",
               fontSize: ".72rem",
               fontWeight: 300,
             }}
@@ -414,21 +414,21 @@ export default function DjhonRhuoPage() {
 
           {/* Ornament */}
           <div className="flex items-center gap-4 mb-8 fu-3">
-            <div className="h-px w-20" style={{ background: "linear-gradient(90deg,transparent,rgba(123,63,228,.6))" }} />
+            <div className="h-px w-20" style={{ background: "linear-gradient(90deg,transparent,rgba(180,130,20,.6))" }} />
             <svg viewBox="0 0 20 20" fill="none" className="w-3.5 h-3.5">
               <polygon points="10,1 19,17 1,17" stroke="#C9A84C" strokeWidth="1.2" fill="none" />
               <circle cx="10" cy="12" r="2" fill="#C9A84C" />
             </svg>
-            <div className="h-px w-20" style={{ background: "linear-gradient(90deg,rgba(123,63,228,.6),transparent)" }} />
+            <div className="h-px w-20" style={{ background: "linear-gradient(90deg,rgba(180,130,20,.6),transparent)" }} />
           </div>
 
           {/* Lead */}
           <p
             className="max-w-xl mx-auto mb-12 leading-relaxed fu-4"
-            style={{ color: "#9B8FBA", fontSize: "1.05rem", fontWeight: 300 }}
+            style={{ color: "#B09A6A", fontSize: "1.05rem", fontWeight: 300 }}
           >
             Você não está apenas vivendo. Você está operando dentro de uma estrutura.{" "}
-            <span style={{ color: "#F4F0FF", fontWeight: 400 }}>
+            <span style={{ color: "#F0E8D0", fontWeight: 400 }}>
               E existe uma saída para além dela.
             </span>
           </p>
@@ -441,7 +441,7 @@ export default function DjhonRhuoPage() {
             className="btn-primary gap-3 font-medium uppercase tracking-widest fu-5"
             style={{
               background: "linear-gradient(135deg,#C9A84C,#A07D1C)",
-              color: "#030110",
+              color: "#080600",
               fontSize: ".8rem",
               letterSpacing: ".18em",
               padding: "16px 40px",
@@ -456,7 +456,7 @@ export default function DjhonRhuoPage() {
 
         <div
           className="absolute bottom-0 left-0 right-0 h-px"
-          style={{ background: "linear-gradient(90deg,transparent,rgba(92,47,160,.3),transparent)" }}
+          style={{ background: "linear-gradient(90deg,transparent,rgba(160,110,20,.3),transparent)" }}
         />
       </section>
 
@@ -466,19 +466,19 @@ export default function DjhonRhuoPage() {
       <section
         className="relative w-full py-24 px-6 text-center"
         style={{
-          background: "linear-gradient(180deg,#030110 0%,#0b0520 50%,#030110 100%)",
+          background: "linear-gradient(180deg,#080600 0%,#0D0900 50%,#080600 100%)",
           zIndex: 1,
         }}
       >
         <div className="max-w-3xl mx-auto">
           <blockquote
             className="text-xl md:text-2xl leading-relaxed"
-            style={{ color: "#6B5F80", fontWeight: 300 }}
+            style={{ color: "#7A6B4A", fontWeight: 300 }}
           >
             &ldquo;Grande parte das pessoas vive sem perceber os padrões, algoritmos e criptografias
             que moldam comportamento, percepção e consciência.&rdquo;
             <br />
-            <span style={{ color: "#C9B8E8", fontWeight: 400 }}>
+            <span style={{ color: "#E8D0A0", fontWeight: 400 }}>
               E muitas dessas estruturas foram projetadas para parecer naturais.
             </span>
           </blockquote>
@@ -488,15 +488,15 @@ export default function DjhonRhuoPage() {
       {/* ══════════════════════════════════════════════════════════════════════
           3. O QUE É
       ══════════════════════════════════════════════════════════════════════ */}
-      <section className="relative w-full py-24 px-6 overflow-hidden" style={{ background: "#030110", zIndex: 1 }}>
+      <section className="relative w-full py-24 px-6 overflow-hidden" style={{ background: "#080600", zIndex: 1 }}>
         <div className="max-w-5xl mx-auto space-y-16">
           {/* Header */}
           <div className="text-center space-y-6 max-w-xl mx-auto">
             <SectionLabel>Estrutura</SectionLabel>
             <SectionTitle>O que é o D&apos;JHON RHU&apos;O</SectionTitle>
-            <p className="text-base leading-relaxed" style={{ color: "#6B5F80", fontWeight: 300 }}>
+            <p className="text-base leading-relaxed" style={{ color: "#7A6B4A", fontWeight: 300 }}>
               Uma estrutura de alinhamento e ativação consciencial. Não se trata de religião.{" "}
-              <span style={{ color: "#C4B5D4" }}>
+              <span style={{ color: "#E8D0A0" }}>
                 É um processo de percepção, alinhamento e reorganização interna.
               </span>
             </p>
@@ -506,7 +506,7 @@ export default function DjhonRhuoPage() {
           <div
             className="relative mx-auto grid max-w-4xl sm:grid-cols-2 lg:grid-cols-3"
             style={{
-              border: "1px solid rgba(92,47,160,.25)",
+              border: "1px solid rgba(160,110,20,.25)",
               borderRadius: 16,
               overflow: "hidden",
             }}
@@ -547,25 +547,25 @@ export default function DjhonRhuoPage() {
                 key={i}
                 className="feat-cell space-y-4 p-10"
                 style={{
-                  borderRight: i % 3 !== 2 ? "1px solid rgba(92,47,160,.2)" : undefined,
-                  borderBottom: i < 3 ? "1px solid rgba(92,47,160,.2)" : undefined,
+                  borderRight: i % 3 !== 2 ? "1px solid rgba(160,110,20,.2)" : undefined,
+                  borderBottom: i < 3 ? "1px solid rgba(160,110,20,.2)" : undefined,
                 }}
               >
                 <div className="flex items-center gap-3">
                   <div
                     className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
                     style={{
-                      background: "rgba(92,47,160,.15)",
-                      border: "1px solid rgba(92,47,160,.3)",
+                      background: "rgba(160,110,20,.15)",
+                      border: "1px solid rgba(160,110,20,.3)",
                     }}
                   >
-                    <Icon size={15} style={{ color: "#B87DE8" }} />
+                    <Icon size={15} style={{ color: "#D4A84C" }} />
                   </div>
                   <h3 className="text-sm font-medium" style={{ color: "#C9A84C", letterSpacing: ".04em" }}>
                     {title}
                   </h3>
                 </div>
-                <p className="text-sm leading-relaxed" style={{ color: "#6B5F80", fontWeight: 300 }}>
+                <p className="text-sm leading-relaxed" style={{ color: "#7A6B4A", fontWeight: 300 }}>
                   {text}
                 </p>
               </div>
@@ -580,9 +580,9 @@ export default function DjhonRhuoPage() {
       <div
         className="relative w-full py-16 px-6 text-center"
         style={{
-          background: "#08031A",
-          borderTop: "1px solid rgba(92,47,160,.12)",
-          borderBottom: "1px solid rgba(92,47,160,.12)",
+          background: "#0D0800",
+          borderTop: "1px solid rgba(160,110,20,.12)",
+          borderBottom: "1px solid rgba(160,110,20,.12)",
           zIndex: 1,
         }}
       >
@@ -590,12 +590,12 @@ export default function DjhonRhuoPage() {
           <svg viewBox="0 0 40 30" fill="none" className="w-8 h-6 mx-auto mb-6 opacity-20">
             <path
               d="M0 30 L0 18 Q0 0 18 0 L18 8 Q8 8 8 18 L16 18 L16 30 Z M22 30 L22 18 Q22 0 40 0 L40 8 Q30 8 30 18 L38 18 L38 30 Z"
-              fill="#B87DE8"
+              fill="#D4A84C"
             />
           </svg>
           <blockquote
             className="text-xl md:text-2xl italic"
-            style={{ color: "#B87DE8", fontWeight: 300 }}
+            style={{ color: "#D4A84C", fontWeight: 300 }}
           >
             Nem todo bloqueio é emocional. Alguns são estruturais e só podem ser dissolvidos de dentro para fora.
           </blockquote>
@@ -605,12 +605,12 @@ export default function DjhonRhuoPage() {
       {/* ══════════════════════════════════════════════════════════════════════
           5. 6 PILARES
       ══════════════════════════════════════════════════════════════════════ */}
-      <section className="relative w-full py-24 px-6" style={{ background: "#030110", zIndex: 1 }}>
+      <section className="relative w-full py-24 px-6" style={{ background: "#080600", zIndex: 1 }}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <SectionLabel>Acesso</SectionLabel>
             <SectionTitle className="mb-4">Os 6 Pilares da Ativação</SectionTitle>
-            <p className="text-sm max-w-sm mx-auto" style={{ color: "#4D4466", fontWeight: 300 }}>
+            <p className="text-sm max-w-sm mx-auto" style={{ color: "#5A4A2A", fontWeight: 300 }}>
               Cada camada opera em um nível específico da estrutura consciencial.
             </p>
           </div>
@@ -621,7 +621,7 @@ export default function DjhonRhuoPage() {
                 <div className="flex items-center justify-between">
                   <span
                     style={{
-                      color: "rgba(92,47,160,.45)",
+                      color: "rgba(160,110,20,.45)",
                       fontSize: "2rem",
                       lineHeight: 1,
                       fontWeight: 300,
@@ -645,7 +645,7 @@ export default function DjhonRhuoPage() {
                   >
                     {p.title}
                   </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: "#6B5F80", fontWeight: 300 }}>
+                  <p className="text-sm leading-relaxed" style={{ color: "#7A6B4A", fontWeight: 300 }}>
                     {p.text}
                   </p>
                 </div>
@@ -661,9 +661,9 @@ export default function DjhonRhuoPage() {
       <section
         className="relative w-full py-24 px-6 overflow-hidden"
         style={{
-          background: "linear-gradient(135deg,#080318 0%,#030110 60%,#0b0520 100%)",
-          borderTop: "1px solid rgba(92,47,160,.1)",
-          borderBottom: "1px solid rgba(92,47,160,.1)",
+          background: "linear-gradient(135deg,#080600 0%,#080600 60%,#0D0900 100%)",
+          borderTop: "1px solid rgba(160,110,20,.1)",
+          borderBottom: "1px solid rgba(160,110,20,.1)",
           zIndex: 1,
         }}
       >
@@ -678,7 +678,7 @@ export default function DjhonRhuoPage() {
               className="absolute top-8 bottom-8 w-px"
               style={{
                 left: 31,
-                background: "linear-gradient(180deg,rgba(92,47,160,.8),rgba(92,47,160,.2),transparent)",
+                background: "linear-gradient(180deg,rgba(160,110,20,.8),rgba(160,110,20,.2),transparent)",
               }}
             />
             <div className="space-y-6">
@@ -693,12 +693,12 @@ export default function DjhonRhuoPage() {
                       width: 48,
                       height: 48,
                       borderRadius: "50%",
-                      background: "#08031A",
-                      border: "1px solid rgba(92,47,160,.65)",
-                      boxShadow: "0 0 20px rgba(92,47,160,.35)",
+                      background: "#0D0800",
+                      border: "1px solid rgba(160,110,20,.65)",
+                      boxShadow: "0 0 20px rgba(160,110,20,.35)",
                     }}
                   >
-                    <span style={{ color: "#B87DE8", fontWeight: 300, fontSize: ".85rem" }}>
+                    <span style={{ color: "#D4A84C", fontWeight: 300, fontSize: ".85rem" }}>
                       {step.num}
                     </span>
                   </div>
@@ -706,7 +706,7 @@ export default function DjhonRhuoPage() {
                     <h3 className="mb-2" style={{ color: "#C9A84C", fontSize: ".95rem", fontWeight: 500 }}>
                       {step.title}
                     </h3>
-                    <p className="text-sm leading-relaxed" style={{ color: "#6B5F80", fontWeight: 300 }}>
+                    <p className="text-sm leading-relaxed" style={{ color: "#7A6B4A", fontWeight: 300 }}>
                       {step.text}
                     </p>
                   </div>
@@ -720,7 +720,7 @@ export default function DjhonRhuoPage() {
       {/* ══════════════════════════════════════════════════════════════════════
           7. PARA QUEM É / NÃO É
       ══════════════════════════════════════════════════════════════════════ */}
-      <section className="relative w-full py-24 px-6" style={{ background: "#030110", zIndex: 1 }}>
+      <section className="relative w-full py-24 px-6" style={{ background: "#080600", zIndex: 1 }}>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <SectionTitle>Esta ativação é para você?</SectionTitle>
@@ -730,26 +730,26 @@ export default function DjhonRhuoPage() {
             <div
               className="p-8 rounded-xl"
               style={{
-                background: "rgba(123,63,228,.04)",
-                border: "1px solid rgba(123,63,228,.18)",
+                background: "rgba(180,130,20,.04)",
+                border: "1px solid rgba(180,130,20,.18)",
                 backdropFilter: "blur(20px)",
               }}
             >
               <div className="flex items-center gap-3 mb-7">
                 <div
                   className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0"
-                  style={{ background: "rgba(123,63,228,.15)", border: "1px solid rgba(123,63,228,.32)" }}
+                  style={{ background: "rgba(180,130,20,.15)", border: "1px solid rgba(180,130,20,.32)" }}
                 >
                   <svg viewBox="0 0 16 16" fill="none" className="w-4 h-4">
-                    <path d="M3 8l4 4 6-6" stroke="#9B55D4" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M3 8l4 4 6-6" stroke="#C9A84C" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
-                <h3 style={{ color: "#9B55D4", fontWeight: 500, fontSize: "1rem" }}>Para quem é</h3>
+                <h3 style={{ color: "#C9A84C", fontWeight: 500, fontSize: "1rem" }}>Para quem é</h3>
               </div>
               <ul className="space-y-4">
                 {PARA_QUEM.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "#9B8FBA", fontWeight: 300 }}>
-                    <span className="mt-1.5 w-1 h-1 rounded-full flex-shrink-0" style={{ background: "#7B3FE4" }} />
+                  <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "#B09A6A", fontWeight: 300 }}>
+                    <span className="mt-1.5 w-1 h-1 rounded-full flex-shrink-0" style={{ background: "#C9A84C" }} />
                     {item}
                   </li>
                 ))}
@@ -777,7 +777,7 @@ export default function DjhonRhuoPage() {
               </div>
               <ul className="space-y-4">
                 {NAO_PARA.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "#9B8FBA", fontWeight: 300 }}>
+                  <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "#B09A6A", fontWeight: 300 }}>
                     <span className="mt-1.5 w-1 h-1 rounded-full flex-shrink-0" style={{ background: "#C44569" }} />
                     {item}
                   </li>
@@ -793,7 +793,7 @@ export default function DjhonRhuoPage() {
       ══════════════════════════════════════════════════════════════════════ */}
       <section
         className="relative w-full py-24 px-6"
-        style={{ background: "#08031A", borderTop: "1px solid rgba(92,47,160,.1)", zIndex: 1 }}
+        style={{ background: "#0D0800", borderTop: "1px solid rgba(160,110,20,.1)", zIndex: 1 }}
       >
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
@@ -825,7 +825,7 @@ export default function DjhonRhuoPage() {
                   />
                   <div
                     className="absolute inset-0"
-                    style={{ background: "linear-gradient(180deg,transparent 50%,rgba(3,1,16,.85) 100%)" }}
+                    style={{ background: "linear-gradient(180deg,transparent 50%,rgba(8,6,0,.85) 100%)" }}
                   />
                 </div>
               </div>
@@ -833,11 +833,11 @@ export default function DjhonRhuoPage() {
 
             {/* Bio */}
             <div>
-              <p className="text-base mb-5 leading-relaxed" style={{ color: "#6B5F80", fontWeight: 300 }}>
+              <p className="text-base mb-5 leading-relaxed" style={{ color: "#7A6B4A", fontWeight: 300 }}>
                 Facilitador de ativações conscienciais e apometria quântica. Há mais de uma
                 década trabalhando com estruturas de alinhamento, desbloqueio e expansão de percepção.
               </p>
-              <p className="text-base mb-8 leading-relaxed" style={{ color: "#6B5F80", fontWeight: 300 }}>
+              <p className="text-base mb-8 leading-relaxed" style={{ color: "#7A6B4A", fontWeight: 300 }}>
                 O D&apos;JHON RHU&apos;O é uma das ativações desenvolvidas por Sergio a partir
                 de anos de pesquisa prática em conscienciologia aplicada.
               </p>
@@ -852,9 +852,9 @@ export default function DjhonRhuoPage() {
                     key={tag}
                     className="px-3 py-1.5 text-xs tracking-wider"
                     style={{
-                      background: "rgba(92,47,160,.1)",
-                      border: "1px solid rgba(92,47,160,.22)",
-                      color: "#9B55D4",
+                      background: "rgba(160,110,20,.1)",
+                      border: "1px solid rgba(160,110,20,.22)",
+                      color: "#C9A84C",
                       borderRadius: 6,
                       fontWeight: 300,
                       letterSpacing: ".12em",
@@ -874,7 +874,7 @@ export default function DjhonRhuoPage() {
       ══════════════════════════════════════════════════════════════════════ */}
       <section
         className="relative w-full py-24 px-6"
-        style={{ background: "#030110", borderTop: "1px solid rgba(255,255,255,.06)", zIndex: 1 }}
+        style={{ background: "#080600", borderTop: "1px solid rgba(255,255,255,.06)", zIndex: 1 }}
       >
         <div className="max-w-lg mx-auto text-center">
           <SectionLabel>Investimento</SectionLabel>
@@ -895,28 +895,28 @@ export default function DjhonRhuoPage() {
               <div
                 className="inline-flex items-center gap-2 mb-8 px-4 py-1.5"
                 style={{
-                  background: "rgba(92,47,160,.12)",
-                  border: "1px solid rgba(92,47,160,.22)",
+                  background: "rgba(160,110,20,.12)",
+                  border: "1px solid rgba(160,110,20,.22)",
                   borderRadius: 9999,
-                  color: "#B87DE8",
+                  color: "#D4A84C",
                   fontSize: ".68rem",
                   letterSpacing: ".15em",
                   fontWeight: 300,
                 }}
               >
-                <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: "#9B55D4" }} />
+                <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: "#C9A84C" }} />
                 Sessão Online Individual com Sergio
               </div>
 
               <p
                 className="text-xs tracking-widest uppercase mb-3"
-                style={{ color: "#4D4466", letterSpacing: ".2em", fontWeight: 300 }}
+                style={{ color: "#5A4A2A", letterSpacing: ".2em", fontWeight: 300 }}
               >
                 Investimento
               </p>
 
               <div className="flex items-end justify-center gap-1.5 mb-2">
-                <span style={{ color: "#6B5F80", fontSize: "1.25rem", fontWeight: 300, marginBottom: 8 }}>
+                <span style={{ color: "#7A6B4A", fontSize: "1.25rem", fontWeight: 300, marginBottom: 8 }}>
                   R$
                 </span>
                 <span
@@ -932,11 +932,11 @@ export default function DjhonRhuoPage() {
                 >
                   2.200
                 </span>
-                <span style={{ color: "#6B5F80", fontSize: "1.25rem", fontWeight: 300, marginBottom: 8 }}>
+                <span style={{ color: "#7A6B4A", fontSize: "1.25rem", fontWeight: 300, marginBottom: 8 }}>
                   ,00
                 </span>
               </div>
-              <p className="text-sm mb-10" style={{ color: "#6B5F80", fontWeight: 300 }}>
+              <p className="text-sm mb-10" style={{ color: "#7A6B4A", fontWeight: 300 }}>
                 ou em até{" "}
                 <span style={{ color: "#C9A84C", fontWeight: 500 }}>12×</span> no cartão
               </p>
@@ -953,18 +953,18 @@ export default function DjhonRhuoPage() {
                     key={d.label}
                     className="flex flex-col gap-1 p-3"
                     style={{
-                      background: "rgba(92,47,160,.07)",
-                      border: "1px solid rgba(92,47,160,.14)",
+                      background: "rgba(160,110,20,.07)",
+                      border: "1px solid rgba(160,110,20,.14)",
                       borderRadius: 8,
                     }}
                   >
                     <p
                       className="text-xs"
-                      style={{ color: "#4D4466", letterSpacing: ".1em", fontWeight: 300 }}
+                      style={{ color: "#5A4A2A", letterSpacing: ".1em", fontWeight: 300 }}
                     >
                       {d.label}
                     </p>
-                    <p className="text-xs text-left" style={{ color: "#F4F0FF", fontWeight: 400 }}>
+                    <p className="text-xs text-left" style={{ color: "#F0E8D0", fontWeight: 400 }}>
                       {d.value}
                     </p>
                   </div>
@@ -978,7 +978,7 @@ export default function DjhonRhuoPage() {
                 className="btn-primary w-full justify-center gap-3 font-medium uppercase tracking-widest"
                 style={{
                   background: "linear-gradient(135deg,#C9A84C,#A07D1C)",
-                  color: "#030110",
+                  color: "#080600",
                   fontSize: ".78rem",
                   letterSpacing: ".18em",
                   padding: "16px 32px",
@@ -990,7 +990,7 @@ export default function DjhonRhuoPage() {
                 Quero Acessar
               </a>
 
-              <p className="text-xs mt-5" style={{ color: "#3A2F4E", fontWeight: 300 }}>
+              <p className="text-xs mt-5" style={{ color: "#3A2D10", fontWeight: 300 }}>
                 Após o contato, você receberá todas as informações sobre agendamento e formas de pagamento.
               </p>
             </div>
@@ -1004,8 +1004,8 @@ export default function DjhonRhuoPage() {
       <section
         className="relative w-full py-28 px-6 text-center overflow-hidden"
         style={{
-          background: "linear-gradient(180deg,#030110 0%,#0b0520 50%,#030110 100%)",
-          borderTop: "1px solid rgba(92,47,160,.1)",
+          background: "linear-gradient(180deg,#080600 0%,#0D0900 50%,#080600 100%)",
+          borderTop: "1px solid rgba(160,110,20,.1)",
           zIndex: 1,
         }}
       >
@@ -1015,9 +1015,9 @@ export default function DjhonRhuoPage() {
           aria-hidden="true"
         >
           <svg viewBox="0 0 800 800" fill="none" className="w-full max-w-2xl">
-            <circle cx="400" cy="400" r="380" stroke="#9B55D4" strokeWidth="1" strokeDasharray="6 4" />
+            <circle cx="400" cy="400" r="380" stroke="#C9A84C" strokeWidth="1" strokeDasharray="6 4" />
             <circle cx="400" cy="400" r="280" stroke="#C9A84C" strokeWidth=".5" />
-            <circle cx="400" cy="400" r="180" stroke="#9B55D4" strokeWidth="1" strokeDasharray="3 6" />
+            <circle cx="400" cy="400" r="180" stroke="#C9A84C" strokeWidth="1" strokeDasharray="3 6" />
           </svg>
         </div>
 
@@ -1033,13 +1033,13 @@ export default function DjhonRhuoPage() {
 
           <h2
             className="mb-6 leading-snug"
-            style={{ color: "#F4F0FF", fontWeight: 300, fontSize: "clamp(1.8rem,4vw,2.5rem)", lineHeight: 1.3 }}
+            style={{ color: "#F0E8D0", fontWeight: 300, fontSize: "clamp(1.8rem,4vw,2.5rem)", lineHeight: 1.3 }}
           >
             Se você percebe que existe algo além,{" "}
             <span style={{ color: "#C9A84C" }}>este pode ser o próximo passo.</span>
           </h2>
 
-          <p className="text-base mb-4 leading-relaxed" style={{ color: "#6B5F80", fontWeight: 300 }}>
+          <p className="text-base mb-4 leading-relaxed" style={{ color: "#7A6B4A", fontWeight: 300 }}>
             A ativação é individual, consciente e progressiva.
             <br />
             Não exige crença. Apenas a disposição de perceber.
@@ -1047,7 +1047,7 @@ export default function DjhonRhuoPage() {
 
           <p
             className="text-xs tracking-[.3em] uppercase mb-12"
-            style={{ color: "#4D4466", fontWeight: 300 }}
+            style={{ color: "#5A4A2A", fontWeight: 300 }}
           >
             Academia HQ · Apometria Quântica
           </p>
@@ -1060,7 +1060,7 @@ export default function DjhonRhuoPage() {
               className="btn-primary gap-3 font-medium uppercase tracking-widest"
               style={{
                 background: "linear-gradient(135deg,#C9A84C,#A07D1C)",
-                color: "#030110",
+                color: "#080600",
                 fontSize: ".78rem",
                 letterSpacing: ".18em",
                 padding: "16px 40px",
@@ -1075,7 +1075,7 @@ export default function DjhonRhuoPage() {
             <Link
               href="/ativacoes"
               className="btn-ghost gap-2 text-sm px-6 py-4"
-              style={{ color: "#4D4466", fontWeight: 300 }}
+              style={{ color: "#5A4A2A", fontWeight: 300 }}
             >
               Ver todas as ativações
               <svg viewBox="0 0 16 16" fill="none" className="w-4 h-4">
